@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в аккаунт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+<section class="page-wrapper">
+    <section class="auth-form">
+        <header class="auth-form__header">
+            <section class="auth-form__logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#00C49F" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="#00C49F"/>
+                </svg>
+            </section>
+            <h1 class="auth-form__title">Добро пожаловать!</h1>
+            <p class="auth-form__subtitle">Зарегестрируйтесь чтоб начать работать с платформой!</p>
+        </header>
+        <div class="auth-form__nav">
+            <a href="login.html" class="auth-form__tab ">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i> Вход
+            </a>
+            <a href="register.html" class="auth-form__tab auth-form__tab--active">
+                <i class="fa-solid fa-user-plus"></i> Регистрация
+            </a>
+        </div>
+
+        <form class="auth-form__fields" action="#" method="POST">
+
+            <div class="form-group">
+                <label class="form-group__label" for="name">Имя</label>
+                <input class="form-group__input" type="email" id="name" placeholder="введите ваше имя" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-group__label" for="email">Email</label>
+                <input class="form-group__input" type="email" id="email" placeholder="введите ваш email" required>
+            </div>
+
+            <div class="form-group form-group--password">
+                <label class="form-group__label" for="password">Пароль</label>
+                <input class="form-group__input" type="password" id="password" placeholder="введите пароль" required>
+                <i class="fa-solid fa-eye form-group__eye-icon"></i>
+            </div>
+
+            <button type="submit" class="auth-form__btn auth-form__btn--main">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i> Войти в аккаунт &rarr;
+            </button>
+        </form>
+
+        <p class="auth-form__demo-text">
+            Демо-версия: используйте любой email и пароль для входа
+        </p>
+
+        <div class="auth-form__features">
+            <p class="auth-form__features-title">Что вас ждет после регистрации:</p>
+            <div class="auth-form__feature-grid">
+                    <span class="auth-form__feature-item">
+                        <i class="fa-solid fa-circle-check"></i> Персональная аналитика
+                    </span>
+                <span class="auth-form__feature-item">
+                        <i class="fa-solid fa-circle-check"></i> AI-консультант
+                    </span>
+                <span class="auth-form__feature-item">
+                        <i class="fa-solid fa-circle-check"></i> Инвестиционные гиды
+                    </span>
+                <span class="auth-form__feature-item">
+                        <i class="fa-solid fa-circle-check"></i> Бизнес ресурсы
+                    </span>
+            </div>
+        </div>
+    </section>
+</section>
+
+</body>
+</html>

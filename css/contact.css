@@ -1,0 +1,479 @@
+@import "css/fonts.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.container {
+    max-width: 1780px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #4447ff;
+    margin-bottom: 40px;
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 12px 57.8px 0 rgba(0, 0, 0, 0.25);
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1728px;
+    margin: 0 auto;
+
+}
+
+.logo img {
+    height: 40px;
+    width: 40px;
+}
+
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.main-nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+    padding: 5px 10px;
+    transition: all 0.3s ease ;
+    gap: 13px;
+}
+
+.main-nav a:hover {
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #fff;
+    background: linear-gradient(160deg, #3647FF, #1625CE);
+}
+
+.main-nav a:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.main-nav svg:hover {
+    color: #3647FF;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.language-switcher {
+    margin-right:50px;
+    box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.25);
+}
+
+.lang-button {
+    background-color: #fff;
+    box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.25);
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.lang-button.active {
+    background: linear-gradient(160deg, #3647FF, #1625CE);
+    color: #fff;
+    margin-right: -4PX;
+    border-top-left-radius:5px ;
+    border-bottom-left-radius:5px ;
+}
+
+.lang-button.noactive{
+    border-top-right-radius:5px ;
+    border-bottom-right-radius:5px ;
+    color: #666;
+}
+
+.lang-button:hover {
+    background: linear-gradient(160deg, #3647FF, #1625CE);
+    color: #fff;
+}
+
+
+.user-profile a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: rgba(48, 64, 245, 0.15);
+    color: #1625CE;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.user-profile img {
+    margin-right: 6px;
+}
+
+
+
+/*main*/
+
+
+h1 {
+    color: #1F31F0; /* Темный синий/серый для заголовков */
+    text-align: center;
+    font-size: 96px;
+
+}
+
+.icon-circle img {
+
+    margin: 0 auto;
+}
+
+.icon-circle {
+    padding: 15px;
+    border-radius: 23px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.email {
+    background: linear-gradient(160deg, #00508e, #008bff);
+
+}
+
+.phone {
+    background: linear-gradient(160deg, #27AE60, #2ECC71);
+
+}
+
+.chat {
+    background: linear-gradient(160deg, #F40FE5, #9721FF);
+
+}
+
+.support {
+    background: linear-gradient(160deg, #FFAD08, #EF4800);
+}
+
+
+h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 64px;
+    color: #1F31F0;
+}
+
+.main-container {
+    width: 80%; /* Общая ширина контейнера */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+/* Clearfix для float-элементов */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Секция заголовка */
+.section-header {
+    text-align: center;
+    padding: 50px 0 20px 0;
+}
+
+.section-header p {
+    max-width: 1200px;
+    margin: 15px auto 40px auto;
+    color: #6c757d;
+    font-size: 32px;
+}
+
+
+.help-options {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.help-item {
+    float: left;
+    width: 23%; /* 4 колонки по 23%, чтобы оставить место для margin */
+    margin-right: 2.66%; /* Отступ между блоками */
+    background-color: #fff;
+    padding: 30px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+}
+
+.help-item:last-child {
+    margin-right: 0; /* Убираем margin у последнего блока */
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    font-size: 20px;
+    color: #fff;
+}
+
+.help-item h3 {
+    margin: 0 0 5px 0;
+    text-align: center;
+    font-size: 24px;
+    color: #1F31F0;
+}
+
+.help-item p {
+    font-size: 0.9em;
+    color: #6c757d;
+    text-align: center;
+}
+
+/* --- Секция Отправьте нам сообщение (2 основные колонки) --- */
+.send-message-section {
+    padding: 50px 0;
+}
+
+.message-form-block {
+    float: left;
+    width: 683px; /* Левая колонка для формы */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 35px 68.5px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+}
+
+.office-team-block {
+    float: right;
+    width: 38%; /* Правая колонка для офисов/команды */
+    box-sizing: border-box;
+    max-width: 1700px;
+}
+
+/* Форма */
+.input-group {
+    margin-bottom: 50px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #1a2a47;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.my_list,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #EDEDED;
+}
+
+
+.form-row-half {
+    margin-bottom: 0; /* Отступ внутри row-half уже есть у .input-group */
+}
+
+.half-width {
+    width: 48%; /* Для двух инпутов в ряд */
+    margin-bottom: 40px;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.submit-button {
+    background-color: #3647FF; /* Синий цвет кнопки */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+}
+
+.job-title{
+    color: #3647FF;
+    font-style: italic;
+}
+
+.service{
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.team-member p:first-child {
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+}
+
+.team-member p:last-child {
+    font-weight: 100;
+    font-size: 12px;
+    color: #575757;
+}
+
+.cart-flex{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+.cart-flex > img{
+    margin-right: 16px;
+}
+.cart-flex p {
+    font-size: 16px;
+    font-weight: 100;
+}
+
+/* Офисы и Команда (Правая колонка) */
+.office-list, .team-list {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    color: #666;
+}
+
+h3 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #000;
+    font-weight: 500;
+}
+
+.office-list h3, .team-list h3 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #1a2a47;
+}
+
+/* --- Часто задаваемые вопросы (FAQ) --- */
+.faq-section {
+    padding: 50px 0;
+}
+
+.faq-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.faq-card {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 300px;
+    box-sizing: border-box;
+    width: 49%; /* 2 колонки */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 17px;
+    box-shadow: 0 4px 42.4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.faq-card p {
+    color: #1a2a47;
+    font-weight: 500;
+}
+
+/* --- Футер CTA --- */
+.cta-footer {
+    background-color: #3647FF; /* Синий фон на всю ширину */
+    color: white;
+    text-align: center;
+    padding: 250px 20px;
+
+
+
+}
+
+.cta-footer h2 {
+    color: white;
+
+    font-size: 96px;
+}
+
+.cta-footer p {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 200;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: white;
+    color: #3647FF;
+    padding: 18px 100px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #eee;
+}
