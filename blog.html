@@ -8,10 +8,15 @@
 </head>
 <body>
 <header>
-    <section class="container header-wrapper">
+    <div class="container header-wrapper">
         <div class="logo">
             <img src="img/logo.png" alt="Логотип">
         </div>
+        <button class="menu-toggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav class="main-nav">
             <ul>
                 <li><a href="index.html"><img src="img/home.svg" alt="home">Главная</a></li>
@@ -32,7 +37,7 @@
                 <a href="/profile.html"><img src="img/proof.png" alt="home">Monty-Nik</a>
             </div>
         </div>
-    </section>
+    </div>
 </header>
 <main class="container">
     <section class="blog-header">
@@ -232,5 +237,46 @@
     <p>Поделитесь своим предпринимательским опытом и идеями с нашим сообществом. Мы всегда ищем новые перспективы и истории успеха.</p>
     <a href="#" class="cta-button">Начните бесплатную пробную версию</a>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        const headerRight = document.querySelector('.header-right');
+        const body = document.body;
+
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('open');
+            menuToggle.classList.toggle('open');
+            body.classList.toggle('no-scroll');
+
+            // Обработка header-right для мобильного меню
+            if (mainNav.classList.contains('open') && window.innerWidth <= 768) {
+                if (!mainNav.querySelector('.header-right')) {
+                    const clonedHeaderRight = headerRight.cloneNode(true);
+                    clonedHeaderRight.classList.add('mobile-only');
+                    mainNav.appendChild(clonedHeaderRight);
+                }
+            } else if (window.innerWidth <= 768) {
+                const mobileHeaderRight = mainNav.querySelector('.header-right.mobile-only');
+                if (mobileHeaderRight) {
+                    mobileHeaderRight.remove();
+                }
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mainNav.classList.remove('open');
+                menuToggle.classList.remove('open');
+                body.classList.remove('no-scroll');
+                const mobileHeaderRight = mainNav.querySelector('.header-right.mobile-only');
+                if (mobileHeaderRight) {
+                    mobileHeaderRight.remove();
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>

@@ -506,3 +506,319 @@ main{
     background: #fff;
     align-items: center;
 }
+
+.menu-toggle {
+    display: none; /* Скрываем по умолчанию */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    position: relative;
+    width: 40px;
+    height: 30px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+@media (max-width: 992px) {
+
+    .container {
+        padding: 0 15px;
+    }
+
+
+    h1 {
+        font-size: 80px;
+        text-align: center;
+    }
+
+
+    .advantages-container {
+        justify-content: space-around;
+        padding: 40px 0;
+    }
+
+    .advantage-item {
+        flex: 0 1 calc(50% - 20px); /* Два элемента в ряд */
+        min-width: 300px;
+        height: auto; /* Гибкая высота */
+    }
+
+
+    .icon-stat {
+        justify-content: space-between;
+    }
+
+    .stat-title {
+        margin-left: 0;
+    }
+
+
+    .image-dashboard {
+        overflow-x: hidden;
+    }
+
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .dashboard img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+    }
+
+    /* Секция инструментов */
+    .trust-header {
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    .trust-subtitle {
+        font-size: 18px;
+    }
+
+    .tools-container {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    .tool-item {
+        flex: 0 1 calc(50% - 20px);
+        min-width: 350px;
+        height: auto;
+    }
+
+    .tool-item img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .tool-number {
+        font-size: 20px;
+    }
+
+
+    .main_el_pink, .main_el_blue {
+        opacity: 0.5;
+        right: 0;
+        top: 50px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    /* ---------------------- HEADER и БУРГЕР-МЕНЮ ---------------------- */
+
+    header {
+        padding: 5px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        height: 100vh;
+        overflow-y: auto;
+        padding-top: 20px;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    .main-nav a {
+        padding: 15px 20px;
+        width: 100%;
+        border-radius: 0;
+        font-size: 16px;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+
+    .main-nav .header-right.mobile-only {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .main-nav .header-right.mobile-only .language-switcher {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-nav .header-right.mobile-only .user-profile {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .main-nav .header-right.mobile-only .user-profile a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .logo img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .main-nav {
+        top: 41px;
+    }
+
+    /* Заголовок H1 */
+    h1 {
+        font-size: 48px;
+        margin-top: 20px;
+    }
+
+    .advantages-container {
+        padding: 20px 0;
+    }
+
+    .advantage-item {
+        flex: 1 1 100%;
+        min-width: unset;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .icon-wrapper {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .advantage-item img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .advantage-title {
+        font-size: 18px;
+    }
+
+    .advantage-description {
+        font-size: 13px;
+    }
+
+    .stat-title {
+        margin-left: 20px;
+    }
+
+    .stat-title > p, .stat-neg-title {
+        font-size: 16px;
+    }
+
+    .dashboard-img, .dashboard-img-t {
+        border-radius: 10px; /* Скругление углов на мобильном */
+    }
+
+    .trust-header {
+        margin-top: 40px;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .trust-title {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .trust-subtitle {
+        font-size: 14px;
+    }
+
+    .tools-container {
+        gap: 15px;
+    }
+
+    .tool-item {
+        flex: 1 1 100%;
+        min-width: unset;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .tool-number {
+        font-size: 18px;
+    }
+
+    .tool-label p:first-child {
+        font-size: 14px;
+    }
+
+
+    .tool-label svg {
+        width: 100%;
+    }
+
+    .tool-label p:last-child {
+        font-size: 12px;
+    }
+
+    .main_el_pink, .main_el_blue {
+        display: none;
+    }
+}

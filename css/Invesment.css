@@ -643,3 +643,398 @@ header {
 .footer__container { align-items: center; } /* Центрируем */
 .footer h2 { font-size: 128px; margin-bottom: 30px; max-width: 1200px; }
 .footer__btns { display: flex; gap: 20px; }
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    position: relative;
+    width: 40px;
+    height: 30px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+/* ========================================================================= */
+/* 1. БУРГЕР-МЕНЮ (Общие стили)                                             */
+/* ========================================================================= */
+
+.menu-toggle {
+    display: none; /* Скрываем по умолчанию */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    position: relative;
+    width: 40px;
+    height: 30px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* ========================================================================= */
+/* 2. АДАПТАЦИЯ (MAX-WIDTH: 1200PX) - Большие Планшеты / Малые Десктопы      */
+/* ========================================================================= */
+
+@media (max-width: 1200px) {
+
+    .container {
+        max-width: 960px;
+        padding: 0 15px;
+    }
+
+    /* Hero Section */
+    .hero__title {
+        font-size: 72px;
+    }
+    .hero__subtitle {
+        font-size: 24px;
+        max-width: 800px;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .stat-card {
+        flex: 1 1 calc(50% - 20px); /* 2 в ряд */
+        min-width: 250px;
+    }
+
+    /* Roadmap */
+    .section__title {
+        font-size: 50px;
+    }
+    .roadmap__grid {
+        gap: 20px;
+    }
+    .roadmap-card {
+        width: calc(50% - 20px); /* 2 в ряд */
+        max-width: 450px;
+        height: auto;
+    }
+
+    /* Guides Section */
+    .guide-section__title {
+        font-size: 50px;
+        width: auto;
+    }
+    .guide__grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 в ряд */
+        max-width: 800px;
+        gap: 20px;
+    }
+    .guide-card__description {
+        min-height: 40px; /* Уменьшаем минимальную высоту */
+    }
+
+    /* Investor Table */
+    .investor-table {
+        max-width: 960px;
+    }
+    .investor-table__row {
+        flex-wrap: wrap;
+    }
+    .investor-table__column--type {
+        flex-basis: 100%;
+        min-width: unset;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    .investor-type {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+    .investor-type__icon {
+        margin: 0 20px 0 0;
+        width: 60px;
+        height: 60px;
+    }
+    .investor-type__meta {
+        display: none; /* Скрываем на планшетах, чтобы сэкономить место */
+    }
+    .investor-table__column--pros,
+    .investor-table__column--cons {
+        flex-basis: calc(50% - 15px);
+        padding: 15px;
+    }
+    .investor-table__heading {
+        margin-top: 0;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 100px 0;
+    }
+}
+
+/* ========================================================================= */
+/* 3. АДАПТАЦИЯ (MAX-WIDTH: 768PX) - СМАРТФОНЫ (Включение меню)              */
+/* ========================================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------------------- HEADER и БУРГЕР-МЕНЮ ---------------------- */
+
+    header {
+        padding: 5px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        height: 100vh;
+        overflow-y: auto;
+        padding-top: 20px;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    .main-nav a {
+        padding: 15px 20px;
+        width: 100%;
+        border-radius: 0;
+        font-size: 16px;
+    }
+
+    .header-right {
+        display: none; /* Скрываем в шапке */
+    }
+
+    /* Стили для клонированного header-right внутри меню */
+    .main-nav .header-right.mobile-only {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .main-nav .header-right.mobile-only .language-switcher {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-nav .header-right.mobile-only .user-profile {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .main-nav .header-right.mobile-only .user-profile a {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* ---------------------- ОСНОВНОЙ КОНТЕНТ ---------------------- */
+
+    .section { padding: 40px 0; }
+    .section__title {
+        font-size: 36px;
+        margin-bottom: 25px;
+    }
+    .btn {
+        padding: 15px 30px;
+        width: 100%;
+        max-width: 300px;
+        font-size: 14px;
+    }
+
+    /* Hero Section */
+    .hero { padding: 40px 0 60px; }
+    .hero__title {
+        font-size: 44px;
+        margin-bottom: 15px;
+    }
+    .hero__subtitle {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .stat-card {
+        flex: none;
+        width: 100%;
+        padding: 20px;
+    }
+    .stat-card__val { font-size: 32px; }
+    .stat-card__percent { font-size: 16px; }
+
+    /* Roadmap */
+    .roadmap-card {
+        width: 100%; /* 1 в ряд */
+        max-width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+    .roadmap-card__icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+    .roadmap-card__price {
+        font-size: 20px;
+    }
+    .roadmap-card__list {
+        margin-bottom: 15px;
+    }
+
+    /* Guides Section */
+    .guide-section__title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    .guide__grid {
+        grid-template-columns: 1fr; /* 1 в ряд */
+        gap: 15px;
+    }
+    .guide-card__content {
+        padding: 15px;
+    }
+    .guide-card__description {
+        min-height: unset; /* Снимаем ограничение */
+    }
+
+    /* Investor Table */
+    .investor-table {
+        gap: 15px;
+    }
+    .investor-table__row {
+        flex-direction: column;
+        min-height: unset;
+        padding: 15px;
+    }
+    .investor-table__column {
+        padding: 0;
+        width: 100%;
+    }
+    .investor-table__column--type {
+        flex-direction: column;
+        border-bottom: none;
+        margin-bottom: 15px;
+        padding-bottom: 0;
+        align-items: flex-start;
+    }
+    .investor-type {
+        flex-direction: column;
+        text-align: left;
+    }
+    .investor-type__icon {
+        margin: 0 0 10px 0;
+    }
+    .investor-type__meta {
+        display: block; /* Показываем снова на мобильных, так как место есть */
+        margin-top: 10px;
+    }
+    .investor-table__column--pros,
+    .investor-table__column--cons {
+        flex-basis: 100%;
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+    }
+    .investor-table__heading {
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 60px 0;
+        margin-top: 40px;
+    }
+    .footer__container h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    .footer__btns {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+    }
+    .btn--outline-white, .btn--white {
+        width: 90%;
+        max-width: 300px;
+    }
+}

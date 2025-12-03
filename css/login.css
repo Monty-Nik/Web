@@ -224,3 +224,82 @@ body {
     margin-right: 5px;
     color: #5161ff;
 }
+
+@media (max-width: 768px) {
+    body {
+        /* Убираем центрирование, чтобы позволить body заполнить весь экран */
+        align-items: flex-start;
+        padding-top: 0;
+    }
+
+    .page-wrapper {
+        min-height: 100vh; /* Гарантируем полную высоту */
+        padding: 15px;
+        align-items: center; /* Центрируем контент внутри */
+    }
+
+    .page-wrapper::before, .page-wrapper::after {
+        display: none; /* Убираем декоративные элементы для чистоты на маленьких экранах */
+    }
+
+    .auth-form {
+        width: 100%;
+        max-width: 400px; /* Немного уменьшим максимальную ширину */
+        padding: 30px 25px; /* Уменьшаем внутренние отступы */
+        margin: 0;
+    }
+
+    .auth-form__title {
+        font-size: 24px;
+    }
+    .auth-form__subtitle {
+        font-size: 14px;
+    }
+    .auth-form__nav {
+        margin-bottom: 25px;
+    }
+    .form-group__input {
+        padding: 12px 15px; /* Чуть меньше инпуты */
+    }
+
+    .auth-form__feature-grid {
+        grid-template-columns: 1fr 1fr; /* Оставляем 2 в ряд */
+    }
+}
+
+/* 2. Смартфоны (до 480px) */
+@media (max-width: 480px) {
+    .page-wrapper {
+        padding: 10px; /* Минимальный отступ от краев */
+    }
+    .auth-form {
+        padding: 20px 15px; /* Еще меньше отступы */
+    }
+
+    .auth-form__title {
+        font-size: 22px;
+    }
+    .auth-form__subtitle {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+    .auth-form__tab {
+        font-size: 13px;
+        padding: 10px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .auth-form__feature-grid {
+        grid-template-columns: 1fr; /* КОЛЛАПС: 1 в ряд */
+        gap: 8px;
+    }
+    .auth-form__feature-item {
+        font-size: 13px;
+    }
+    .auth-form__btn {
+        font-size: 15px;
+        padding: 14px;
+    }
+}

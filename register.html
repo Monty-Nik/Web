@@ -74,6 +74,26 @@
         </div>
     </section>
 </section>
+<script>
+    // Добавляем простую логику для переключения видимости пароля
+    document.addEventListener('DOMContentLoaded', () => {
+        const eyeIcon = document.querySelector('.form-group__eye-icon');
+        const passwordInput = document.getElementById('password');
+        const nameInput = document.getElementById('name');
+        
+        if (nameInput && nameInput.getAttribute('type') === 'email') {
+            nameInput.setAttribute('type', 'text');
+        }
 
+        if (eyeIcon && passwordInput) {
+            eyeIcon.addEventListener('click', () => {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                eyeIcon.classList.toggle('fa-eye');
+                eyeIcon.classList.toggle('fa-eye-slash');
+            });
+        }
+    });
+</script>
 </body>
 </html>

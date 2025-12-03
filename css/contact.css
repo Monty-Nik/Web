@@ -154,7 +154,7 @@ header {
 
 
 h1 {
-    color: #1F31F0; /* Темный синий/серый для заголовков */
+    color: #1F31F0;
     text-align: center;
     font-size: 96px;
 
@@ -203,13 +203,13 @@ h2 {
 }
 
 .main-container {
-    width: 80%; /* Общая ширина контейнера */
+    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 50px;
 }
 
-/* Clearfix для float-элементов */
+
 .clearfix::after {
     content: "";
     display: table;
@@ -237,8 +237,8 @@ h2 {
 
 .help-item {
     float: left;
-    width: 23%; /* 4 колонки по 23%, чтобы оставить место для margin */
-    margin-right: 2.66%; /* Отступ между блоками */
+    width: 23%;
+    margin-right: 2.66%;
     background-color: #fff;
     padding: 30px 15px;
     border-radius: 8px;
@@ -247,7 +247,7 @@ h2 {
 }
 
 .help-item:last-child {
-    margin-right: 0; /* Убираем margin у последнего блока */
+    margin-right: 0;
 }
 
 .icon-circle {
@@ -273,14 +273,14 @@ h2 {
     text-align: center;
 }
 
-/* --- Секция Отправьте нам сообщение (2 основные колонки) --- */
+
 .send-message-section {
     padding: 50px 0;
 }
 
 .message-form-block {
     float: left;
-    width: 683px; /* Левая колонка для формы */
+    width: 683px;
     background-color: #fff;
     padding: 30px;
     border-radius: 15px;
@@ -290,12 +290,11 @@ h2 {
 
 .office-team-block {
     float: right;
-    width: 38%; /* Правая колонка для офисов/команды */
+    width: 38%;
     box-sizing: border-box;
     max-width: 1700px;
 }
 
-/* Форма */
 .input-group {
     margin-bottom: 50px;
 }
@@ -321,11 +320,11 @@ h2 {
 
 
 .form-row-half {
-    margin-bottom: 0; /* Отступ внутри row-half уже есть у .input-group */
+    margin-bottom: 0;
 }
 
 .half-width {
-    width: 48%; /* Для двух инпутов в ряд */
+    width: 48%;
     margin-bottom: 40px;
 }
 
@@ -338,7 +337,7 @@ h2 {
 }
 
 .submit-button {
-    background-color: #3647FF; /* Синий цвет кнопки */
+    background-color: #3647FF;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -384,7 +383,7 @@ h2 {
     font-weight: 100;
 }
 
-/* Офисы и Команда (Правая колонка) */
+
 .office-list, .team-list {
     background-color: #fff;
     padding: 20px;
@@ -411,7 +410,7 @@ h3 {
     color: #1a2a47;
 }
 
-/* --- Часто задаваемые вопросы (FAQ) --- */
+
 .faq-section {
     padding: 50px 0;
 }
@@ -440,7 +439,7 @@ h3 {
     font-weight: 500;
 }
 
-/* --- Футер CTA --- */
+
 .cta-footer {
     background-color: #3647FF; /* Синий фон на всю ширину */
     color: white;
@@ -476,4 +475,398 @@ h3 {
 
 .cta-button:hover {
     background-color: #eee;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    position: relative;
+    width: 40px;
+    height: 30px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+
+@media (max-width: 992px) {
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .main-container {
+        width: 100%;
+        max-width: 960px;
+        padding: 0 15px 50px 15px;
+    }
+
+    /* Заголовки */
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 40px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .section-header p {
+        font-size: 20px;
+    }
+
+    /* Опции помощи (2 в ряд) */
+    .help-options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .help-item {
+        float: none;
+        width: 48%; /* 2 элемента в ряд */
+        margin-right: 0;
+        min-width: 250px;
+        padding: 20px 15px;
+    }
+
+    .help-item h3 {
+        font-size: 20px;
+    }
+
+
+    .message-form-block, .office-team-block {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .message-form-block {
+        order: 2;
+    }
+
+    .office-team-block {
+        order: 1;
+    }
+
+    .send-message-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Форма */
+    .form-row-half {
+        display: flex;
+        gap: 4%;
+    }
+
+    .half-width {
+        width: 48%;
+        float: none;
+        margin-bottom: 30px;
+    }
+
+    .float-left, .float-right {
+        float: none;
+    }
+
+
+    .faq-cards {
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .faq-card {
+        flex: 1 1 100%;
+        min-width: unset;
+        width: 100%;
+    }
+
+    .faq-card h4 {
+        font-size: 18px;
+    }
+
+
+    .cta-footer {
+        padding: 100px 20px;
+    }
+
+    .cta-footer h2 {
+        font-size: 50px;
+    }
+
+    .cta-footer p {
+        font-size: 20px;
+    }
+
+    .cta-button {
+        padding: 15px 50px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 5px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        height: 100vh;
+        overflow-y: auto;
+        padding-top: 20px;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    .main-nav a {
+        padding: 15px 20px;
+        width: 100%;
+        border-radius: 0;
+        font-size: 16px;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+
+    .main-nav .header-right.mobile-only {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .main-nav .header-right.mobile-only .language-switcher {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-nav .header-right.mobile-only .user-profile {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .main-nav .header-right.mobile-only .user-profile a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .main-container {
+        padding: 0 10px 30px 10px;
+    }
+
+    .logo img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .main-nav {
+        top: 41px;
+    }
+
+    /* Заголовки */
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .section-header p {
+        font-size: 16px;
+        margin: 10px auto 30px auto;
+    }
+
+
+    .help-options {
+        gap: 15px;
+    }
+
+    .help-item {
+        width: 100%; /* 1 элемент в ряд */
+        padding: 15px;
+    }
+
+    .help-item h3 {
+        font-size: 18px;
+    }
+
+    .icon-circle {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+
+    .icon-circle img {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    .message-form-block {
+        padding: 20px;
+    }
+
+    .form-row-half {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .half-width {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    .submit-button {
+        padding: 15px 20px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+
+    h3 {
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .office-list, .team-list {
+        padding: 15px;
+    }
+
+    .office-list h3 {
+        font-size: 20px;
+    }
+
+    .cart-flex img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cart-flex p {
+        font-size: 14px;
+    }
+
+    .team-member .client-name {
+        font-size: 16px;
+    }
+
+    .team-member .job-title {
+        font-size: 14px;
+    }
+
+    .team-member .service {
+        font-size: 10px;
+    }
+
+    /* FAQ */
+    .faq-section h2 {
+        text-align: left;
+    }
+
+    .faq-card {
+        padding: 15px;
+    }
+
+    .faq-card h4 {
+        font-size: 16px;
+    }
+
+    .faq-card p {
+        font-size: 14px;
+    }
+
+
+    .cta-footer {
+        padding: 60px 10px;
+    }
+
+    .cta-footer h2 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .cta-footer p {
+        font-size: 18px;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
 }
