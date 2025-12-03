@@ -220,7 +220,7 @@ h1{
 }
 
 .pink-gradient {
-    background: linear-gradient(160deg, #3647FF, #1F31F0, #F40FE5);
+    background-color: #0040FF;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -274,11 +274,8 @@ h1{
     color: #414141;
     border-radius: 15px;
     margin-right: 34px;
-    border: double 2px transparent;
+    border: double 2px #1F31F0;
 
-    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #36FFDD,#F40FE5);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
 }
 
 .bth .sign{
@@ -288,7 +285,7 @@ h1{
     height: 64px;
     width: 275px;
     text-decoration: none;
-    background: linear-gradient(90deg, #36FFDD, #F40FE5);
+    background-color: #0040FF;
 
     color: #fff;
     border-radius: 15px;
@@ -397,7 +394,7 @@ main{
     width: 326px;
     height: 258px;
     border-radius: 15px;
-    box-shadow: 0 12px 57.8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
 }
 
 .stat-item > img{
@@ -437,7 +434,7 @@ main{
     width: 432px;
     height: 316px;
     border-radius: 15px;
-    box-shadow: 0 12px 57.8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
     padding: 30px;
     box-sizing: border-box;
     display: flex;
@@ -523,7 +520,7 @@ main{
     width: 432px;
     height: 258px;
     border-radius: 15px;
-    box-shadow: 0 12px 57.8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
     padding: 30px 25px;
     box-sizing: border-box;
     display: flex;
@@ -612,7 +609,7 @@ main{
     width: 432px;
     height: 379px;
     border-radius: 15px;
-    box-shadow: 0 12px 57.8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
     padding: 30px;
     box-sizing: border-box;
     display: flex;
@@ -723,7 +720,7 @@ main{
     width: 328px;
     height: 258px;
     border-radius: 15px;
-    box-shadow: 0 12px 57.8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
     padding: 40px 25px;
     box-sizing: border-box;
     display: flex;
@@ -920,10 +917,6 @@ main{
 .no-scroll {
     overflow: hidden;
 }
-
-/* ========================================================================= */
-/* 2. АДАПТАЦИЯ (MAX-WIDTH: 1200PX) - Большие Планшеты / Малые Десктопы      */
-/* ========================================================================= */
 
 @media (max-width: 1200px) {
 
