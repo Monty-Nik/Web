@@ -161,12 +161,13 @@ h1 {
 }
 
 .icon-circle img {
-
+    width: 35px;
     margin: 0 auto;
 }
 
 .icon-circle {
-    padding: 15px;
+    width: 82px;
+    padding: 35px;
     border-radius: 23px;
     margin-bottom: 24px;
     display: flex;
@@ -240,7 +241,7 @@ h2 {
     width: 23%;
     margin-right: 2.66%;
     background-color: #fff;
-    padding: 30px 15px;
+    padding: 30px 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
@@ -264,7 +265,8 @@ h2 {
     margin: 0 0 5px 0;
     text-align: center;
     font-size: 24px;
-    color: #1F31F0;
+    font-weight: 600;
+    color: #0040FF;
 }
 
 .help-item p {

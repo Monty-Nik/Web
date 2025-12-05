@@ -154,9 +154,9 @@ header {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 68px;
+    padding: 20px 120px;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 15px;
     font-weight: 600;
     font-size: 16px;
     cursor: pointer;
@@ -175,7 +175,7 @@ header {
 
 .btn--full { width: 100%; }
 
-.btn--white { background: #fff; color: #5E72E4; }
+.btn--white { background: #fff; color: #414141; }
 .btn--outline-white { border: 1px solid #fff; color: #fff; }
 
 .card {
@@ -412,8 +412,9 @@ header {
 .guide-card__title {
     font-size: 18px;
     font-weight: 700;
+    margin-top: 44px;
     color: #000;
-    margin-bottom: 8px;
+    margin-bottom: 24px;
 }
 
 .guide-card__description {
