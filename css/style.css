@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
+    background-color: #EFF5FE;
     color: #333333;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -395,6 +395,7 @@ main{
     height: 258px;
     border-radius: 15px;
     box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
+    background-color: #FFFFFF;
 }
 
 .stat-item > img{
@@ -440,6 +441,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #FFFFFF;
 }
 
 .icon-wrapper {
@@ -521,6 +523,7 @@ main{
     height: 258px;
     border-radius: 15px;
     box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
+    background-color: #FFFFFF;
     padding: 30px 25px;
     box-sizing: border-box;
     display: flex;
@@ -610,6 +613,7 @@ main{
     height: 379px;
     border-radius: 15px;
     box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
+    background-color: #FFFFFF;
     padding: 30px;
     box-sizing: border-box;
     display: flex;
@@ -717,8 +721,8 @@ main{
 
 .technology-item {
     flex: 0 1 320px;
-    width: 328px;
-    height: 258px;
+    width: 434px;
+    height: 379px;
     border-radius: 15px;
     box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
     padding: 40px 25px;
