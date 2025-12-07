@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-    <div class="container">
+    <div class="container header-container">
         <div class="logo">
             <img src="img/logo.png" alt="Логотип">
         </div>
@@ -17,24 +17,51 @@
             <span></span>
             <span></span>
         </button>
+        <div class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-header">
+                <div class="language-switcher">
+                    <button class="lang-button active">RU</button>
+                    <button class="lang-button noactive">EN</button>
+                </div>
+
+                <div class="user-profile">
+                    <a href="#">
+                        <img src="img/proof.png" alt="User">
+                        Войти
+                    </a>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><img src="img/home.svg" alt="home"> Главная</a></li>
+                <li><a href="about.html"><img src="img/about.png" alt="home"> О нас</a></li>
+                <li><a href="analitics.html"><img src="img/anal.png" alt="anal"> Аналитика</a></li>
+                <li><a href="invesment.html"><img src="img/invest.png" alt="invest"> Инвестиции</a></li>
+                <li><a href="ai.html"><img src="img/ai.png" alt="ai"> ИИ-Ассистент</a></li>
+                <li><a href="contact.html"><img src="img/con1.png" alt="contact"> Контакты</a></li>
+                <li><a href="blog.html"><img src="img/blog.png" alt="blog"> Блог</a></li>
+            </ul>
+        </div>
+        <div class="menu-overlay" id="menuOverlay"></div>
+
         <nav class="main-nav">
-            <ul>
-                <li><a href="index.html"><img src="img/home.svg" alt="home">Главная</a></li>
-                <li><a href="about.html"><img src="img/about.png" alt="home">О нас</a></li>
-                <li><a href="analitics.html"><img src="img/anal.png" alt="anal">Аналитика</a></li>
-                <li><a href="invesment.html"><img src="img/invest.png" alt="invest">Инвестиции</a></li>
-                <li><a href="ai.html"><img src="img/ai.png" alt="ai">ИИ-Ассистент</a></li>
-                <li><a href="contact.html"><img src="img/con1.png" alt="contact">Контакты</a></li>
-                <li><a href="blog.html"><img src="img/blog.png" alt="blog">Блог</a></li>
+            <ul class="nav-list">
+                <li><a href="index.html"><img src="img/home.svg" alt="home"> Главная</a></li>
+                <li><a href="about.html"><img src="img/about.png" alt="home"> О нас</a></li>
+                <li><a href="analitics.html"><img src="img/anal.png" alt="anal"> Аналитика</a></li>
+                <li><a href="invesment.html"><img src="img/invest.png" alt="invest"> Инвестиции</a></li>
+                <li><a href="ai.html"><img src="img/ai.png" alt="ai"> ИИ-Ассистент</a></li>
+                <li><a href="contact.html"><img src="img/con1.png" alt="contact"> Контакты</a></li>
+                <li><a href="blog.html"><img src="img/blog.png" alt="blog"> Блог</a></li>
             </ul>
         </nav>
-        <div class="header-right">
+
+        <div class="header-right desktop-only">
             <div class="language-switcher">
                 <a class="lang-button active">EN</a>
                 <a class="lang-button noactive">RU</a>
             </div>
             <div class="user-profile">
-                <a href="/profile.html"><img src="img/proof.png" alt="home">Monty-Nik</a>
+                <a href="profile.html"><img src="img/proof.png" alt="home"> Monty-Nik</a>
             </div>
         </div>
     </div>
@@ -173,13 +200,13 @@
                     <div class="activity-box">
                         <h3>Недавняя активность</h3>
                         <ul class="activity-list">
-                            <li><span class="activity-dot dot-pink"></span> Создан новый отчет <span
+                            <li><span class="activity-dot dot-pink"><img src="img/star.svg" alt="start"></span> Создан новый отчет <span
                                     class="activity-time">за второй квартал завершен</span></li>
-                            <li><span class="activity-dot dot-blue"></span> Добавлен член команды <span
+                            <li><span class="activity-dot dot-blue"><img src="img/star.svg" alt="start"></span> Добавлен член команды <span
                                     class="activity-time">за второй квартал завершен</span></li>
-                            <li><span class="activity-dot dot-green"></span> Достигнута целевая выручка <span
+                            <li><span class="activity-dot dot-green"><img src="img/star.svg" alt="start"></span> Достигнута целевая выручка <span
                                     class="activity-time">увеличьте эффективность за второй квартал завершен</span></li>
-                            <li><span class="activity-dot dot-purple"></span> Проблема с синхронизацией данных <span
+                            <li><span class="activity-dot dot-purple"><img src="img/star.svg" alt="start"></span> Проблема с синхронизацией данных <span
                                     class="activity-time">за второй квартал завершен</span></li>
                         </ul>
                     </div>
@@ -188,6 +215,35 @@
     </section>
 
 </main>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileNav = document.getElementById('mobileNav');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const body = document.body;
 
+        function toggleMenu() {
+            menuToggle.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            menuOverlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+        if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+        if (menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
+
+        if (mobileNav) {
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 1024) setTimeout(toggleMenu, 100);
+                });
+            });
+        }
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1024 && mobileNav.classList.contains('open')) {
+                toggleMenu();
+            }
+        });
+    });
+</script>
 </body>
 </html>

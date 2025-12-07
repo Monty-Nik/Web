@@ -23,14 +23,12 @@ ul {
     list-style: none;
 }
 
-
 .container {
     max-width: 1780px;
     margin: 0 auto;
     padding: 0 20px;
     width: 100%;
 }
-
 
 .section-title {
     font-size: 36px;
@@ -44,15 +42,17 @@ header {
     box-shadow: 0 12px 57.8px 0 rgba(0, 0, 0, 0.25);
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
+    position: relative;
+    z-index: 1000;
 }
 
-.container {
+.header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 1728px;
     margin: 0 auto;
-
+    padding: 0 20px;
 }
 
 .logo img {
@@ -60,11 +60,12 @@ header {
     width: 40px;
 }
 
+.main-nav {
+    display: flex;
+    align-items: center;
+}
 
 .main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     align-items: center;
     gap: 25px;
@@ -77,7 +78,7 @@ header {
     color: #333;
     font-weight: normal;
     padding: 5px 10px;
-    transition: all 0.3s ease ;
+    transition: all 0.3s ease;
     gap: 13px;
 }
 
@@ -92,38 +93,36 @@ header {
     filter: brightness(0) invert(1);
 }
 
-.main-nav svg:hover {
-    color: #3647FF;
-}
-
 .header-right {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 .language-switcher {
-    margin-right:50px;
     box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
 }
 
 .lang-button {
     background-color: #fff;
-    box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.25);
     padding: 10px 20px;
     cursor: pointer;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
 }
 
 .lang-button.active {
     background: linear-gradient(160deg, #3647FF, #1625CE);
     color: #fff;
-    margin-right: -4PX;
-    border-top-left-radius:5px ;
-    border-bottom-left-radius:5px ;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
-.lang-button.noactive{
-    border-top-right-radius:5px ;
-    border-bottom-right-radius:5px ;
+.lang-button.noactive {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     color: #666;
 }
 
@@ -131,7 +130,6 @@ header {
     background: linear-gradient(160deg, #3647FF, #1625CE);
     color: #fff;
 }
-
 
 .user-profile a {
     display: flex;
@@ -147,7 +145,6 @@ header {
 .user-profile img {
     margin-right: 6px;
 }
-
 
 
 .trust-title {
@@ -388,11 +385,9 @@ main{
 }
 
 .stat-item {
-    flex: 1;
-    min-width: 200px;
-    margin-right: 30px;
-    width: 326px;
-    height: 258px;
+    flex: 1 1 250px; /* Гибкость и базовая ширина */
+    min-width: 250px;
+    height: auto;
     border-radius: 15px;
     box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
     background-color: #FFFFFF;
@@ -430,10 +425,9 @@ main{
 }
 
 .tool-item {
-    flex: 1;
-    min-width: 200px;
-    width: 432px;
-    height: 316px;
+    flex: 1 1 350px;
+    min-width: 300px;
+    height: auto;
     border-radius: 15px;
     box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
     padding: 30px;
@@ -519,8 +513,7 @@ main{
 .advantage-item {
     flex: 0 1 calc(25% - 30px);
     min-width: 280px;
-    width: 432px;
-    height: 258px;
+    height: auto;
     border-radius: 15px;
     box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
     background-color: #FFFFFF;
@@ -607,10 +600,9 @@ main{
 }
 
 .testimonial-item {
-    flex: 1;
-    min-width: 200px;
-    width: 434px;
-    height: 379px;
+    flex: 1 1 300px;
+    min-width: 300px;
+    height: auto;
     border-radius: 15px;
     box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
     background-color: #FFFFFF;
@@ -723,8 +715,8 @@ main{
 
 .technology-item {
     flex: 0 1 320px;
-    width: 328px;
-    height: 258px;
+    min-width: 300px;
+    height: auto;
     border-radius: 15px;
     box-shadow: 0 12px 58px rgba(0, 0, 0, 0.25);
     padding: 40px 25px;
@@ -805,7 +797,7 @@ main{
     color: white;
     padding: 80px 0;
     text-align: center;
-    height: 1120px;
+
 }
 
 .footer-content {
@@ -889,16 +881,18 @@ main{
 
 }
 
+/* Бургер-кнопка - скрыта по умолчанию */
 .menu-toggle {
-    display: none; /* Скрываем по умолчанию */
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
-    z-index: 1000;
-    position: relative;
-    width: 40px;
-    height: 30px;
+    padding: 0;
+    z-index: 1001;
 }
 
 .menu-toggle span {
@@ -906,433 +900,596 @@ main{
     width: 100%;
     height: 3px;
     background-color: #333;
-    margin: 6px 0;
+    border-radius: 2px;
     transition: all 0.3s ease;
 }
 
 .menu-toggle.open span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(45deg) translate(6px, 6px);
 }
+
 .menu-toggle.open span:nth-child(2) {
     opacity: 0;
 }
+
 .menu-toggle.open span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.no-scroll {
+/* Мобильное меню - скрыто по умолчанию */
+.mobile-nav {
+    position: fixed; /* Гарантирует, что меню не прокручивается */
+    top: 0; /* Привязка к верхней части окна */
+    right: -300px; /* Скрыто за пределами экрана (закрыто по умолчанию) */
+    width: 300px;
+    /* ... остальные стили ... */
+}
+
+/* В секции body.menu-open */
+body.menu-open {
+    overflow: hidden; /* Запрещает прокрутку основного контента */
+}
+
+/* Затемнение фона */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/* Отключение прокрутки при открытом меню */
+body.menu-open {
+    overflow: hidden;
+}
+body.menu-open {
     overflow: hidden;
 }
 
-@media (max-width: 1200px) {
+/* Стили для бургер-меню */
+.menu-toggle {
+    display: none; /* Скрыть на десктопе по умолчанию */
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+}
 
-    .container {
-        max-width: 960px;
+.menu-toggle span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #333; /* Цвет бургера */
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.menu-toggle span:nth-child(1) {
+    top: 0px;
+}
+
+.menu-toggle span:nth-child(2) {
+    top: 10px;
+}
+
+.menu-toggle span:nth-child(3) {
+    top: 20px;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    top: 10px;
+    transform: rotate(135deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-135deg);
+}
+
+/* Стили для мобильной навигации */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Скрыто за пределами экрана */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav.open {
+    right: 0; /* Открыто */
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-nav .language-switcher {
+    box-shadow: none;
+}
+
+.mobile-nav .nav-menu {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-nav .nav-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+.mobile-nav .nav-menu li a img {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    /* !!! ИСПРАВЛЕНИЕ: Делаем навигацию более компактной */
+    gap: 10px; /* Было 25px или 15px, делаем 10px */
+}
+
+/* Overlay для затемнения фона */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Стили для основного блока (Flex) */
+.main-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    position: relative;
+    padding-top: 50px; /* Отступ сверху для контента */
+}
+
+.main-info {
+    flex-grow: 1;
+    max-width: 50%; /* Ограничение ширины информационного блока */
+    z-index: 2;
+}
+
+/* Коррекция позиционирования изображения робота */
+.main_img {
+    position: absolute;
+    right: -200px; /* Сдвигаем немного вправо, чтобы не перекрывать контент */
+    top: -50px;
+    width: 60%; /* Гибкая ширина */
+    max-width: 900px; /* Максимальная ширина */
+    height: auto;
+    z-index: 1;
+}
+
+/* Адаптивность для остальных секций */
+.stats-container, .tools-container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.stat-item, .tool-item {
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+/* Вне медиазапросов */
+.menu-toggle {
+    display: none; /* Скрыто на десктопе */
+}
+/* ... */
+@media (max-width: 1024px) {
+    .menu-toggle {
+        display: block; /* Показать бургер-меню */
     }
-
-    /* Главный баннер */
-    .main-flex-container {
-        display: block; /* Сбрасываем flex-контейнер */
-        text-align: center;
-    }
-
-    .main-info {
-        margin-top: 50px;
-        text-align: center;
-        width: 100%;
-    }
-
-    .main-info > * {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .main-flex {
-        width: auto;
-        max-width: 500px;
-    }
-
-    h1 {
-        font-size: 90px;
-    }
-
-    .text {
-        font-size: 24px;
-        max-width: 600px;
-    }
-
-    .statistics {
-        max-width: 700px;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .statistic-item {
-        margin-right: 20px;
-    }
-
-    .main_img {
-        position: relative;
-        right: auto;
-        top: auto;
-        margin: 30px auto 0 auto;
-        width: 100%;
-        max-width: 700px;
-        height: auto;
-    }
-
-    /* Эллипсы на фоне */
-    .main_el_pink, .main_el_blue {
-        display: none;
-    }
-
-    /* Доверие / Статистика */
-    .trust-title {
-        font-size: 50px;
-    }
-
-    .trust-subtitle {
-        font-size: 18px;
-    }
-
-    .stats-container {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .stat-item {
-        flex: 1 1 calc(50% - 30px); /* 2 в ряд */
-        margin-right: 0;
-        min-width: 250px;
-        height: auto;
-        padding: 20px 10px;
-    }
-
-    /* Инструменты и Преимущества */
-    .tools-container {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .tool-item {
-        flex: 1 1 calc(50% - 30px); /* 2 в ряд */
-        height: auto;
-        min-width: 280px;
-    }
-
-    .advantages-container {
-        gap: 20px;
-    }
-
-    .advantage-item {
-        flex: 1 1 calc(50% - 30px); /* 2 в ряд */
-        min-width: 250px;
-        height: auto;
-    }
-
-    /* Отзывы */
-    .testimonials-container {
-        flex-wrap: wrap;
-        gap: 30px;
-    }
-
-    .testimonial-item {
-        flex: 1 1 calc(50% - 30px); /* 2 в ряд */
-        height: auto;
-        min-width: 250px;
-    }
-
-    /* Технологии */
-    .technologies-container {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .technology-item {
-        flex: 1 1 calc(50% - 30px); /* 2 в ряд */
-        height: auto;
-        min-width: 250px;
-    }
-
-    /* Футер */
-    .footer-title {
-        font-size: 50px;
+    .main-nav, .header-right.desktop-only {
+        display: none; /* Скрыть основную навигацию */
     }
 }
 
-
-/* ========================================================================= */
-/* 3. АДАПТАЦИЯ (MAX-WIDTH: 768PX) - СМАРТФОНЫ (Включение меню)              */
-/* ========================================================================= */
-
-@media (max-width: 768px) {
-
-    /* ---------------------- HEADER и БУРГЕР-МЕНЮ ---------------------- */
-
-    header {
-        padding: 5px 0;
+@media (max-width: 1100px) {
+    /* 1. Уменьшаем размер заголовка футера */
+    .footer-title {
+        font-size: 80px;
     }
 
-    .container {
-        padding: 0 15px;
-        max-width: 100%;
+    /* 2. Уменьшаем описание */
+    .footer-description {
+        font-size: 28px;
     }
+}
 
+@media (max-width: 1200px) {
     .menu-toggle {
         display: block;
     }
 
-    .main-nav {
+    .main-nav, .header-right.desktop-only {
         display: none;
-        position: fixed;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        z-index: 999;
-        height: 100vh;
-        overflow-y: auto;
-        padding-top: 20px;
     }
-
-    .main-nav.open {
-        display: block;
-    }
-
+    /* Навигация */
     .main-nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-    }
-
-    .main-nav a {
-        padding: 15px 20px;
-        width: 100%;
-        border-radius: 0;
-        font-size: 16px;
+        gap: 15px; /* Уменьшаем расстояние между пунктами меню */
     }
 
     .header-right {
-        display: none; /* Скрываем в шапке */
+        /* В этом разрешении нам нужно оставить только lang-switcher и профиль */
+        gap: 10px; /* Уменьшаем зазор, если .header-right еще виден */
     }
 
-    /* Стили для клонированного header-right внутри меню */
-    .main-nav .header-right.mobile-only {
+    /* Дополнительно: Скрываем логин/профиль, чтобы освободить место */
+    .user-profile {
+        display: none;
+    }
+
+    /* Главный блок */
+    h1 {
+        font-size: 80px; /* Уменьшаем главный заголовок */
+    }
+
+    .text {
+        font-size: 24px;
+    }
+
+    .main_img {
+        right: -300px; /* Сдвигаем робота чуть ближе */
+        width: 70%; /* Уменьшаем размер робота */
+    }
+
+    /* Общие секции */
+    .trust-title, .main-text-3 {
+        font-size: 48px; /* Уменьшаем заголовки секций */
+    }
+
+    .trust-subtitle {
+        font-size: 20px;
+    }
+
+    /* Контейнеры с карточками */
+    .stats-container, .tools-container, .testimonials-container {
+        gap: 20px; /* Уменьшаем расстояние между карточками */
+    }
+}
+
+@media (max-width: 1250px) { /* Меняем 1200px или 1024px на 1250px */
+    .header-container {
+        /* Убедитесь, что логотип и mobile-actions разделены */
+        justify-content: space-between;
+    }
+
+    .mobile-actions {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        padding: 0 20px;
+        align-items: center;
+        gap: 5px; /* !!! ГАРАНТИРУЕТ, ЧТО ОНИ БУДУТ ПРИЖАТЫ ДРУГ К ДРУГУ !!! */
     }
 
-    .main-nav .header-right.mobile-only .language-switcher {
-        margin-right: 0;
-        margin-bottom: 15px;
-        width: 100%;
-        box-shadow: none;
+    /* Скрываем десктопный .header-right (если он отличается от mobile-actions) */
+    .header-right {
+        display: none;
+    }
+
+    /* Показываем бургер-меню */
+    .menu-toggle {
+        display: block;
+    }
+    /* 1. Показываем бургер-меню */
+    .menu-toggle {
+        display: block;
+        right: 0;
+    }
+
+    /* 2. Скрываем широкую десктопную навигацию */
+    .main-nav {
+        display: none;
+    }
+
+    /* 3. Очищаем правый блок, оставляя только необходимое (lang-switcher и toggle) */
+    .header-right {
+        /* Уменьшаем отступ между языком и бургером */
+        gap: 10px;
+    }
+
+    /* 4. Принудительно скрываем профиль, чтобы освободить место */
+    .user-profile {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .header-right {
         display: flex;
-        justify-content: center;
+        align-items: center;
+        gap: 5px; /* Уменьшаем расстояние между элементами до минимума */
     }
 
-    .main-nav .header-right.mobile-only .user-profile {
-        width: 100%;
-        margin-bottom: 20px;
+    /* Навигация */
+    .menu-toggle {
+        display: block; /* Показываем бургер-меню */
     }
 
-    .main-nav .header-right.mobile-only .user-profile a {
-        width: 100%;
-        justify-content: center;
+    .main-nav, .header-right {
+        display: none; /* Скрываем десктопную навигацию */
     }
 
-    /* ---------------------- ОСНОВНОЙ КОНТЕНТ ---------------------- */
+    /* Главный блок - Переход на колонку */
+    .main-flex-container {
+        flex-direction: column; /* Элементы выстраиваются вертикально */
+        align-items: center;
+        text-align: center;
 
-    /* Главный баннер */
+        .stats-container,
+        .tools-container,
+        .advantages-container,
+        .testimonials-container,
+        .technologies-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .stat-item,
+        .tool-item,
+        .advantage-item,
+        .testimonial-item,
+        .technology-item {
+            width: 100%;
+            min-width: unset;
+            flex: 0 0 100%; /* Занимают 100% ширины, не сжимаются и не растут */
+            margin: 0; /* Убираем все внешние отступы */
+        }
+    }
+
     .main-info {
-        margin-top: 30px;
-    }
-
-    .main-flex {
-        font-size: 16px;
-        padding: 10px 0;
-        max-width: 90%;
+        max-width: 100%; /* Занимает всю ширину */
+        margin-top: 50px;
     }
 
     h1 {
-        font-size: 55px;
+        font-size: 64px;
         line-height: 1.1;
+    }
+
+    .main-flex {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .main_img {
+        position: static; /* Отключаем абсолютное позиционирование */
+        width: 90%;
+        max-width: 500px;
+        margin-top: 40px;
+    }
+
+    /* Кнопки */
+    .bth {
+        justify-content: center;
+    }
+
+    .bth .sign, .bth .watch {
+        width: 45%;
+        margin: 0 5px;
+        font-size: 14px;
+    }
+
+    /* Статистика и секции - В колонку */
+    .statistics {
+        max-width: 100%;
+        justify-content: center;
+        gap: 20px;
+        /* Статистика может оставаться flex, но с переносом */
+    }
+
+    /* Заголовки */
+    .trust-title, .main-text-3 {
+        font-size: 36px;
+    }
+
+    .trust-subtitle {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* Все контейнеры карточек переходят в колонку для лучшего скроллинга */
+    .stats-container,
+    .tools-container,
+    .advantages-container,
+    .testimonials-container,
+    .technologies-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .stat-item, .tool-item, .advantage-item, .testimonial-item, .technology-item {
+        width: 100%; /* Карточки занимают полную ширину */
+        min-width: unset;
+    }
+
+    /* Футер */
+    .footer-title {
+        font-size: 80px;
+    }
+
+    .footer-description {
+        font-size: 24px;
+    }
+}
+@media (max-width: 768px) {
+    /* Главный блок */
+    h1 {
+        font-size: 48px; /* Уменьшаем еще сильнее */
     }
 
     .text {
         font-size: 18px;
     }
 
+    /* Кнопки - В колонку */
     .bth {
         flex-direction: column;
         gap: 15px;
-        margin-top: 30px;
         align-items: center;
     }
 
     .bth .sign, .bth .watch {
         width: 90%;
         max-width: 300px;
-        margin-right: 0;
+        font-size: 16px;
     }
 
+    /* Статистика - В колонку */
     .statistics {
         flex-direction: column;
-        align-items: center;
-        max-width: 90%;
-        margin-top: 20px;
+        align-items: flex-start;
+        padding-left: 10px; /* Небольшой отступ для списка */
     }
 
     .statistic-item {
         width: 100%;
-        justify-content: center;
-        margin-right: 0;
-        font-size: 1em;
     }
 
-    .main_img {
-        max-width: 90%;
-    }
-
-    /* Доверие / Статистика */
-    .trust-section {
-        padding: 40px 10px;
-    }
-
-    .trust-header {
-        margin-top: 50px;
-        margin-bottom: 30px;
-    }
-
-    .trust-title {
-        font-size: 36px;
-    }
-
-    .trust-subtitle {
-        font-size: 16px;
-    }
-
-    .stats-container {
-        gap: 15px;
-    }
-
-    .stat-item {
-        flex: 1 1 100%; /* 1 в ряд */
-        min-width: unset;
-    }
-
-    .stat-number {
-        font-size: 36px;
-    }
-
-    /* Инструменты и Преимущества */
-    .tools-container {
-        gap: 15px;
-    }
-
-    .tool-item {
-        flex: 1 1 100%; /* 1 в ряд */
-        min-width: unset;
-        padding: 20px;
-    }
-
-    .tool-number {
-        font-size: 20px;
-    }
-
-    .advantages-container {
-        padding: 40px 0;
-        gap: 15px;
-    }
-
-    .advantage-item {
-        flex: 1 1 100%; /* 1 в ряд */
-        min-width: unset;
-        padding: 20px;
-    }
-
-    .advantage-title {
-        font-size: 18px;
-    }
-
-    .advantage-description {
-        font-size: 13px;
-    }
-
-    /* Отзывы */
-    .main-text-3 {
-        font-size: 36px;
-    }
-
-    .testimonials-container {
-        gap: 15px;
-    }
-
-    .testimonial-item {
-        flex: 1 1 100%; /* 1 в ряд */
-        min-width: unset;
-        padding: 20px;
-        height: auto;
-    }
-
-    .client-name {
-        font-size: 18px;
-    }
-
-    .client-achievement {
-        font-size: 16px;
-    }
-
-    /* Технологии */
-    .technologies-container {
-        gap: 15px;
-    }
-
-    .technology-item {
-        flex: 1 1 100%; /* 1 в ряд */
-        min-width: unset;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .technology-title {
-        font-size: 18px;
-    }
-
-    .technology-description {
-        font-size: 13px;
+    /* Заголовки секций */
+    .trust-title, .main-text-3 {
+        font-size: 30px;
     }
 
     /* Футер */
-    .business-footer {
-        padding: 60px 10px;
+    .footer-content {
+        padding: 0 20px;
     }
 
     .footer-title {
-        font-size: 36px;
-        line-height: 1.2;
+        font-size: 48px;
     }
 
     .footer-description {
-        font-size: 16px;
-    }
-
-    .footer-buttons {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
+        font-size: 18px;
     }
 
     .btn-login, .btn-demo {
-        width: 90%;
-        max-width: 300px;
-        margin-right: 0;
+        padding: 15px 50px;
+        font-size: 18px;
+        width: 100%;
+    }
+    .footer-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-login, .btn-demo {
+        width: 90%; /* Занимают почти всю ширину */
+        padding: 15px 50px;
+        font-size: 18px;
+    }
+
+    .footer-title {
+        font-size: 48px;
     }
 }
+
+
+
+/* Дополнительно для самых маленьких экранов */
+@media (max-width: 480px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .mobile-nav {
+        width: 100%;
+    }
+
+    /* Убедитесь, что начальное скрытое состояние соответствует новой ширине */
+    .mobile-nav:not(.open) {
+        /* Перемещаем его полностью за пределы экрана */
+        right: -100%;
+    }
+
+    .mobile-nav.open {
+        /* При открытии привязываем к правому краю */
+        right: 0;
+    }
+
+    /* Уменьшение отступов для крайне узких экранов */
+    .container {
+        padding: 0 10px;
+    }
+
+    /* Кнопки футера (уже должны быть в колонку, но уменьшаем padding) */
+    .btn-login, .btn-demo {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+
+    /* Заголовки секций */
+    .section-title, .trust-title, .main-text-3 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .trust-subtitle {
+        font-size: 14px;
+    }
+    .main-flex {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+    .footer-title {
+        font-size: 40px;
+    }
+    .mobile-nav {
+        width: 100%; /* Меню на всю ширину экрана */
+    }
+}
+

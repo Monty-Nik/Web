@@ -57,16 +57,23 @@ body {
     text-align: center;
 }
 
+
+
 .auth-form__logo {
     margin: 0 auto 15px;
     width: 48px;
     height: 48px;
-    background: rgb(19, 35, 151);
+    background: linear-gradient(90deg, #3546FA, #1F2994);
     border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.auth-form__header img {
+    width: 24px;
+    height: 24px;
+}
+
 .auth-form__header svg {
     width: 24px;
     height: 24px;
@@ -182,10 +189,6 @@ body {
     transform: translateY(-1px);
 }
 
-.auth-form__btn i {
-    margin-right: 10px;
-    font-size: 14px;
-}
 
 .auth-form__demo-text {
     font-size: 12px;
@@ -221,10 +224,7 @@ body {
     background: rgba(81, 97, 255, 0.13);
 }
 
-.auth-form__feature-item i {
-    margin-right: 5px;
-    color: #5161ff;
-}
+
 
 @media (max-width: 768px) {
     body {

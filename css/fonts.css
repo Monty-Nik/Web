@@ -88,20 +88,29 @@
 }
 
 body {
-    font-family: 'Kanit', sans-serif; /* Браузер сам подставит нужный файл в зависимости от font-weight */
-    font-weight: 400; /* Базовая толщина */
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
 }
-
-/* Примеры использования разной толщины: */
 
 h1 {
-    font-weight: 900; /* Будет использован Kanit-Black.ttf */
+    font-family: 'Kanit', Arial, sans-serif;
+    font-size: 128px;
+    font-weight: 700;
+    letter-spacing: normal;
 }
+h2 { font-size: 64px; font-weight: 700; }
+h3 { font-size: 45px; font-weight: 700; }
+h4 { font-size: 36px; font-weight: 600; }
+p, .card-title { font-size: 32px; font-weight: 500; letter-spacing: 0.12em; }
+.card-title { font-size: 32px; font-weight: 500; letter-spacing: 0.12em; }
+.card-description { font-size: 16px; font-weight: 400; letter-spacing: 0.12em; }
+.card-lit { font-size: 12px; font-weight: 300;  }
+.title { font-size: 24px; font-weight: 400; }
 
 strong, b {
-    font-weight: 700; /* Будет использован Kanit-Bold.ttf */
+    font-weight: 700;
 }
 
 .thin-text {
-    font-weight: 100; /* Будет использован Kanit-Thin.ttf */
+    font-weight: 100;
 }

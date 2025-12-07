@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #EFF5FE;
     color: #333333;
     line-height: 1.6;
@@ -23,14 +23,12 @@ ul {
     list-style: none;
 }
 
-
 .container {
     max-width: 1780px;
     margin: 0 auto;
     padding: 0 20px;
     width: 100%;
 }
-
 
 .section-title {
     font-size: 36px;
@@ -41,23 +39,33 @@ ul {
 
 header {
     background-color: #fff;
-    box-shadow: 0 12px 58px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 57.8px 0 rgba(0, 0, 0, 0.25);
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
+    position: relative;
+    z-index: 1000;
 }
 
-
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1728px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
 .logo img {
     height: 40px;
     width: 40px;
 }
 
+.main-nav {
+    display: flex;
+    align-items: center;
+}
 
 .main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     align-items: center;
     gap: 25px;
@@ -70,7 +78,7 @@ header {
     color: #333;
     font-weight: normal;
     padding: 5px 10px;
-    transition: all 0.3s ease ;
+    transition: all 0.3s ease;
     gap: 13px;
 }
 
@@ -85,45 +93,36 @@ header {
     filter: brightness(0) invert(1);
 }
 
-.main-nav svg:hover {
-    color: #3647FF;
-}
-
 .header-right {
     display: flex;
     align-items: center;
-}
-
-.header-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    gap: 20px;
 }
 
 .language-switcher {
-    margin-right:50px;
     box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
 }
 
 .lang-button {
     background-color: #fff;
-    box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.25);
     padding: 10px 20px;
     cursor: pointer;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
 }
 
 .lang-button.active {
     background: linear-gradient(160deg, #3647FF, #1625CE);
     color: #fff;
-    margin-right: -4PX;
-    border-top-left-radius:5px ;
-    border-bottom-left-radius:5px ;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
-.lang-button.noactive{
-    border-top-right-radius:5px ;
-    border-bottom-right-radius:5px ;
+.lang-button.noactive {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     color: #666;
 }
 
@@ -132,11 +131,9 @@ header {
     color: #fff;
 }
 
-
 .user-profile a {
     display: flex;
     align-items: center;
-    text-decoration: none;
     background-color: rgba(48, 64, 245, 0.15);
     color: #1625CE;
     border-radius: 5px;
@@ -146,22 +143,33 @@ header {
 
 .user-profile img {
     margin-right: 6px;
+    height: 20px;
+    width: 20px;
 }
 
-
-a {
-    text-decoration: none;
-    color: #1E2A53;
-    transition: color 0.3s ease;
+.mobile-actions, .mobile-nav, .menu-overlay {
+    display: none;
 }
-
-a:hover {
-    color: #5E72E4;
-}
-
-img, svg {
+.desktop-only {
     display: block;
-    max-width: 100%;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.language-switcher,
+.user-profile {
+    margin: 0;
+    box-shadow: none;
+    align-self: center;
+}
+.language-switcher {
+    box-shadow: none;
+}
+
+.user-profile a {
+    box-shadow: none;
 }
 
 .blog-header {
@@ -184,22 +192,23 @@ img, svg {
     margin: 0 auto 32px auto;
 }
 
+.filter-tags {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .search-input-wrapper {
     position: relative;
-    width: 100%;
-    max-width: 1700px;
+    width: 785px;
     margin-bottom: 25px;
-    margin-top: 187px;
-
-
+    margin-top: 50px;
 }
-
 
 .search-icon {
     position: absolute;
     top: 50%;
-    left: 470px;
+    left: 15px;
     transform: translateY(-50%);
     width: 18px;
     height: 18px;
@@ -207,14 +216,13 @@ img, svg {
     z-index: 2;
 }
 
-
 .search-container {
     padding: 12px 15px 12px 45px;
     border: 1px solid #C8C8C8;
     border-radius: 8px;
     font-size: 15px;
-    color: #fff;
-    width: 785px;
+    color: #333;
+    width: 100%;
     background: linear-gradient(160deg, #EDEDED, #FFFFFF);
 }
 
@@ -228,14 +236,12 @@ img, svg {
     box-shadow: 0 0 0 2px rgba(94, 114, 228, 0.1);
 }
 
-
 .filter-tags-link {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
     margin-top: 18px;
-
     flex-wrap: wrap;
 }
 
@@ -244,7 +250,7 @@ img, svg {
     font-weight: 600;
     padding: 8px 40px;
     border-radius: 20px;
-    color: #414141; /* Синий */
+    color: #414141;
     border: 1px solid #414141;
     transition: all 0.2s ease;
 }
@@ -252,59 +258,41 @@ img, svg {
 .filter-tags a.active,
 .filter-tags a:hover {
     background-color: #0040FF;
-    border-color: #E9ECEF;
+    border-color: #0040FF;
     color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-
-
-.filter-tags a.active {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
 
 .featured-post {
     display: flex;
     background: #FFFFFF;
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(94, 114, 228, 0.1);
-    width: 1392px;
+    max-width: 1392px;
+    width: 100%;
     height: 424px;
-    margin-bottom: 48px;
+    margin: 48px auto;
     overflow: hidden;
 }
 
+
+
+.featured-post-image {
+    flex: 1 1 50%;
+}
+
 .featured-post-image img {
-    flex-basis: 50%;
-    flex-shrink: 0;
-    background-size: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .featured-post-content {
-    flex-basis: 10%;
+    flex: 1 1 50%;
     padding: 40px;
-
-}
-
-.post-meta {
     display: flex;
-    gap: 16px;
-    margin-bottom: 16px;
-    font-size: 14px;
-    min-width: 100px;
-    color: #6B7280;
-}
-
-.post-meta span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.post-meta svg {
-    width: 16px;
-    height: 16px;
-    opacity: 0.7;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .featured-post-content h2 {
@@ -321,33 +309,51 @@ img, svg {
     margin-bottom: 24px;
 }
 
-.featured-post-content a{
+.post-meta {
     display: flex;
-    align-items: center;
-    text-decoration: none;
-    justify-content: center;
-    color: #fff;
-    padding: 5px 10px;
-    width: 187px;
-    height: 32px;
-    border-radius: 5px;
-    background: #1F31F0;
-    margin-top: -20px;
-    margin-left: 475px;
+    gap: 16px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #6B7280;
 }
 
-.featured-post-content a:hover{
-    background: #5161ff;
+.post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.post-meta img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}
+
+.featured-post-content a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
-    transform: matrix(1, 0, 0, 1, 1);
+    padding: 10px 20px;
+    width: 187px;
+    border-radius: 5px;
+    background: #1F31F0;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.featured-post-content a:hover {
+    background: #5161ff;
 }
 
 .blog-layout {
     display: flex;
     gap: 30px;
     align-items: flex-start;
+    max-width: 1780px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-
 
 .article-list-column {
     flex: 2;
@@ -368,8 +374,8 @@ img, svg {
     gap: 20px;
     background: #FFFFFF;
     border-radius: 16px;
-
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
 }
 
 .article-card-small-image {
@@ -380,21 +386,6 @@ img, svg {
     overflow: hidden;
 }
 
-.article-card-small-content a{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    justify-content: center;
-    color: #fff;
-    padding: 15px 60px;
-    width: 122px;
-    height: 20px;
-    border-radius: 5px;
-    background: linear-gradient(160deg, #3041FB, #1323CA);
-    margin-top: 20px;
-    margin-left: 540px;
-}
-
 .article-card-small-image img {
     width: 100%;
     height: 100%;
@@ -403,8 +394,9 @@ img, svg {
 
 .article-card-small-content {
     flex-grow: 1;
-    margin-top: 35px;
-    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .article-card-small-content h3 {
@@ -415,16 +407,28 @@ img, svg {
     line-height: 1.4;
 }
 
-.article-card-small-content .post-meta {
-    margin-bottom: 12px;
-}
-
 .article-card-small-content p {
     font-size: 16px;
     color: #525F7F;
     margin-bottom: 16px;
 }
 
+.article-card-small-content a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 10px 20px;
+    width: 122px;
+    border-radius: 5px;
+    background: linear-gradient(160deg, #3041FB, #1323CA);
+    margin-top: auto;
+    transition: background-color 0.3s ease;
+}
+
+.article-card-small-content a:hover {
+    background: #5161ff;
+}
 
 .sidebar-column {
     flex: 1;
@@ -433,6 +437,7 @@ img, svg {
     gap: 24px;
     position: sticky;
     top: 20px;
+    max-width: 400px;
 }
 
 .widget {
@@ -458,13 +463,19 @@ img, svg {
 .authors-list-item {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.authors-list-item:hover {
+    opacity: 0.8;
 }
 
 .authors-list-item img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .authors-list-item p {
@@ -493,6 +504,7 @@ img, svg {
     border-radius: 15px;
     color: #414141;
     border: 1px solid #414141;
+    transition: all 0.2s ease;
 }
 
 .tags-list a:hover {
@@ -504,7 +516,6 @@ img, svg {
 .widget-subscribe {
     background: linear-gradient(-120deg, #1625CE, #0040FF);
     color: #FFFFFF;
-
 }
 
 .widget-subscribe h3 {
@@ -525,17 +536,15 @@ img, svg {
 
 .subscribe-form input {
     width: 100%;
-    margin: 0 auto;
     padding: 12px 25px;
     border-radius: 10px;
     border: none;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Kanit', sans-serif;
     font-size: 15px;
 }
 
 .subscribe-form button {
     width: 100%;
-    margin: 0 auto;
     padding: 12px 16px;
     border-radius: 10px;
     border: none;
@@ -548,9 +557,8 @@ img, svg {
 }
 
 .subscribe-form button:hover {
-    background: #3647FF;
+    background: #D9D9D9;
 }
-
 
 .cta-footer {
     background: #3647FF;
@@ -591,12 +599,12 @@ img, svg {
 
 
 .menu-toggle {
-    display: none; /* Скрываем по умолчанию */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
-    z-index: 1000;
+    z-index: 1010;
     position: relative;
     width: 40px;
     height: 30px;
@@ -625,10 +633,18 @@ img, svg {
     overflow: hidden;
 }
 
+@media (max-width: 1200px) {
+    .featured-post {
+        height: auto;
+    }
+    .featured-post-image img {
+        max-height: 300px;
+    }
+    .featured-post-content {
+        padding: 30px;
+    }
+}
 
-/* ========================================================================= */
-/* 2. АДАПТАЦИЯ (MAX-WIDTH: 992PX) - Планшеты (Перестроение колонок)          */
-/* ========================================================================= */
 
 @media (max-width: 992px) {
 
@@ -636,60 +652,37 @@ img, svg {
         padding: 0 15px;
     }
 
-    /* Секция шапки блога */
     .blog-header h1 {
         font-size: 60px;
         margin-bottom: 15px;
     }
 
     .blog-header p {
-        font-size: 16px;
+        font-size: 20px;
     }
 
-    /* Поиск */
     .search-input-wrapper {
-        text-align: center;
+        width: 90%;
+        max-width: 600px;
     }
 
     .search-container {
-        width: 80%; /* Уменьшаем ширину */
-        max-width: 500px;
-        padding: 12px 15px;
-        text-align: center;
+        padding: 12px 15px 12px 45px;
     }
 
-    .search-icon {
-        left: auto;
-        right: 15%; /* Сдвигаем иконку, если она слева */
-        transform: translateY(-50%);
-        opacity: 0.5; /* Иконка менее заметна, фокус на кнопке */
-    }
-
-    .filter-tags-link {
-        gap: 10px;
-    }
-
-    .filter-tags a {
-        padding: 8px 25px;
-        font-size: 13px;
-    }
-
-    /* Главная статья */
     .featured-post {
-        flex-direction: column; /* Вертикальный стек */
-        width: 100%;
+        flex-direction: column;
         height: auto;
+        margin: 30px auto;
     }
 
     .featured-post-image {
         width: 100%;
-        height: auto;
-        max-height: 300px;
+        height: 250px;
     }
 
     .featured-post-content {
         padding: 25px;
-        flex-basis: auto;
     }
 
     .featured-post-content h2 {
@@ -703,13 +696,10 @@ img, svg {
     }
 
     .featured-post-content a {
-        margin-top: 20px;
-        margin-left: 0;
         width: 100%;
-        text-align: center;
+        max-width: 250px;
     }
 
-    /* Макет блога (Смена на вертикальный стек) */
     .blog-layout {
         flex-direction: column;
         gap: 40px;
@@ -718,31 +708,44 @@ img, svg {
     .article-list-column, .sidebar-column {
         flex: none;
         width: 100%;
-        position: static; /* Убираем sticky для боковой панели */
+        position: static;
     }
 
     .article-list-column h2 {
         font-size: 30px;
     }
 
-    /* Боковая панель */
+    .article-card-small {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .article-card-small-image {
+        width: 95%;
+        height: 200px;
+        margin-top: 15px;
+    }
+
+    .article-card-small-content {
+        width: 95%;
+        padding: 0;
+        margin-top: 15px;
+    }
+
+    .article-card-small-content a {
+        width: 100%;
+        max-width: 200px;
+    }
+
     .sidebar-column {
-        order: 1; /* Перемещаем наверх для мобильного */
+        order: 1;
         gap: 20px;
+        max-width: 100%;
     }
 
     .article-list-column {
-        order: 2; /* Список статей после виджетов */
-    }
-
-    .widget-subscribe input {
-        width: 100%;
-    }
-
-    /* Футер CTA */
-    .cta-footer {
-        padding: 60px 20px;
-        margin-top: 40px;
+        order: 2;
     }
 
     .cta-footer h2 {
@@ -755,25 +758,41 @@ img, svg {
     }
 }
 
-
-/* ========================================================================= */
-/* 3. АДАПТАЦИЯ (MAX-WIDTH: 768PX) - Планшеты (Включение меню)              */
-/* ========================================================================= */
-
 @media (max-width: 768px) {
-
-    /* ---------------------- HEADER и БУРГЕР-МЕНЮ ---------------------- */
 
     header {
         padding: 5px 0;
+    }
+
+    .header-container {
+        position: relative;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .desktop-only {
+        display: none;
     }
 
     .menu-toggle {
         display: block;
     }
 
-    .main-nav {
-        display: none;
+    .main-nav.open {
+        display: flex;
+        flex-direction: column;
         position: fixed;
         top: 60px;
         left: 0;
@@ -781,22 +800,23 @@ img, svg {
         background-color: #fff;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         z-index: 999;
-        height: 100vh;
+        height: calc(100vh - 60px);
         overflow-y: auto;
         padding-top: 20px;
-    }
-
-    .main-nav.open {
-        display: block;
     }
 
     .main-nav ul {
         flex-direction: column;
         align-items: flex-start;
+        width: 100%;
         gap: 0;
         border-bottom: 1px solid #eee;
         padding-bottom: 15px;
         margin-bottom: 15px;
+    }
+
+    .main-nav li {
+        width: 100%;
     }
 
     .main-nav a {
@@ -806,20 +826,19 @@ img, svg {
         font-size: 16px;
     }
 
-    .header-right {
-        display: none; /* Скрываем в шапке */
+    .main-nav a:hover {
+        padding: 15px 20px;
     }
 
-    /* Стили для клонированного header-right внутри меню */
-    .main-nav .header-right.mobile-only {
-        display: flex;
+    .header-right.mobile-only {
+        display: flex !important;
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
         padding: 0 20px;
     }
 
-    .main-nav .header-right.mobile-only .language-switcher {
+    .header-right.mobile-only .language-switcher {
         margin-right: 0;
         margin-bottom: 15px;
         width: 100%;
@@ -828,55 +847,40 @@ img, svg {
         justify-content: center;
     }
 
-    .main-nav .header-right.mobile-only .user-profile {
+    .header-right.mobile-only .user-profile {
         width: 100%;
         margin-bottom: 20px;
     }
 
-    .main-nav .header-right.mobile-only .user-profile a {
+    .header-right.mobile-only .user-profile a {
         width: 100%;
         justify-content: center;
     }
 
+    .featured-post-content {
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .featured-post-content a {
+        max-width: 100%;
+    }
+
     /* Карточки статей (Маленькие) */
-    .article-card-small {
-        flex-direction: column; /* Маленькие карточки в стек */
-        align-items: center;
-        text-align: center;
-        padding-bottom: 20px;
-    }
-
-    .article-card-small-image {
-        width: 90%;
-        height: 200px;
-        margin-top: 15px;
-    }
-
     .article-card-small-content {
-        width: 90%;
-        margin: 0;
-        padding: 0;
-        text-align: left;
+        justify-content: flex-start;
+        gap: 10px;
     }
 
     .article-card-small-content a {
-        margin-left: 0;
-        width: 100%;
-        text-align: center;
-        margin-top: 20px;
-        height: 35px;
-        line-height: 25px;
+        margin-top: 10px;
+        max-width: 100%;
     }
 
     .post-meta {
-        justify-content: center; /* Центрирование мета-данных */
+        margin-bottom: 5px;
     }
 }
-
-
-/* ========================================================================= */
-/* 4. АДАПТАЦИЯ (MAX-WIDTH: 480PX) - СМАРТФОНЫ (Максимальная компрессия)     */
-/* ========================================================================= */
 
 @media (max-width: 480px) {
 
@@ -889,35 +893,30 @@ img, svg {
         width: 30px;
     }
 
-    .main-nav {
-        top: 41px;
+    .menu-toggle {
+        width: 30px;
+        height: 25px;
     }
 
-    /* ---------------------- HEADER БЛОГА ---------------------- */
+    .menu-toggle span {
+        margin: 4px 0;
+    }
     .blog-header h1 {
         font-size: 40px;
     }
 
     .blog-header p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
-    /* Поиск */
-    .search-container {
+    .search-input-wrapper {
         width: 100%;
-        max-width: 100%;
-        padding: 10px 15px;
-    }
-
-    .search-icon {
-        left: 15px;
-        right: auto;
-        opacity: 1; /* Возвращаем иконку влево */
     }
 
     .filter-tags-link {
-        flex-direction: column; /* Теги в вертикальный стек */
+        flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .filter-tags a {
@@ -925,7 +924,6 @@ img, svg {
         padding: 10px 15px;
     }
 
-    /* ---------------------- ГЛАВНАЯ СТАТЬЯ ---------------------- */
 
     .featured-post-content h2 {
         font-size: 20px;
@@ -935,97 +933,35 @@ img, svg {
         font-size: 14px;
     }
 
-    .featured-post-content a {
-        height: 40px;
-        font-size: 15px;
-        line-height: 30px;
+    .featured-post-image {
+        height: 200px;
     }
-
-    /* ---------------------- СПИСОК СТАТЕЙ ---------------------- */
-
     .article-list-column h2 {
         font-size: 24px;
     }
 
-    .article-card-small-image {
-        height: 150px;
-    }
-
     .article-card-small-content h3 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .article-card-small-content p {
         font-size: 14px;
-        /* Сокращаем текст, если он слишком длинный */
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
 
-    /* ---------------------- САЙДБАР ---------------------- */
-
-    .widget {
-        padding: 15px;
-    }
-
-    .widget h3 {
-        font-size: 16px;
-        margin-bottom: 15px;
-    }
-
-    /* Авторы */
-    .authors-list-item {
-        gap: 10px;
-    }
-
-    .authors-list-item img {
-        width: 35px;
-        height: 35px;
-    }
-
-    .authors-list-item p {
-        font-size: 14px;
-    }
-
-    .authors-list-item span {
-        font-size: 12px;
-    }
-
-    /* Теги */
-    .tags-list a {
-        font-size: 12px;
-        padding: 6px 15px;
-    }
-
-    /* Подписка */
-    .widget-subscribe p {
-        font-size: 14px;
-    }
-
-    .subscribe-form input, .subscribe-form button {
-        padding: 10px 15px;
-        font-size: 14px;
-    }
-
-    /* ---------------------- CTA FOOTER ---------------------- */
     .cta-footer {
         padding: 40px 10px;
     }
 
     .cta-footer h2 {
         font-size: 36px;
-        margin-bottom: 10px;
     }
 
     .cta-footer p {
         font-size: 18px;
-        margin-bottom: 20px;
     }
 
     .cta-button {
-        padding: 12px 20px;
-        font-size: 15px;
+        padding: 14px 30px;
+        font-size: 14px;
     }
 }

@@ -514,7 +514,501 @@ h3 {
     overflow: hidden;
 }
 
+.cta-footer {
+    background-color: #3647FF;
+    color: white;
+    text-align: center;
+    padding: 250px 20px;
+}
 
+.cta-footer h2 {
+    color: white;
+    font-size: 96px;
+    margin-top: 0;
+}
+
+.cta-footer p {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 200;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: white;
+    color: #3647FF;
+    padding: 18px 100px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #eee;
+}
+
+/* --- 7. BURGER MENU (MOBILE ONLY) --- */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    position: relative;
+    width: 40px;
+    height: 30px;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1728px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.language-switcher {
+    display: flex;
+    box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.25);
+    margin-right: 0;
+}
+
+.lang-button {
+    background-color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    min-height: 40px; /* для одинакового визуального уровня */
+    display: flex;
+    align-items: center;
+}
+
+.lang-button.active {
+    background: linear-gradient(160deg, #3647FF, #1625CE);
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.lang-button.noactive {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #666;
+}
+
+.user-profile a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: rgba(48, 64, 245, 0.15);
+    color: #1625CE;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 15px;
+    min-height: 40px;   /* прямо как lang-button */
+}
+
+.header-right > * {
+    align-self: center; /* выравнивание по вертикали */
+}
+
+/* --- Бургер --- */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    width: 40px;
+    height: 30px;
+}
+/* Бургер-кнопка - скрыта по умолчанию */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Мобильное меню - скрыто по умолчанию */
+.mobile-nav {
+    position: fixed; /* Гарантирует, что меню не прокручивается */
+    top: 0; /* Привязка к верхней части окна */
+    right: -300px; /* Скрыто за пределами экрана (закрыто по умолчанию) */
+    width: 300px;
+    /* ... остальные стили ... */
+}
+
+/* В секции body.menu-open */
+body.menu-open {
+    overflow: hidden; /* Запрещает прокрутку основного контента */
+}
+
+/* Затемнение фона */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/* Отключение прокрутки при открытом меню */
+body.menu-open {
+    overflow: hidden;
+}
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Стили для бургер-меню */
+.menu-toggle {
+    display: none; /* Скрыть на десктопе по умолчанию */
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #333; /* Цвет бургера */
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.menu-toggle span:nth-child(1) {
+    top: 0px;
+}
+
+.menu-toggle span:nth-child(2) {
+    top: 10px;
+}
+
+.menu-toggle span:nth-child(3) {
+    top: 20px;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    top: 10px;
+    transform: rotate(135deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-135deg);
+}
+
+/* Стили для мобильной навигации */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Скрыто за пределами экрана */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav.open {
+    right: 0; /* Открыто */
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-nav .language-switcher {
+    box-shadow: none;
+}
+
+.mobile-nav .nav-menu {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-nav .nav-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+.mobile-nav .nav-menu li a img {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    /* !!! ИСПРАВЛЕНИЕ: Делаем навигацию более компактной */
+    gap: 10px; /* Было 25px или 15px, делаем 10px */
+}
+
+/* Overlay для затемнения фона */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Стили для основного блока (Flex) */
+.main-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    position: relative;
+    padding-top: 50px; /* Отступ сверху для контента */
+}
+
+.main-info {
+    flex-grow: 1;
+    max-width: 50%; /* Ограничение ширины информационного блока */
+    z-index: 2;
+}
+
+/* Коррекция позиционирования изображения робота */
+.main_img {
+    position: absolute;
+    right: -200px; /* Сдвигаем немного вправо, чтобы не перекрывать контент */
+    top: -50px;
+    width: 60%; /* Гибкая ширина */
+    max-width: 900px; /* Максимальная ширина */
+    height: auto;
+    z-index: 1;
+}
+
+/* Адаптивность для остальных секций */
+.stats-container, .tools-container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.stat-item, .tool-item {
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+/* Вне медиазапросов */
+.menu-toggle {
+    display: none; /* Скрыто на десктопе */
+}
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ------- АДАПТИВ ДЛЯ HEADER -------- */
+
+@media (max-width: 992px) {
+    .header-container {
+        padding: 0 15px;
+    }
+    .header-right {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 10px;
+    }
+    .main-nav {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    /* Показываем бургер при открытии */
+    .main-nav.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        z-index: 999;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+        padding: 25px 0 0 0;
+        height: calc(100vh - 60px);
+        overflow-y: auto;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+    }
+    .main-nav li {
+        width: 100%;
+    }
+    .main-nav a {
+        padding: 15px 20px;
+        width: 100%;
+        font-size: 16px;
+        border-radius: 0;
+    }
+
+    .header-right {
+        flex-direction: row;
+        position: fixed;
+        top: 10px;
+        right: 20px;
+        z-index: 1001;
+        background: transparent;
+        gap: 8px;
+    }
+    .language-switcher, .user-profile {
+        margin: 0;
+    }
+    .language-switcher {
+        box-shadow: none;
+        background: #fff;
+        border-radius: 8px;
+    }
+    .lang-button, .lang-button.noactive, .user-profile a {
+        min-height: 36px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+/* --- МЕЛКИЕ СМАРТФОНЫ --- */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 6px;
+    }
+    .logo img { width: 32px; height: 32px; }
+    .menu-toggle { width: 30px; height: 25px; }
+    .lang-button, .user-profile a { font-size: 12px; padding: 7px 8px;}
+}
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/* =========================================
+   8. MEDIA QUERIES (АДАПТИВНОСТЬ)
+   ========================================= */
+
+/* --- ПЛАНШЕТЫ (до 992px) --- */
 @media (max-width: 992px) {
 
     .container {
@@ -536,7 +1030,7 @@ h3 {
         font-size: 40px;
         margin-top: 30px;
         margin-bottom: 20px;
-        text-align: center;
+        text-align: center; /* Центрируем заголовок "Как мы можем помочь?" */
     }
 
     .section-header p {
@@ -545,62 +1039,55 @@ h3 {
 
     /* Опции помощи (2 в ряд) */
     .help-options {
-        display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
     }
 
     .help-item {
-        float: none;
         width: 48%; /* 2 элемента в ряд */
-        margin-right: 0;
         min-width: 250px;
         padding: 20px 15px;
+        margin-right: 0; /* Убираем старый float margin */
     }
 
     .help-item h3 {
         font-size: 20px;
     }
 
-
-    .message-form-block, .office-team-block {
-        float: none;
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 30px;
-    }
-
-    .message-form-block {
-        order: 2;
-    }
-
-    .office-team-block {
-        order: 1;
-    }
-
+    /* Секция сообщения (1 в ряд) */
     .send-message-section {
         display: flex;
         flex-direction: column;
     }
 
+    .send-message-section h2 {
+        text-align: center; /* Центрируем заголовок на планшетах */
+    }
+
+    .send-message-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .message-form-block, .office-team-block {
+        width: 100%;
+        min-width: unset;
+        max-width: 100%;
+        /* Удалены float-правила */
+    }
+
     /* Форма */
     .form-row-half {
-        display: flex;
         gap: 4%;
     }
 
     .half-width {
         width: 48%;
-        float: none;
         margin-bottom: 30px;
     }
 
-    .float-left, .float-right {
-        float: none;
-    }
-
-
+    /* FAQ (1 в ряд) */
     .faq-cards {
         gap: 15px;
         justify-content: center;
@@ -609,7 +1096,6 @@ h3 {
     .faq-card {
         flex: 1 1 100%;
         min-width: unset;
-        width: 100%;
     }
 
     .faq-card h4 {
@@ -635,21 +1121,70 @@ h3 {
 }
 
 
+@media (max-width: 992px) {
 
+    .main-container {
+        width: 100%;
+        max-width: 960px;
+        padding: 0 15px 50px 15px;
+    }
+
+    /* Заголовки */
+    h1 { font-size: 60px; }
+    h2 { font-size: 40px; }
+
+    /* Опции помощи (2 в ряд) */
+    .help-options {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .help-item {
+        width: 48%;
+        min-width: 250px;
+    }
+
+    /* Секция сообщения (1 в ряд) */
+    .send-message-section h2 {
+        text-align: center; /* Центрируем заголовок на планшетах */
+    }
+    .send-message-container {
+        flex-direction: column; /* Вертикальный стек */
+        gap: 30px;
+    }
+    .message-form-block, .office-team-block {
+        width: 100%;
+        min-width: unset;
+        max-width: 100%;
+    }
+
+    /* FAQ (1 в ряд) */
+    .faq-cards {
+        gap: 15px;
+    }
+    .faq-card {
+        flex: 1 1 100%;
+        min-width: unset;
+    }
+
+    /* CTA */
+    .cta-footer h2 { font-size: 50px; }
+    .cta-footer p { font-size: 20px; }
+}
+
+
+/* --- ТЕЛЕФОНЫ (до 768px) --- */
 @media (max-width: 768px) {
 
     header {
         padding: 5px 0;
     }
-
     .container {
         padding: 0 15px;
     }
 
-    .menu-toggle {
-        display: block;
-    }
-
+    /* Бургер-меню */
+    .menu-toggle { display: block; }
     .main-nav {
         display: none;
         position: fixed;
@@ -663,11 +1198,7 @@ h3 {
         overflow-y: auto;
         padding-top: 20px;
     }
-
-    .main-nav.open {
-        display: block;
-    }
-
+    .main-nav.open { display: block; }
     .main-nav ul {
         flex-direction: column;
         align-items: flex-start;
@@ -676,199 +1207,43 @@ h3 {
         padding-bottom: 15px;
         margin-bottom: 15px;
     }
-
     .main-nav a {
         padding: 15px 20px;
         width: 100%;
         border-radius: 0;
         font-size: 16px;
     }
-
-    .header-right {
-        display: none;
-    }
+    .header-right { display: none; }
 
 
-    .main-nav .header-right.mobile-only {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        padding: 0 20px;
-    }
-
-    .main-nav .header-right.mobile-only .language-switcher {
-        margin-right: 0;
-        margin-bottom: 15px;
-        width: 100%;
-        box-shadow: none;
-        display: flex;
-        justify-content: center;
-    }
-
-    .main-nav .header-right.mobile-only .user-profile {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .main-nav .header-right.mobile-only .user-profile a {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-
-@media (max-width: 480px) {
-
-    .main-container {
-        padding: 0 10px 30px 10px;
-    }
-
-    .logo img {
-        height: 30px;
-        width: 30px;
-    }
-
-    .main-nav {
-        top: 41px;
-    }
-
-    /* Заголовки */
-    h1 {
-        font-size: 40px;
-    }
-
-    h2 {
-        font-size: 28px;
-        margin-top: 20px;
-        margin-bottom: 15px;
-    }
-
+    /* Main */
+    h1 { font-size: 40px; }
+    h2 { font-size: 32px; }
+    .send-message-section h2 { font-size: 32px; }
     .section-header p {
         font-size: 16px;
         margin: 10px auto 30px auto;
     }
 
-
-    .help-options {
-        gap: 15px;
-    }
-
+    /* Опции помощи (1 в ряд) */
     .help-item {
-        width: 100%; /* 1 элемент в ряд */
+        width: 100%;
         padding: 15px;
     }
 
-    .help-item h3 {
-        font-size: 18px;
-    }
-
-    .icon-circle {
-        width: 40px;
-        height: 40px;
-        padding: 10px;
-    }
-
-    .icon-circle img {
-        width: 20px;
-        height: 20px;
-    }
-
-
-    .message-form-block {
-        padding: 20px;
-    }
-
+    /* Форма */
+    .message-form-block { padding: 20px; }
     .form-row-half {
         flex-direction: column;
         gap: 0;
     }
-
     .half-width {
         width: 100%;
         margin-bottom: 20px;
     }
+    .input-group { margin-bottom: 20px; }
 
-    .input-group {
-        margin-bottom: 20px;
-    }
-
-    .submit-button {
-        padding: 15px 20px;
-        font-size: 16px;
-        border-radius: 10px;
-    }
-
-
-    h3 {
-        font-size: 24px;
-        margin-top: 30px;
-        margin-bottom: 15px;
-    }
-
-    .office-list, .team-list {
-        padding: 15px;
-    }
-
-    .office-list h3 {
-        font-size: 20px;
-    }
-
-    .cart-flex img {
-        width: 20px;
-        height: 20px;
-    }
-
-    .cart-flex p {
-        font-size: 14px;
-    }
-
-    .team-member .client-name {
-        font-size: 16px;
-    }
-
-    .team-member .job-title {
-        font-size: 14px;
-    }
-
-    .team-member .service {
-        font-size: 10px;
-    }
-
-    /* FAQ */
-    .faq-section h2 {
-        text-align: left;
-    }
-
-    .faq-card {
-        padding: 15px;
-    }
-
-    .faq-card h4 {
-        font-size: 16px;
-    }
-
-    .faq-card p {
-        font-size: 14px;
-    }
-
-
-    .cta-footer {
-        padding: 60px 10px;
-    }
-
-    .cta-footer h2 {
-        font-size: 36px;
-        line-height: 1.2;
-    }
-
-    .cta-footer p {
-        font-size: 18px;
-    }
-
-    .cta-button {
-        padding: 12px 30px;
-        font-size: 16px;
-        border-radius: 10px;
-    }
+    /* CTA */
+    .cta-footer h2 { font-size: 36px; }
+    .cta-footer p { font-size: 18px; }
 }

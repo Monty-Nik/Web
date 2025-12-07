@@ -9,33 +9,67 @@
 </head>
 <body>
 <header>
-    <div class="container header-wrapper">
+    <div class="container header-container">
         <div class="logo">
             <img src="img/logo.png" alt="Логотип">
         </div>
-        <button class="menu-toggle" aria-label="Открыть меню">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+
+        <div class="mobile-actions">
+            <div class="language-switcher desktop-only">
+                <a class="lang-button active">EN</a>
+                <a class="lang-button noactive">RU</a>
+            </div>
+
+            <button class="menu-toggle" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-header">
+                <div class="language-switcher">
+                    <button class="lang-button active">RU</button>
+                    <button class="lang-button noactive">EN</button>
+                </div>
+                <div class="user-profile">
+                    <a href="#">
+                        <img src="img/proof.png" alt="User">
+                        Войти
+                    </a>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><img src="img/home.svg" alt="home"> Главная</a></li>
+                <li><a href="about.html"><img src="img/about.png" alt="home"> О нас</a></li>
+                <li><a href="analitics.html"><img src="img/anal.png" alt="anal"> Аналитика</a></li>
+                <li><a href="invesment.html"><img src="img/invest.png" alt="invest"> Инвестиции</a></li>
+                <li><a href="ai.html"><img src="img/ai.png" alt="ai"> ИИ-Ассистент</a></li>
+                <li><a href="contact.html"><img src="img/con1.png" alt="contact"> Контакты</a></li>
+                <li><a href="blog.html"><img src="img/blog.png" alt="blog"> Блог</a></li>
+            </ul>
+        </div>
+        <div class="menu-overlay" id="menuOverlay"></div>
+
         <nav class="main-nav">
-            <ul>
-                <li><a href="index.html"><img src="img/home.svg" alt="home">Главная</a></li>
-                <li><a href="about.html"><img src="img/about.png" alt="home">О нас</a></li>
-                <li><a href="analitics.html"><img src="img/anal.png" alt="anal">Аналитика</a></li>
-                <li><a href="invesment.html"><img src="img/invest.png" alt="invest">Инвестиции</a></li>
-                <li><a href="ai.html"><img src="img/ai.png" alt="ai">ИИ-Ассистент</a></li>
-                <li><a href="contact.html"><img src="img/con1.png" alt="contact">Контакты</a></li>
-                <li><a href="blog.html"><img src="img/blog.png" alt="blog">Блог</a></li>
+            <ul class="nav-list">
+                <li><a href="index.html"><img src="img/home.svg" alt="home"> Главная</a></li>
+                <li><a href="about.html"><img src="img/about.png" alt="home"> О нас</a></li>
+                <li><a href="analitics.html"><img src="img/anal.png" alt="anal"> Аналитика</a></li>
+                <li><a href="invesment.html"><img src="img/invest.png" alt="invest"> Инвестиции</a></li>
+                <li><a href="ai.html"><img src="img/ai.png" alt="ai"> ИИ-Ассистент</a></li>
+                <li><a href="contact.html"><img src="img/con1.png" alt="contact"> Контакты</a></li>
+                <li><a href="blog.html"><img src="img/blog.png" alt="blog"> Блог</a></li>
             </ul>
         </nav>
-        <div class="header-right">
+
+        <div class="header-right desktop-only">
             <div class="language-switcher">
                 <a class="lang-button active">EN</a>
                 <a class="lang-button noactive">RU</a>
             </div>
             <div class="user-profile">
-                <a href="profile.html"><img src="img/proof.png" alt="home">Monty-Nik</a>
+                <a href="profile.html"><img src="img/proof.png" alt="home"> Monty-Nik</a>
             </div>
         </div>
     </div>
@@ -188,40 +222,33 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const menuToggle = document.querySelector('.menu-toggle');
-        const mainNav = document.querySelector('.main-nav');
-        const headerRight = document.querySelector('.header-right');
-        const headerWrapper = document.querySelector('.header-wrapper');
+        const mobileNav = document.getElementById('mobileNav');
+        const menuOverlay = document.getElementById('menuOverlay');
         const body = document.body;
 
-        menuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('open');
+        function toggleMenu() {
             menuToggle.classList.toggle('open');
-            body.classList.toggle('no-scroll');
+            mobileNav.classList.toggle('open');
+            menuOverlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
 
-            // Обработка header-right для мобильного меню
-            if (mainNav.classList.contains('open') && window.innerWidth <= 768) {
-                if (!mainNav.querySelector('.header-right')) {
-                    const clonedHeaderRight = headerRight.cloneNode(true);
-                    clonedHeaderRight.classList.add('mobile-only');
-                    mainNav.appendChild(clonedHeaderRight);
-                }
-            } else if (window.innerWidth <= 768) {
-                const mobileHeaderRight = mainNav.querySelector('.header-right.mobile-only');
-                if (mobileHeaderRight) {
-                    mobileHeaderRight.remove();
-                }
-            }
-        });
+        if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+        if (menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
 
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                mainNav.classList.remove('open');
-                menuToggle.classList.remove('open');
-                body.classList.remove('no-scroll');
-                const mobileHeaderRight = mainNav.querySelector('.header-right.mobile-only');
-                if (mobileHeaderRight) {
-                    mobileHeaderRight.remove();
-                }
+        // Закрыть меню при клике по ссылке в .mobile-nav
+        if (mobileNav) {
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 1024) setTimeout(toggleMenu, 100);
+                });
+            });
+        }
+
+        // При ресайзе на десктоп скрыть меню
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1024 && mobileNav.classList.contains('open')) {
+                toggleMenu();
             }
         });
     });

@@ -3,13 +3,12 @@
 <head>
     <title>Home</title>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/style.css"/>
-
 </head>
-<body>
+<body class="no-scroll">
 <header>
-    <div class="container">
+    <div class="container header-container">
         <div class="logo">
             <img src="img/logo.png" alt="Логотип">
         </div>
@@ -18,24 +17,51 @@
             <span></span>
             <span></span>
         </button>
+        <div class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-header">
+                <div class="language-switcher">
+                    <button class="lang-button active">RU</button>
+                    <button class="lang-button noactive">EN</button>
+                </div>
+
+                <div class="user-profile">
+                    <a href="#">
+                        <img src="img/proof.png" alt="User">
+                        Войти
+                    </a>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><img src="img/home.svg" alt="home"> Главная</a></li>
+                <li><a href="about.html"><img src="img/about.png" alt="home"> О нас</a></li>
+                <li><a href="analitics.html"><img src="img/anal.png" alt="anal"> Аналитика</a></li>
+                <li><a href="invesment.html"><img src="img/invest.png" alt="invest"> Инвестиции</a></li>
+                <li><a href="ai.html"><img src="img/ai.png" alt="ai"> ИИ-Ассистент</a></li>
+                <li><a href="contact.html"><img src="img/con1.png" alt="contact"> Контакты</a></li>
+                <li><a href="blog.html"><img src="img/blog.png" alt="blog"> Блог</a></li>
+            </ul>
+        </div>
+        <div class="menu-overlay" id="menuOverlay"></div>
+
         <nav class="main-nav">
-            <ul>
-                <li><a href="index.html"><img src="img/home.svg" alt="home">Главная</a></li>
-                <li><a href="about.html"><img src="img/about.png" alt="home">О нас</a></li>
-                <li><a href="analitics.html"><img src="img/anal.png" alt="anal">Аналитика</a></li>
-                <li><a href="invesment.html"><img src="img/invest.png" alt="invest">Инвестиции</a></li>
-                <li><a href="ai.html"><img src="img/ai.png" alt="ai">ИИ-Ассистент</a></li>
-                <li><a href="contact.html"><img src="img/con1.png" alt="contact">Контакты</a></li>
-                <li><a href="blog.html"><img src="img/blog.png" alt="blog">Блог</a></li>
+            <ul class="nav-list">
+                <li><a href="index.html"><img src="img/home.svg" alt="home"> Главная</a></li>
+                <li><a href="about.html"><img src="img/about.png" alt="home"> О нас</a></li>
+                <li><a href="analitics.html"><img src="img/anal.png" alt="anal"> Аналитика</a></li>
+                <li><a href="invesment.html"><img src="img/invest.png" alt="invest"> Инвестиции</a></li>
+                <li><a href="ai.html"><img src="img/ai.png" alt="ai"> ИИ-Ассистент</a></li>
+                <li><a href="contact.html"><img src="img/con1.png" alt="contact"> Контакты</a></li>
+                <li><a href="blog.html"><img src="img/blog.png" alt="blog"> Блог</a></li>
             </ul>
         </nav>
-        <div class="header-right">
+
+        <div class="header-right desktop-only">
             <div class="language-switcher">
                 <a class="lang-button active">EN</a>
                 <a class="lang-button noactive">RU</a>
             </div>
             <div class="user-profile">
-                <a href="/profile.html"><img src="img/proof.png" alt="home">Monty-Nik</a>
+                <a href="/profile.html"><img src="img/proof.png" alt="home"> Monty-Nik</a>
             </div>
         </div>
     </div>
@@ -235,7 +261,6 @@
                             <h2 class="trust-title main-text-3">Превращая мечты <br> в реальность</h2>
                         </div>
                         <div class="testimonials-container">
-                            <!-- Отзыв 1 -->
                             <article class="testimonial-item review-1">
                                 <div class="icon-wrapper">
                                     <img src="img/star.svg" alt="Аналитика">
@@ -344,44 +369,48 @@
                 <a href="" class="btn-demo">Попробовать демо</a>
             </div>
         </div>
-        </div>
+    </div>
 </footer>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const menuToggle = document.querySelector('.menu-toggle');
-        const mainNav = document.querySelector('.main-nav');
-        const headerRight = document.querySelector('.header-right');
-        const body = document.body;
+        const mobileNav = document.getElementById('mobileNav');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const body = document.body; // Получаем body
 
-        menuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('open');
+        // Функция открытия/закрытия меню
+        function toggleMenu() {
             menuToggle.classList.toggle('open');
-            body.classList.toggle('no-scroll');
+            mobileNav.classList.toggle('open');
+            menuOverlay.classList.toggle('active');
+            body.classList.toggle('menu-open'); // Используем класс на body для фиксации скролла
+        }
 
-            // Обработка header-right для мобильного меню
-            if (mainNav.classList.contains('open') && window.innerWidth <= 768) {
-                if (!mainNav.querySelector('.header-right')) {
-                    const clonedHeaderRight = headerRight.cloneNode(true);
-                    clonedHeaderRight.classList.add('mobile-only');
-                    mainNav.appendChild(clonedHeaderRight);
+        // Обработчик для бургер-кнопки
+        if (menuToggle) {
+            menuToggle.addEventListener('click', toggleMenu);
+        }
+
+        // Обработчик для overlay
+        if (menuOverlay) {
+            menuOverlay.addEventListener('click', toggleMenu);
+        }
+
+        // Закрытие меню при клике на ссылку в мобильном меню
+        const mobileLinks = mobileNav.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 1024) {
+                    // Используем setTimeout, чтобы браузер успел обработать переход по ссылке
+                    setTimeout(toggleMenu, 100);
                 }
-            } else if (window.innerWidth <= 768) {
-                const mobileHeaderRight = mainNav.querySelector('.header-right.mobile-only');
-                if (mobileHeaderRight) {
-                    mobileHeaderRight.remove();
-                }
-            }
+            });
         });
 
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                mainNav.classList.remove('open');
-                menuToggle.classList.remove('open');
-                body.classList.remove('no-scroll');
-                const mobileHeaderRight = mainNav.querySelector('.header-right.mobile-only');
-                if (mobileHeaderRight) {
-                    mobileHeaderRight.remove();
-                }
+        // Закрытие меню при изменении размера окна (на десктоп)
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1024 && mobileNav.classList.contains('open')) {
+                toggleMenu();
             }
         });
     });

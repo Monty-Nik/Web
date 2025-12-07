@@ -563,10 +563,10 @@ header {
 }
 
 .investor-type__meta span {
-    display: block; /* Каждый мета-пункт на новой строке */
+    display: block;
 }
 
-/* --- ПЛЮСЫ / СООБРАЖЕНИЯ (Pros/Cons) --- */
+
 
 .investor-table__heading {
     font-size: 16px;
@@ -592,7 +592,7 @@ header {
 .investor-table__heading--green { color: #2DCE89; margin-right: 20px;}
 .investor-table__heading--red { color: #FB6340; }
 
-/* Имитация точки перед заголовком */
+
 .investor-table__heading--green::before,
 .investor-table__heading--red::before {
     content: "•";
@@ -612,15 +612,15 @@ header {
     position: relative;
     padding-left: 15px;
     margin-bottom: 8px;
-    list-style: none; /* Убираем стандартные маркеры */
+    list-style: none;
 }
 
-/* Имитация маркера списка (точка) */
+
 .investor-table__list--pros li::before {
     content: "•";
     position: absolute;
     left: 0;
-    color: #2DCE89; /* Зеленый маркер для плюсов */
+    color: #2DCE89;
     font-weight: 900;
 }
 
@@ -628,7 +628,7 @@ header {
     content: "•";
     position: absolute;
     left: 0;
-    color: #FB6340; /* Красный маркер для соображений */
+    color: #FB6340;
     font-weight: 900;
 }
 
@@ -641,7 +641,7 @@ header {
     margin-top: 60px;
 }
 
-.footer__container { align-items: center; } /* Центрируем */
+.footer__container { align-items: center; }
 .footer h2 { font-size: 128px; margin-bottom: 30px; max-width: 1200px; }
 .footer__btns { display: flex; gap: 20px; }
 
@@ -679,20 +679,138 @@ header {
 .no-scroll {
     overflow: hidden;
 }
-/* ========================================================================= */
-/* 1. БУРГЕР-МЕНЮ (Общие стили)                                             */
-/* ========================================================================= */
+
+body.menu-open {
+    overflow: hidden;
+}
+body.menu-open {
+    overflow: hidden;
+}
+
 
 .menu-toggle {
-    display: none; /* Скрываем по умолчанию */
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #333;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.menu-toggle span:nth-child(1) {
+    top: 0px;
+}
+
+.menu-toggle span:nth-child(2) {
+    top: 10px;
+}
+
+.menu-toggle span:nth-child(3) {
+    top: 20px;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    top: 10px;
+    transform: rotate(135deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-135deg);
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav.open {
+    right: 0;
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-nav .language-switcher {
+    box-shadow: none;
+}
+
+.mobile-nav .nav-menu {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-nav .nav-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+.mobile-nav .nav-menu li a img {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
-    z-index: 1000;
-    position: relative;
-    width: 40px;
-    height: 30px;
+    padding: 0;
+    z-index: 1001;
 }
 
 .menu-toggle span {
@@ -700,23 +818,242 @@ header {
     width: 100%;
     height: 3px;
     background-color: #333;
-    margin: 6px 0;
+    border-radius: 2px;
     transition: all 0.3s ease;
 }
 
 .menu-toggle.open span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(45deg) translate(6px, 6px);
 }
+
 .menu-toggle.open span:nth-child(2) {
     opacity: 0;
 }
+
 .menu-toggle.open span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.no-scroll {
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+
+}
+
+
+body.menu-open {
     overflow: hidden;
 }
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    max-width: 1728px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-right, .mobile-nav-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.language-switcher {
+    display: flex;
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.15);
+}
+
+.lang-button, .lang-button.noactive {
+    background: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+.lang-button.active {
+    background: linear-gradient(160deg, #3647FF, #1625CE);
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.lang-button.noactive {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #666;
+}
+.user-profile a {
+    display: flex;
+    align-items: center;
+    background: rgba(48, 64, 245, 0.15);
+    color: #1625CE;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-decoration: none;
+    min-height: 40px;
+}
+
+
+.menu-toggle { display: none; }
+
+.main-nav { display: block; }
+.desktop-only { display: flex; }
+
+.mobile-nav,
+.menu-overlay,
+.mobile-nav-header { display: none; }
+
+
+@media (max-width: 1024px) {
+    .container { padding: 0 10px; }
+}
+
+
+@media (max-width: 768px) {
+    .main-nav,
+    .desktop-only { display: none; }
+    .menu-toggle { display: block; }
+
+    .mobile-nav {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        width: 80vw;
+        max-width: 420px;
+        height: 100vh;
+        background: #fff;
+        z-index: 1201;
+        box-shadow: 0 0 64px rgba(20,30,80,0.14);
+        transition: transform 0.3s;
+        transform: translateX(-100%);
+    }
+    .mobile-nav.open { transform: translateX(0); }
+    .menu-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1200;
+        background: rgba(0,0,0,0.17);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;}
+    .menu-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .mobile-nav-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 24px 18px 16px 18px;
+        background: #f6f8fa;
+        border-bottom: 1px solid #f0f1f7;
+    }
+    .mobile-nav .language-switcher {
+        box-shadow: none;
+        background: #fff;
+        border-radius: 8px;
+    }
+    .mobile-nav .lang-button, .mobile-nav .lang-button.noactive, .mobile-nav .user-profile a {
+        min-height: 36px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 7px 0 0 0;
+        width: 100%;
+    }
+    .nav-menu li {
+        width: 100%;
+    }
+    .nav-menu a {
+        padding: 16px 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 18px;
+    }
+    .header-container { justify-content: space-between; }
+    .menu-toggle {
+        z-index: 1300;
+        position: relative;
+    }
+    body.no-scroll { overflow: hidden; }
+}
+
+
+@media (max-width: 480px) {
+    .mobile-nav { width: 97vw; max-width: 330px; }
+    .mobile-nav-header { padding: 15px 7px 10px 7px; gap: 7px; }
+    .menu-toggle { width: 30px; height: 25px; }
+    .logo img { width: 32px; height: 32px; }
+}
+
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Стили для основного блока (Flex) */
+.main-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    position: relative;
+    padding-top: 50px; /* Отступ сверху для контента */
+}
+
+.main-info {
+    flex-grow: 1;
+    max-width: 50%; /* Ограничение ширины информационного блока */
+    z-index: 2;
+}
+
 
 /* ========================================================================= */
 /* 2. АДАПТАЦИЯ (MAX-WIDTH: 1200PX) - Большие Планшеты / Малые Десктопы      */
