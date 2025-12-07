@@ -114,10 +114,6 @@ body {
     align-items: center;
 }
 
-.auth-form__tab i {
-    margin-right: 8px;
-    font-size: 13px;
-}
 
 .auth-form__tab--active {
     background: #fff;
@@ -153,9 +149,8 @@ body {
 }
 
 .form-group__input:focus {
-    border-color: #3c4af8;
     outline: none;
-    box-shadow: 0 0 0 3px rgb(19, 35, 151);
+    border: 1px solid #000;
 }
 
 .form-group--password .form-group__eye-icon {
@@ -267,7 +262,6 @@ body {
     }
 }
 
-/* 2. Смартфоны (до 480px) */
 @media (max-width: 480px) {
     .page-wrapper {
         padding: 10px;
@@ -292,7 +286,7 @@ body {
     }
 
     .auth-form__feature-grid {
-        grid-template-columns: 1fr; /* КОЛЛАПС: 1 в ряд */
+        grid-template-columns: 1fr;
         gap: 8px;
     }
     .auth-form__feature-item {

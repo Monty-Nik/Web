@@ -144,9 +144,8 @@ body {
 }
 
 .form-group__input:focus {
-    border-color: #3c4af8;
     outline: none;
-    box-shadow: 0 0 0 3px rgb(19, 35, 151);
+    border: 1px solid #000;
 }
 
 .form-group--password .form-group__eye-icon {
@@ -227,25 +226,25 @@ body {
 
 @media (max-width: 768px) {
     body {
-        /* Убираем центрирование, чтобы позволить body заполнить весь экран */
+
         align-items: flex-start;
         padding-top: 0;
     }
 
     .page-wrapper {
-        min-height: 100vh; /* Гарантируем полную высоту */
+        min-height: 100vh;
         padding: 15px;
-        align-items: center; /* Центрируем контент внутри */
+        align-items: center;
     }
 
     .page-wrapper::before, .page-wrapper::after {
-        display: none; /* Убираем декоративные элементы для чистоты на маленьких экранах */
+        display: none;
     }
 
     .auth-form {
         width: 100%;
-        max-width: 400px; /* Немного уменьшим максимальную ширину */
-        padding: 30px 25px; /* Уменьшаем внутренние отступы */
+        max-width: 400px;
+        padding: 30px 25px;
         margin: 0;
     }
 
@@ -259,21 +258,20 @@ body {
         margin-bottom: 25px;
     }
     .form-group__input {
-        padding: 12px 15px; /* Чуть меньше инпуты */
+        padding: 12px 15px;
     }
 
     .auth-form__feature-grid {
-        grid-template-columns: 1fr 1fr; /* Оставляем 2 в ряд */
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-/* 2. Смартфоны (до 480px) */
 @media (max-width: 480px) {
     .page-wrapper {
-        padding: 10px; /* Минимальный отступ от краев */
+        padding: 10px;
     }
     .auth-form {
-        padding: 20px 15px; /* Еще меньше отступы */
+        padding: 20px 15px;
     }
 
     .auth-form__title {
@@ -292,7 +290,7 @@ body {
     }
 
     .auth-form__feature-grid {
-        grid-template-columns: 1fr; /* КОЛЛАПС: 1 в ряд */
+        grid-template-columns: 1fr;
         gap: 8px;
     }
     .auth-form__feature-item {

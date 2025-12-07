@@ -1,6 +1,5 @@
-@import "css/fonts.css"; /* Если есть, иначе fonts.googleapis подключен в html */
+@import "css/fonts.css";
 
-/* --- ОБНУЛЕНИЕ И БАЗА --- */
 * {
     margin: 0;
     padding: 0;
@@ -37,7 +36,7 @@ img {
 }
 
 .container {
-    max-width: 1440px; /* Немного уменьшил стандарт, чтобы контент был плотнее */
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
     width: 100%;
@@ -54,7 +53,6 @@ img {
     text-align: center;
 }
 
-/* --- HEADER --- */
 header {
     background-color: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -75,7 +73,6 @@ header {
     width: auto;
 }
 
-/* Навигация десктоп */
 .main-nav .nav-list {
     display: flex;
     align-items: center;
@@ -89,7 +86,7 @@ header {
 .feature-card__icon img {
     width: 32px;
     height: 32px;
-    filter: brightness(0) invert(1); /* Делаем иконки белыми */
+    filter: brightness(0) invert(1);
 }
 
 .feature-card__icon-wrapper {
@@ -100,22 +97,21 @@ header {
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
-    /* Тени для иконок */
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .feature-card:nth-child(1) .feature-card__icon-wrapper {
     background: linear-gradient(45deg, #1323CA, #36C9FF);
 }
-/* 2. Оранжевый */
+
 .feature-card:nth-child(2) .feature-card__icon-wrapper {
     background: linear-gradient(45deg, #EF4800, #FA9146);
 }
-/* 3. Фиолетовый/Розовый */
+
 .feature-card:nth-child(3) .feature-card__icon-wrapper {
     background: linear-gradient(45deg, #A136FF, #F40FE5);
 }
-/* 4. Зеленый */
+
 .feature-card:nth-child(4) .feature-card__icon-wrapper {
     background: linear-gradient(45deg, #008724, #57E592);
 }
@@ -138,7 +134,6 @@ header {
     height: 20px;
 }
 
-/* Правая часть хедера */
 .header-right {
     display: flex;
     align-items: center;
@@ -185,9 +180,8 @@ header {
     width: 24px;
 }
 
-/* --- МОБИЛЬНЫЕ ЭЛЕМЕНТЫ (Скрыты на десктопе) --- */
 .mobile-actions {
-    display: none; /* Flex включается в медиа-запросе */
+    display: none;
     align-items: center;
     gap: 15px;
 }
@@ -213,16 +207,14 @@ header {
     transition: 0.3s;
 }
 
-/* Анимация крестика */
 .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
 .menu-toggle.open span:nth-child(2) { opacity: 0; }
 .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
 
-/* Мобильное меню (выезжающее) */
 .mobile-nav {
     position: fixed;
     top: 0;
-    right: -100%; /* Скрыто справа */
+    right: -100%;
     width: 300px;
     height: 100%;
     background: #fff;
@@ -279,7 +271,6 @@ header {
     visibility: visible;
 }
 
-/* --- MAIN CONTENT: HERO --- */
 .hero {
     padding: 80px 0;
 }
@@ -314,7 +305,6 @@ header {
     box-shadow: 0 20px 40px rgba(54, 71, 255, 0.15);
 }
 
-/* --- STATS --- */
 .stats {
     padding: 60px 0;
     background: #EFF5FE;

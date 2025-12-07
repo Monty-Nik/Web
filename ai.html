@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бизнес-ассистент</title>
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/ai.css">
 </head>
 <body>
@@ -75,11 +76,8 @@
         <p>Получайте мгновенные ответы на ваши бизнес-вопросы, стратегические советы и персональные рекомендации от
             нашего помощника на базе искусственного интеллекта.</p>
     </section>
-
     <main class="main-content">
-
         <section class="chat-column">
-
             <div class="chat-header-bar">
                 <img src="img/chat-bot.svg" alt="chat-bot">
                 <div class="description-flex">
@@ -231,21 +229,14 @@
         const mobileNav = document.getElementById('mobileNav');
         const menuOverlay = document.getElementById('menuOverlay');
         const body = document.body;
-
-        // Открытие/закрытие мобильного меню (стильно, как на главной)
         function toggleMenu() {
             menuToggle.classList.toggle('open');
             mobileNav.classList.toggle('open');
             menuOverlay.classList.toggle('active');
             body.classList.toggle('menu-open');
         }
-
-        // Клик по бургеру
         if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
-        // Клик по overlay для закрытия
         if (menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
-
-        // При клике на любую ссылку в меню (закрываем на мобиле)
         const mobileLinks = mobileNav.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -254,8 +245,6 @@
                 }
             });
         });
-
-        // Автоматическое закрытие при ресайзе на десктоп
         window.addEventListener('resize', function() {
             if (window.innerWidth > 1024 && mobileNav.classList.contains('open')) {
                 toggleMenu();

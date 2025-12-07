@@ -866,7 +866,6 @@ header {
         max-width: 100%;
     }
 
-    /* Карточки статей (Маленькие) */
     .article-card-small-content {
         justify-content: flex-start;
         gap: 10px;

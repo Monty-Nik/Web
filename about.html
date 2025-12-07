@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BizAnalytics</title>
+
     <link rel="stylesheet" href="css/about.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -74,7 +74,6 @@
         </div>
     </div>
 </header>
-
 <main>
     <section class="hero">
         <div class="container hero__container">
@@ -89,7 +88,6 @@
             </div>
         </div>
     </section>
-
     <section class="stats">
         <div class="container stats__container">
             <section class="stats__info">
@@ -113,10 +111,8 @@
                     </div>
                 </article>
             </section>
-
         </div>
     </section>
-
     <section class="features">
         <div class="container">
             <section class="features__content">
@@ -260,25 +256,19 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const menuToggle = document.querySelector('.menu-toggle');
-        const mobileNav = document.querySelector('#mobileNav'); // Используем ID или класс
+        const mobileNav = document.querySelector('#mobileNav');
         const menuOverlay = document.querySelector('#menuOverlay');
         const body = document.body;
 
         function toggleMenu() {
-            // Переключаем классы для анимации
             menuToggle.classList.toggle('open');
             mobileNav.classList.toggle('open');
             menuOverlay.classList.toggle('active');
             body.classList.toggle('menu-open');
         }
-
-        // Открытие/закрытие по кнопке
         menuToggle.addEventListener('click', toggleMenu);
-
-        // Закрытие при клике на затемнение
         menuOverlay.addEventListener('click', toggleMenu);
 
-        // (Опционально) Закрытие при клике на ссылку внутри меню
         const navLinks = mobileNav.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', toggleMenu);

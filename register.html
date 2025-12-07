@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
-    <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
@@ -18,11 +18,11 @@
             <p class="auth-form__subtitle">Зарегестрируйтесь чтоб начать работать с платформой!</p>
         </header>
         <div class="auth-form__nav">
-            <a href="#" class="auth-form__tab ">
-                <img src="img/lo" alt="login"> Вход
+            <a href="login.html" class="auth-form__tab ">
+                <img src="img/login-in.svg" alt="login"> Вход
             </a>
             <a href="register.html" class="auth-form__tab auth-form__tab--active">
-                <img src="img/reg.svg" alt="reg"> Регистрация
+                <img src="img/register-ice.svg" alt="reg"> Регистрация
             </a>
         </div>
 
@@ -73,7 +73,6 @@
     </section>
 </section>
 <script>
-    // Добавляем простую логику для переключения видимости пароля
     document.addEventListener('DOMContentLoaded', () => {
         const eyeIcon = document.querySelector('.form-group__eye-icon');
         const passwordInput = document.getElementById('password');

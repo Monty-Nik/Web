@@ -148,8 +148,6 @@ header {
     margin-right: 6px;
 }
 
-
-
 .btn {
     display: inline-flex;
     align-items: center;
@@ -203,11 +201,9 @@ header {
     justify-content: flex-start;
 }
 
-
-
-
-
-.hero { text-align: center; padding: 80px 0 100px; }
+.hero { text-align: center;
+    padding: 80px 0 100px;
+}
 .hero__container {
     align-items: center;
 }
@@ -632,7 +628,6 @@ header {
     font-weight: 900;
 }
 
-/* --- FOOTER --- */
 .footer {
     background: #1F31F0;
     padding: 180px 0;
@@ -1039,25 +1034,20 @@ body.menu-open {
     visibility: visible;
 }
 
-/* Стили для основного блока (Flex) */
 .main-flex-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Выравнивание по верхнему краю */
+    align-items: flex-start;
     position: relative;
-    padding-top: 50px; /* Отступ сверху для контента */
+    padding-top: 50px;
 }
 
 .main-info {
     flex-grow: 1;
-    max-width: 50%; /* Ограничение ширины информационного блока */
+    max-width: 50%;
     z-index: 2;
 }
 
-
-/* ========================================================================= */
-/* 2. АДАПТАЦИЯ (MAX-WIDTH: 1200PX) - Большие Планшеты / Малые Десктопы      */
-/* ========================================================================= */
 
 @media (max-width: 1200px) {
 
@@ -1066,7 +1056,6 @@ body.menu-open {
         padding: 0 15px;
     }
 
-    /* Hero Section */
     .hero__title {
         font-size: 72px;
     }
@@ -1075,17 +1064,15 @@ body.menu-open {
         max-width: 800px;
     }
 
-    /* Stats Grid */
     .stats-grid {
         flex-wrap: wrap;
         gap: 20px;
     }
     .stat-card {
-        flex: 1 1 calc(50% - 20px); /* 2 в ряд */
+        flex: 1 1 calc(50% - 20px);
         min-width: 250px;
     }
 
-    /* Roadmap */
     .section__title {
         font-size: 50px;
     }
@@ -1093,7 +1080,7 @@ body.menu-open {
         gap: 20px;
     }
     .roadmap-card {
-        width: calc(50% - 20px); /* 2 в ряд */
+        width: calc(50% - 20px);
         max-width: 450px;
         height: auto;
     }
@@ -1104,15 +1091,14 @@ body.menu-open {
         width: auto;
     }
     .guide__grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 в ряд */
+        grid-template-columns: repeat(2, 1fr);
         max-width: 800px;
         gap: 20px;
     }
     .guide-card__description {
-        min-height: 40px; /* Уменьшаем минимальную высоту */
+        min-height: 40px;
     }
 
-    /* Investor Table */
     .investor-table {
         max-width: 960px;
     }
@@ -1137,7 +1123,7 @@ body.menu-open {
         height: 60px;
     }
     .investor-type__meta {
-        display: none; /* Скрываем на планшетах, чтобы сэкономить место */
+        display: none;
     }
     .investor-table__column--pros,
     .investor-table__column--cons {
@@ -1148,19 +1134,16 @@ body.menu-open {
         margin-top: 0;
     }
 
-    /* Footer */
+
     .footer {
         padding: 100px 0;
     }
 }
 
-/* ========================================================================= */
-/* 3. АДАПТАЦИЯ (MAX-WIDTH: 768PX) - СМАРТФОНЫ (Включение меню)              */
-/* ========================================================================= */
+
 
 @media (max-width: 768px) {
 
-    /* ---------------------- HEADER и БУРГЕР-МЕНЮ ---------------------- */
 
     header {
         padding: 5px 0;
@@ -1210,10 +1193,7 @@ body.menu-open {
     }
 
     .header-right {
-        display: none; /* Скрываем в шапке */
-    }
-
-    /* Стили для клонированного header-right внутри меню */
+        display: none;
     .main-nav .header-right.mobile-only {
         display: flex;
         flex-direction: column;
@@ -1241,7 +1221,7 @@ body.menu-open {
         justify-content: center;
     }
 
-    /* ---------------------- ОСНОВНОЙ КОНТЕНТ ---------------------- */
+
 
     .section { padding: 40px 0; }
     .section__title {
@@ -1255,7 +1235,6 @@ body.menu-open {
         font-size: 14px;
     }
 
-    /* Hero Section */
     .hero { padding: 40px 0 60px; }
     .hero__title {
         font-size: 44px;
@@ -1266,7 +1245,7 @@ body.menu-open {
         margin-bottom: 30px;
     }
 
-    /* Stats Grid */
+
     .stats-grid {
         flex-direction: column;
         gap: 15px;
@@ -1279,9 +1258,9 @@ body.menu-open {
     .stat-card__val { font-size: 32px; }
     .stat-card__percent { font-size: 16px; }
 
-    /* Roadmap */
+
     .roadmap-card {
-        width: 100%; /* 1 в ряд */
+        width: 100%;
         max-width: 100%;
         padding: 20px;
         height: auto;
@@ -1298,23 +1277,21 @@ body.menu-open {
         margin-bottom: 15px;
     }
 
-    /* Guides Section */
     .guide-section__title {
         font-size: 36px;
         margin-bottom: 30px;
     }
     .guide__grid {
-        grid-template-columns: 1fr; /* 1 в ряд */
+        grid-template-columns: 1fr;
         gap: 15px;
     }
     .guide-card__content {
         padding: 15px;
     }
     .guide-card__description {
-        min-height: unset; /* Снимаем ограничение */
+        min-height: unset;
     }
 
-    /* Investor Table */
     .investor-table {
         gap: 15px;
     }
@@ -1342,7 +1319,7 @@ body.menu-open {
         margin: 0 0 10px 0;
     }
     .investor-type__meta {
-        display: block; /* Показываем снова на мобильных, так как место есть */
+        display: block;
         margin-top: 10px;
     }
     .investor-table__column--pros,
@@ -1356,7 +1333,6 @@ body.menu-open {
         margin-bottom: 10px;
     }
 
-    /* Footer */
     .footer {
         padding: 60px 0;
         margin-top: 40px;
@@ -1375,4 +1351,5 @@ body.menu-open {
         width: 90%;
         max-width: 300px;
     }
+}
 }

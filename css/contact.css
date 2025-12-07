@@ -149,10 +149,6 @@ header {
 }
 
 
-
-/*main*/
-
-
 h1 {
     color: #1F31F0;
     text-align: center;
@@ -217,7 +213,6 @@ h2 {
     clear: both;
 }
 
-/* Секция заголовка */
 .section-header {
     text-align: center;
     padding: 50px 0 20px 0;
@@ -443,7 +438,7 @@ h3 {
 
 
 .cta-footer {
-    background-color: #3647FF; /* Синий фон на всю ширину */
+    background-color: #3647FF;
     color: white;
     text-align: center;
     padding: 250px 20px;
@@ -548,7 +543,6 @@ h3 {
     background-color: #eee;
 }
 
-/* --- 7. BURGER MENU (MOBILE ONLY) --- */
 .menu-toggle {
     display: none;
     background: none;
@@ -588,7 +582,7 @@ h3 {
     border: none;
     font-family: inherit;
     font-size: 14px;
-    min-height: 40px; /* для одинакового визуального уровня */
+    min-height: 40px;
     display: flex;
     align-items: center;
 }
@@ -615,14 +609,13 @@ h3 {
     border-radius: 5px;
     font-weight: bold;
     padding: 10px 15px;
-    min-height: 40px;   /* прямо как lang-button */
+    min-height: 40px;
 }
 
 .header-right > * {
-    align-self: center; /* выравнивание по вертикали */
+    align-self: center;
 }
 
-/* --- Бургер --- */
 .menu-toggle {
     display: none;
     background: none;
@@ -633,7 +626,7 @@ h3 {
     width: 40px;
     height: 30px;
 }
-/* Бургер-кнопка - скрыта по умолчанию */
+
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -668,21 +661,19 @@ h3 {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Мобильное меню - скрыто по умолчанию */
+
 .mobile-nav {
-    position: fixed; /* Гарантирует, что меню не прокручивается */
-    top: 0; /* Привязка к верхней части окна */
-    right: -300px; /* Скрыто за пределами экрана (закрыто по умолчанию) */
+    position: fixed;
+    top: 0;
+    right: -300px;
     width: 300px;
-    /* ... остальные стили ... */
+
 }
 
-/* В секции body.menu-open */
 body.menu-open {
-    overflow: hidden; /* Запрещает прокрутку основного контента */
+    overflow: hidden;
 }
 
-/* Затемнение фона */
 .menu-overlay {
     display: none;
     position: fixed;
@@ -698,7 +689,6 @@ body.menu-open {
     display: block;
 }
 
-/* Отключение прокрутки при открытом меню */
 body.menu-open {
     overflow: hidden;
 }
@@ -706,9 +696,8 @@ body.menu-open {
     overflow: hidden;
 }
 
-/* Стили для бургер-меню */
 .menu-toggle {
-    display: none; /* Скрыть на десктопе по умолчанию */
+    display: none;
     width: 30px;
     height: 30px;
     position: relative;
@@ -725,7 +714,7 @@ body.menu-open {
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #333; /* Цвет бургера */
+    background: #333;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -760,11 +749,10 @@ body.menu-open {
     transform: rotate(-135deg);
 }
 
-/* Стили для мобильной навигации */
 .mobile-nav {
     position: fixed;
     top: 0;
-    right: -300px; /* Скрыто за пределами экрана */
+    right: -300px;
     width: 300px;
     height: 100%;
     background-color: #fff;
@@ -777,7 +765,7 @@ body.menu-open {
 }
 
 .mobile-nav.open {
-    right: 0; /* Открыто */
+    right: 0;
 }
 
 .mobile-nav-header {
@@ -816,11 +804,9 @@ body.menu-open {
 .main-nav ul {
     display: flex;
     align-items: center;
-    /* !!! ИСПРАВЛЕНИЕ: Делаем навигацию более компактной */
-    gap: 10px; /* Было 25px или 15px, делаем 10px */
+    gap: 10px;
 }
 
-/* Overlay для затемнения фона */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -839,33 +825,30 @@ body.menu-open {
     visibility: visible;
 }
 
-/* Стили для основного блока (Flex) */
 .main-flex-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Выравнивание по верхнему краю */
+    align-items: flex-start;
     position: relative;
-    padding-top: 50px; /* Отступ сверху для контента */
+    padding-top: 50px;
 }
 
 .main-info {
     flex-grow: 1;
-    max-width: 50%; /* Ограничение ширины информационного блока */
+    max-width: 50%;
     z-index: 2;
 }
 
-/* Коррекция позиционирования изображения робота */
 .main_img {
     position: absolute;
-    right: -200px; /* Сдвигаем немного вправо, чтобы не перекрывать контент */
+    right: -200px;
     top: -50px;
-    width: 60%; /* Гибкая ширина */
-    max-width: 900px; /* Максимальная ширина */
+    width: 60%;
+    max-width: 900px;
     height: auto;
     z-index: 1;
 }
 
-/* Адаптивность для остальных секций */
 .stats-container, .tools-container {
     flex-wrap: wrap;
     justify-content: space-around;
@@ -876,9 +859,8 @@ body.menu-open {
     margin-bottom: 20px;
 }
 
-/* Вне медиазапросов */
 .menu-toggle {
-    display: none; /* Скрыто на десктопе */
+    display: none;
 }
 .menu-toggle span {
     display: block;
@@ -899,7 +881,6 @@ body.menu-open {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* ------- АДАПТИВ ДЛЯ HEADER -------- */
 
 @media (max-width: 992px) {
     .header-container {
@@ -920,7 +901,6 @@ body.menu-open {
     .menu-toggle {
         display: block;
     }
-    /* Показываем бургер при открытии */
     .main-nav.open {
         display: flex;
         flex-direction: column;
@@ -975,7 +955,6 @@ body.menu-open {
     }
 }
 
-/* --- МЕЛКИЕ СМАРТФОНЫ --- */
 @media (max-width: 480px) {
     .header-container {
         padding: 0 6px;
@@ -1003,12 +982,6 @@ body.menu-open {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-
-/* =========================================
-   8. MEDIA QUERIES (АДАПТИВНОСТЬ)
-   ========================================= */
-
-/* --- ПЛАНШЕТЫ (до 992px) --- */
 @media (max-width: 992px) {
 
     .container {
@@ -1021,7 +994,6 @@ body.menu-open {
         padding: 0 15px 50px 15px;
     }
 
-    /* Заголовки */
     h1 {
         font-size: 60px;
     }
@@ -1030,14 +1002,13 @@ body.menu-open {
         font-size: 40px;
         margin-top: 30px;
         margin-bottom: 20px;
-        text-align: center; /* Центрируем заголовок "Как мы можем помочь?" */
+        text-align: center;
     }
 
     .section-header p {
         font-size: 20px;
     }
 
-    /* Опции помощи (2 в ряд) */
     .help-options {
         flex-wrap: wrap;
         justify-content: center;
@@ -1045,24 +1016,23 @@ body.menu-open {
     }
 
     .help-item {
-        width: 48%; /* 2 элемента в ряд */
+        width: 48%;
         min-width: 250px;
         padding: 20px 15px;
-        margin-right: 0; /* Убираем старый float margin */
+        margin-right: 0;
     }
 
     .help-item h3 {
         font-size: 20px;
     }
 
-    /* Секция сообщения (1 в ряд) */
     .send-message-section {
         display: flex;
         flex-direction: column;
     }
 
     .send-message-section h2 {
-        text-align: center; /* Центрируем заголовок на планшетах */
+        text-align: center;
     }
 
     .send-message-container {
@@ -1074,10 +1044,8 @@ body.menu-open {
         width: 100%;
         min-width: unset;
         max-width: 100%;
-        /* Удалены float-правила */
     }
 
-    /* Форма */
     .form-row-half {
         gap: 4%;
     }
@@ -1087,7 +1055,6 @@ body.menu-open {
         margin-bottom: 30px;
     }
 
-    /* FAQ (1 в ряд) */
     .faq-cards {
         gap: 15px;
         justify-content: center;
@@ -1129,11 +1096,9 @@ body.menu-open {
         padding: 0 15px 50px 15px;
     }
 
-    /* Заголовки */
     h1 { font-size: 60px; }
     h2 { font-size: 40px; }
 
-    /* Опции помощи (2 в ряд) */
     .help-options {
         flex-wrap: wrap;
         justify-content: center;
@@ -1144,12 +1109,11 @@ body.menu-open {
         min-width: 250px;
     }
 
-    /* Секция сообщения (1 в ряд) */
     .send-message-section h2 {
-        text-align: center; /* Центрируем заголовок на планшетах */
+        text-align: center;
     }
     .send-message-container {
-        flex-direction: column; /* Вертикальный стек */
+        flex-direction: column;
         gap: 30px;
     }
     .message-form-block, .office-team-block {
@@ -1158,7 +1122,6 @@ body.menu-open {
         max-width: 100%;
     }
 
-    /* FAQ (1 в ряд) */
     .faq-cards {
         gap: 15px;
     }
@@ -1167,13 +1130,11 @@ body.menu-open {
         min-width: unset;
     }
 
-    /* CTA */
     .cta-footer h2 { font-size: 50px; }
     .cta-footer p { font-size: 20px; }
 }
 
 
-/* --- ТЕЛЕФОНЫ (до 768px) --- */
 @media (max-width: 768px) {
 
     header {
@@ -1183,7 +1144,6 @@ body.menu-open {
         padding: 0 15px;
     }
 
-    /* Бургер-меню */
     .menu-toggle { display: block; }
     .main-nav {
         display: none;
@@ -1216,7 +1176,6 @@ body.menu-open {
     .header-right { display: none; }
 
 
-    /* Main */
     h1 { font-size: 40px; }
     h2 { font-size: 32px; }
     .send-message-section h2 { font-size: 32px; }
@@ -1225,13 +1184,11 @@ body.menu-open {
         margin: 10px auto 30px auto;
     }
 
-    /* Опции помощи (1 в ряд) */
     .help-item {
         width: 100%;
         padding: 15px;
     }
 
-    /* Форма */
     .message-form-block { padding: 20px; }
     .form-row-half {
         flex-direction: column;
@@ -1243,7 +1200,6 @@ body.menu-open {
     }
     .input-group { margin-bottom: 20px; }
 
-    /* CTA */
     .cta-footer h2 { font-size: 36px; }
     .cta-footer p { font-size: 18px; }
 }

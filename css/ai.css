@@ -30,7 +30,7 @@ ul { list-style: none; }
 
 header {
     background: #fff;
-    box-shadow: 0 12px 57.8px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 12px 58px 0 rgba(0,0,0,0.25);
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
     position: relative;
@@ -427,7 +427,8 @@ body.menu-open { overflow: hidden; }
     border-radius: 20%;
     background: #EBF0FF;
     display: flex;
-    align-items: center; justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 .help-info h4 {
     font-size: 20px;
@@ -462,10 +463,8 @@ body.menu-open { overflow: hidden; }
     color: #1E2A53;
 }
 .prompts-list a:hover { text-decoration: underline; }
-
-/* Стили для бургер-меню */
 .menu-toggle {
-    display: none; /* Скрыть на десктопе по умолчанию */
+    display: none;
     width: 30px;
     height: 30px;
     position: relative;
@@ -482,7 +481,7 @@ body.menu-open { overflow: hidden; }
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #333; /* Цвет бургера */
+    background: #333;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -517,11 +516,10 @@ body.menu-open { overflow: hidden; }
     transform: rotate(-135deg);
 }
 
-/* Стили для мобильной навигации */
 .mobile-nav {
     position: fixed;
     top: 0;
-    right: -300px; /* Скрыто за пределами экрана */
+    right: -300px;
     width: 300px;
     height: 100%;
     background-color: #fff;
@@ -534,7 +532,7 @@ body.menu-open { overflow: hidden; }
 }
 
 .mobile-nav.open {
-    right: 0; /* Открыто */
+    right: 0;
 }
 
 .mobile-nav-header {
@@ -573,11 +571,8 @@ body.menu-open { overflow: hidden; }
 .main-nav ul {
     display: flex;
     align-items: center;
-    /* !!! ИСПРАВЛЕНИЕ: Делаем навигацию более компактной */
-    gap: 10px; /* Было 25px или 15px, делаем 10px */
+    gap: 10px;
 }
-
-/* Overlay для затемнения фона */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -595,34 +590,28 @@ body.menu-open { overflow: hidden; }
     opacity: 1;
     visibility: visible;
 }
-
-/* Стили для основного блока (Flex) */
 .main-flex-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Выравнивание по верхнему краю */
+    align-items: flex-start;
     position: relative;
-    padding-top: 50px; /* Отступ сверху для контента */
+    padding-top: 50px;
 }
 
 .main-info {
     flex-grow: 1;
-    max-width: 50%; /* Ограничение ширины информационного блока */
+    max-width: 50%;
     z-index: 2;
 }
-
-/* Коррекция позиционирования изображения робота */
 .main_img {
     position: absolute;
-    right: -200px; /* Сдвигаем немного вправо, чтобы не перекрывать контент */
+    right: -200px;
     top: -50px;
-    width: 60%; /* Гибкая ширина */
-    max-width: 900px; /* Максимальная ширина */
+    width: 60%;
+    max-width: 900px;
     height: auto;
     z-index: 1;
 }
-
-/* Адаптивность для остальных секций */
 .stats-container, .tools-container {
     flex-wrap: wrap;
     justify-content: space-around;
@@ -633,13 +622,10 @@ body.menu-open { overflow: hidden; }
     margin-bottom: 20px;
 }
 
-/* Вне медиазапросов */
 .menu-toggle {
-    display: none; /* Скрыто на десктопе */
+    display: none;
 }
-/* ...
 
-/* ----------- АДАПТИВ ------------ */
 @media (max-width: 1250px) {
     .header-container { justify-content: space-between; }
     .menu-toggle { display: block; }
@@ -658,19 +644,39 @@ body.menu-open { overflow: hidden; }
         flex-direction: column;
         gap: 18px;
     }
-    .chat-header-bar, .chat-window, .sidebar-column, .widget { width: 100%; min-width: unset; }
-    .chat-window { margin-bottom: 30px; }
-    .chat-header-bar h2 { font-size: 20px; }
-    .hero-header { margin: 50px 0 30px 0; }
-    .hero-header h1 { font-size: 36px; }
-    .hero-header p { font-size: 18px; }
-    .sidebar-column { gap: 18px; }
-    .widget { padding: 20px; }
-    .help-list { gap: 24px; }
-    .help-info h4 { font-size: 16px; }
-    .prompts-list a { font-size: 13px; }
-    .prompt-btn { padding: 9px 16px; font-size: 12px; }
-    .chat-input-area { width: 97%; }
+    .chat-header-bar, .chat-window, .sidebar-column, .widget {
+        width: 100%;
+        min-width: unset; }
+    .chat-window {
+        margin-bottom: 30px;
+    }
+    .chat-header-bar h2 {
+        font-size: 20px;
+    }
+    .hero-header {
+        margin: 50px 0 30px 0; }
+    .hero-header h1 {
+        font-size: 36px; }
+    .hero-header p {
+        font-size: 18px; }
+    .sidebar-column {
+        gap: 18px; }
+    .widget {
+        padding: 20px; }
+    .help-list {
+        gap: 24px; }
+    .help-info h4 {
+        font-size: 16px;
+    }
+    .prompts-list a {
+        font-size: 13px;
+    }
+    .prompt-btn {
+        padding: 9px 16px;
+        font-size: 12px; }
+    .chat-input-area {
+        width: 97%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -712,7 +718,12 @@ body.menu-open { overflow: hidden; }
         padding: 0 20px;
     }
     .main-nav .header-right.mobile-only .language-switcher {
-        margin-right: 0; margin-bottom: 15px; width: 100%; box-shadow: none; display: flex; justify-content: center;
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
     }
     .main-nav .header-right.mobile-only .user-profile {
         width: 100%; margin-bottom: 20px;
@@ -721,38 +732,108 @@ body.menu-open { overflow: hidden; }
         width: 100%; justify-content: center;
     }
 
-    .hero-header { margin: 25px 0 20px 0; }
-    .hero-header h1 { font-size: 28px; }
-    .hero-header p { font-size: 14px; }
-    .chat-header-bar, .chat-window { min-width: 100%; width: 100%; padding: 10px; }
-    .chat-header-bar h2 { font-size: 14px; }
-    .prompt-buttons { gap: 8px; }
-    .suggested-prompts-input { padding-top: 10px; margin-top: 20px; }
-    .chat-input-area { min-height: 37px; padding: 3px 2px 3px 10px; }
-    .send-btn { width: 37px; height: 37px; font-size: 14px; }
-    .help-list { gap: 14px; }
-    .prompts-list { gap: 6px; }
-    .widget { padding: 12px; }
+    .hero-header {
+        margin: 25px 0 20px 0;
+    }
+    .hero-header h1 {
+        font-size: 28px;
+    }
+    .hero-header p {
+        font-size: 14px;
+    }
+    .chat-header-bar, .chat-window {
+        min-width: 100%;
+        width: 100%;
+        padding: 10px;
+    }
+    .chat-header-bar h2 {
+        font-size: 14px;
+    }
+    .prompt-buttons {
+        gap: 8px;
+    }
+    .suggested-prompts-input {
+        padding-top: 10px;
+        margin-top: 20px; }
+    .chat-input-area {
+        min-height: 37px;
+        padding: 3px 2px 3px 10px; }
+    .send-btn {
+        width: 37px;
+        height: 37px;
+        font-size: 14px; }
+    .help-list {
+        gap: 14px;
+    }
+    .prompts-list {
+        gap: 6px;
+    }
+    .widget {
+        padding: 12px;
+    }
 }
 
 @media (max-width: 480px) {
-    .menu-toggle { display: block; }
-    .container { padding: 0 6px; }
-    .mobile-nav { width: 100%; right: -100%; }
-    .mobile-nav.open { right: 0; }
-    .logo img { height: 30px; width: 30px; }
-    .chat-header-bar h2, .chat-header-bar p { font-size: 12px; }
-    .chat-header-bar { padding: 6px 2px; border-radius: 8px 8px 0 0; }
-    .chat-window { padding: 6px 2px; min-width: 100%; width: 100%; min-height: 220px; }
-    .suggested-prompts h4, .prompt-btn, .prompts-list a, .help-info p { font-size: 12px; }
-    .chat-input-area { font-size: 13px; padding: 2px; min-height: 32px; }
-    .send-btn { width: 32px; height: 32px; }
-    .help-list li { gap: 6px; }
-    .help-icon { width: 28px; height: 28px; }
-    .widget h3 { font-size: 14px; }
-    .hero-icon { width: 35px; height: 35px; margin-bottom: 10px; }
-    .hero-header h1 { font-size: 16px; }
-    .hero-header p { font-size: 11px; }
+    .menu-toggle {
+        display: block;
+    }
+    .container {
+        padding: 0 6px;
+    }
+    .mobile-nav {
+        width: 100%; right: -100%;
+    }
+    .mobile-nav.open {
+        right: 0;
+    }
+    .logo img {
+        height: 30px;
+        width: 30px;
+    }
+    .chat-header-bar h2, .chat-header-bar p {
+        font-size: 12px;
+    }
+    .chat-header-bar {
+        padding: 6px 2px;
+        border-radius: 8px 8px 0 0;
+    }
+    .chat-window {
+        padding: 6px 2px;
+        min-width: 100%;
+        width: 100%;
+        min-height: 220px;
+    }
+    .suggested-prompts h4, .prompt-btn, .prompts-list a, .help-info p {
+        font-size: 12px;
+    }
+    .chat-input-area {
+        font-size: 13px;
+        padding: 2px;
+        min-height: 32px;
+    }
+    .send-btn {
+        width: 32px;
+        height: 32px;
+    }
+    .help-list li {
+        gap: 6px;
+    }
+    .help-icon {
+        width: 28px;
+        height: 28px;
+    }
+    .widget h3 {
+        font-size: 14px;
+    }
+    .hero-icon {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 10px;
+    }
+    .hero-header h1 {
+        font-size: 16px;
+    }
+    .hero-header p {
+        font-size: 11px;
+    }
 }
-
-/* Конец CSS */

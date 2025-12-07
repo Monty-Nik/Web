@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invest Master</title>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/Invesment.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/invesment.css">
 </head>
 <body>
 <header>
@@ -422,8 +422,6 @@
             mainNav.classList.toggle('open');
             menuToggle.classList.toggle('open');
             body.classList.toggle('no-scroll');
-
-            // Обработка header-right для мобильного меню
             if (mainNav.classList.contains('open') && window.innerWidth <= 768) {
                 if (!mainNav.querySelector('.header-right')) {
                     const clonedHeaderRight = headerRight.cloneNode(true);

@@ -4,6 +4,7 @@
     <title>Home</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!--    <link rel="stylesheet" href="css/fonts.css">-->
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body class="no-scroll">
@@ -376,38 +377,28 @@
         const menuToggle = document.querySelector('.menu-toggle');
         const mobileNav = document.getElementById('mobileNav');
         const menuOverlay = document.getElementById('menuOverlay');
-        const body = document.body; // Получаем body
-
-        // Функция открытия/закрытия меню
+        const body = document.body;
         function toggleMenu() {
             menuToggle.classList.toggle('open');
             mobileNav.classList.toggle('open');
             menuOverlay.classList.toggle('active');
-            body.classList.toggle('menu-open'); // Используем класс на body для фиксации скролла
+            body.classList.toggle('menu-open');
         }
 
-        // Обработчик для бургер-кнопки
         if (menuToggle) {
             menuToggle.addEventListener('click', toggleMenu);
         }
-
-        // Обработчик для overlay
         if (menuOverlay) {
             menuOverlay.addEventListener('click', toggleMenu);
         }
-
-        // Закрытие меню при клике на ссылку в мобильном меню
         const mobileLinks = mobileNav.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 1024) {
-                    // Используем setTimeout, чтобы браузер успел обработать переход по ссылке
                     setTimeout(toggleMenu, 100);
                 }
             });
         });
-
-        // Закрытие меню при изменении размера окна (на десктоп)
         window.addEventListener('resize', function() {
             if (window.innerWidth > 1024 && mobileNav.classList.contains('open')) {
                 toggleMenu();

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог предпринимателей</title>
+<!--    <link rel="stylesheet" href="css/fonts.css">-->
     <link rel="stylesheet" href="css/blog.css">
 </head>
 <body>
@@ -210,11 +211,8 @@
                     <a href="#">Читать</a>
                 </article>
             </article>
-
         </section>
-
         <aside class="sidebar-column">
-
             <div class="widget">
                 <h3>Популярные авторы</h3>
                 <div class="authors-list">
@@ -283,8 +281,6 @@
             mainNav.classList.toggle('open');
             menuToggle.classList.toggle('open');
             body.classList.toggle('no-scroll');
-
-            // Обработка header-right для мобильного меню
             if (mainNav.classList.contains('open') && window.innerWidth <= 768) {
                 if (!mainNav.querySelector('.header-right')) {
                     const clonedHeaderRight = headerRight.cloneNode(true);
