@@ -14,7 +14,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Блокировка скролла при открытом меню */
 body.menu-open {
     overflow: hidden;
 }
@@ -388,7 +387,7 @@ header {
     padding: 30px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    flex: 1 1 250px; /* Гибкая ширина */
+    flex: 1 1 250px;
     max-width: 300px;
     text-align: left;
     transition: transform 0.3s;

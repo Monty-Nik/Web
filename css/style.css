@@ -385,7 +385,7 @@ main{
 }
 
 .stat-item {
-    flex: 1 1 250px; /* Гибкость и базовая ширина */
+    flex: 1 1 250px;
     min-width: 250px;
     height: auto;
     border-radius: 15px;
@@ -881,7 +881,6 @@ main{
 
 }
 
-/* Бургер-кнопка - скрыта по умолчанию */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -916,21 +915,19 @@ main{
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Мобильное меню - скрыто по умолчанию */
+
 .mobile-nav {
-    position: fixed; /* Гарантирует, что меню не прокручивается */
-    top: 0; /* Привязка к верхней части окна */
-    right: -300px; /* Скрыто за пределами экрана (закрыто по умолчанию) */
+    position: fixed;
+    top: 0;
+    right: -300px;
     width: 300px;
-    /* ... остальные стили ... */
+
 }
 
-/* В секции body.menu-open */
 body.menu-open {
-    overflow: hidden; /* Запрещает прокрутку основного контента */
+    overflow: hidden;
 }
 
-/* Затемнение фона */
 .menu-overlay {
     display: none;
     position: fixed;
@@ -946,7 +943,6 @@ body.menu-open {
     display: block;
 }
 
-/* Отключение прокрутки при открытом меню */
 body.menu-open {
     overflow: hidden;
 }
@@ -954,9 +950,8 @@ body.menu-open {
     overflow: hidden;
 }
 
-/* Стили для бургер-меню */
 .menu-toggle {
-    display: none; /* Скрыть на десктопе по умолчанию */
+    display: none;
     width: 30px;
     height: 30px;
     position: relative;
@@ -973,7 +968,7 @@ body.menu-open {
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #333; /* Цвет бургера */
+    background: #333;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -1008,11 +1003,10 @@ body.menu-open {
     transform: rotate(-135deg);
 }
 
-/* Стили для мобильной навигации */
 .mobile-nav {
     position: fixed;
     top: 0;
-    right: -300px; /* Скрыто за пределами экрана */
+    right: -300px;
     width: 300px;
     height: 100%;
     background-color: #fff;
@@ -1025,7 +1019,7 @@ body.menu-open {
 }
 
 .mobile-nav.open {
-    right: 0; /* Открыто */
+    right: 0;
 }
 
 .mobile-nav-header {
@@ -1064,11 +1058,9 @@ body.menu-open {
 .main-nav ul {
     display: flex;
     align-items: center;
-    /* !!! ИСПРАВЛЕНИЕ: Делаем навигацию более компактной */
-    gap: 10px; /* Было 25px или 15px, делаем 10px */
+    gap: 10px;
 }
 
-/* Overlay для затемнения фона */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -1087,33 +1079,30 @@ body.menu-open {
     visibility: visible;
 }
 
-/* Стили для основного блока (Flex) */
 .main-flex-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Выравнивание по верхнему краю */
+    align-items: flex-start;
     position: relative;
-    padding-top: 50px; /* Отступ сверху для контента */
+    padding-top: 50px;
 }
 
 .main-info {
     flex-grow: 1;
-    max-width: 50%; /* Ограничение ширины информационного блока */
+    max-width: 50%;
     z-index: 2;
 }
 
-/* Коррекция позиционирования изображения робота */
 .main_img {
     position: absolute;
-    right: -200px; /* Сдвигаем немного вправо, чтобы не перекрывать контент */
+    right: -200px;
     top: -50px;
-    width: 60%; /* Гибкая ширина */
-    max-width: 900px; /* Максимальная ширина */
+    width: 60%;
+    max-width: 900px;
     height: auto;
     z-index: 1;
 }
 
-/* Адаптивность для остальных секций */
 .stats-container, .tools-container {
     flex-wrap: wrap;
     justify-content: space-around;
@@ -1124,27 +1113,25 @@ body.menu-open {
     margin-bottom: 20px;
 }
 
-/* Вне медиазапросов */
+
 .menu-toggle {
-    display: none; /* Скрыто на десктопе */
+    display: none;
 }
-/* ... */
+
 @media (max-width: 1024px) {
     .menu-toggle {
-        display: block; /* Показать бургер-меню */
+        display: block;
     }
     .main-nav, .header-right.desktop-only {
-        display: none; /* Скрыть основную навигацию */
+        display: none;
     }
 }
 
 @media (max-width: 1100px) {
-    /* 1. Уменьшаем размер заголовка футера */
     .footer-title {
         font-size: 80px;
     }
 
-    /* 2. Уменьшаем описание */
     .footer-description {
         font-size: 28px;
     }
@@ -1158,24 +1145,21 @@ body.menu-open {
     .main-nav, .header-right.desktop-only {
         display: none;
     }
-    /* Навигация */
+
     .main-nav ul {
-        gap: 15px; /* Уменьшаем расстояние между пунктами меню */
+        gap: 15px;
     }
 
     .header-right {
-        /* В этом разрешении нам нужно оставить только lang-switcher и профиль */
-        gap: 10px; /* Уменьшаем зазор, если .header-right еще виден */
+        gap: 10px;
     }
 
-    /* Дополнительно: Скрываем логин/профиль, чтобы освободить место */
     .user-profile {
         display: none;
     }
 
-    /* Главный блок */
     h1 {
-        font-size: 80px; /* Уменьшаем главный заголовок */
+        font-size: 80px;
     }
 
     .text {
@@ -1183,64 +1167,53 @@ body.menu-open {
     }
 
     .main_img {
-        right: -300px; /* Сдвигаем робота чуть ближе */
-        width: 70%; /* Уменьшаем размер робота */
+        right: -300px;
+        width: 70%;
     }
 
-    /* Общие секции */
     .trust-title, .main-text-3 {
-        font-size: 48px; /* Уменьшаем заголовки секций */
+        font-size: 48px;
     }
 
     .trust-subtitle {
         font-size: 20px;
     }
 
-    /* Контейнеры с карточками */
     .stats-container, .tools-container, .testimonials-container {
-        gap: 20px; /* Уменьшаем расстояние между карточками */
+        gap: 20px;
     }
 }
 
-@media (max-width: 1250px) { /* Меняем 1200px или 1024px на 1250px */
+@media (max-width: 1250px) {
     .header-container {
-        /* Убедитесь, что логотип и mobile-actions разделены */
         justify-content: space-between;
     }
 
     .mobile-actions {
         display: flex;
         align-items: center;
-        gap: 5px; /* !!! ГАРАНТИРУЕТ, ЧТО ОНИ БУДУТ ПРИЖАТЫ ДРУГ К ДРУГУ !!! */
+        gap: 5px;
     }
 
-    /* Скрываем десктопный .header-right (если он отличается от mobile-actions) */
     .header-right {
         display: none;
     }
 
-    /* Показываем бургер-меню */
     .menu-toggle {
         display: block;
     }
-    /* 1. Показываем бургер-меню */
     .menu-toggle {
         display: block;
         right: 0;
     }
 
-    /* 2. Скрываем широкую десктопную навигацию */
     .main-nav {
         display: none;
     }
 
-    /* 3. Очищаем правый блок, оставляя только необходимое (lang-switcher и toggle) */
     .header-right {
-        /* Уменьшаем отступ между языком и бургером */
         gap: 10px;
     }
-
-    /* 4. Принудительно скрываем профиль, чтобы освободить место */
     .user-profile {
         display: none;
     }
@@ -1251,21 +1224,19 @@ body.menu-open {
     .header-right {
         display: flex;
         align-items: center;
-        gap: 5px; /* Уменьшаем расстояние между элементами до минимума */
+        gap: 5px;
     }
 
-    /* Навигация */
     .menu-toggle {
-        display: block; /* Показываем бургер-меню */
+        display: block;
     }
 
     .main-nav, .header-right {
-        display: none; /* Скрываем десктопную навигацию */
+        display: none;
     }
 
-    /* Главный блок - Переход на колонку */
     .main-flex-container {
-        flex-direction: column; /* Элементы выстраиваются вертикально */
+        flex-direction: column;
         align-items: center;
         text-align: center;
 
@@ -1285,13 +1256,13 @@ body.menu-open {
         .technology-item {
             width: 100%;
             min-width: unset;
-            flex: 0 0 100%; /* Занимают 100% ширины, не сжимаются и не растут */
-            margin: 0; /* Убираем все внешние отступы */
+            flex: 0 0 100%;
+            margin: 0;
         }
     }
 
     .main-info {
-        max-width: 100%; /* Занимает всю ширину */
+        max-width: 100%;
         margin-top: 50px;
     }
 
@@ -1306,13 +1277,12 @@ body.menu-open {
     }
 
     .main_img {
-        position: static; /* Отключаем абсолютное позиционирование */
+        position: static;
         width: 90%;
         max-width: 500px;
         margin-top: 40px;
     }
 
-    /* Кнопки */
     .bth {
         justify-content: center;
     }
@@ -1323,15 +1293,12 @@ body.menu-open {
         font-size: 14px;
     }
 
-    /* Статистика и секции - В колонку */
     .statistics {
         max-width: 100%;
         justify-content: center;
         gap: 20px;
-        /* Статистика может оставаться flex, но с переносом */
     }
 
-    /* Заголовки */
     .trust-title, .main-text-3 {
         font-size: 36px;
     }
@@ -1340,8 +1307,6 @@ body.menu-open {
         font-size: 16px;
         text-align: center;
     }
-
-    /* Все контейнеры карточек переходят в колонку для лучшего скроллинга */
     .stats-container,
     .tools-container,
     .advantages-container,
@@ -1352,11 +1317,9 @@ body.menu-open {
     }
 
     .stat-item, .tool-item, .advantage-item, .testimonial-item, .technology-item {
-        width: 100%; /* Карточки занимают полную ширину */
+        width: 100%;
         min-width: unset;
     }
-
-    /* Футер */
     .footer-title {
         font-size: 80px;
     }
@@ -1366,16 +1329,14 @@ body.menu-open {
     }
 }
 @media (max-width: 768px) {
-    /* Главный блок */
     h1 {
-        font-size: 48px; /* Уменьшаем еще сильнее */
+        font-size: 48px;
     }
 
     .text {
         font-size: 18px;
     }
 
-    /* Кнопки - В колонку */
     .bth {
         flex-direction: column;
         gap: 15px;
@@ -1388,23 +1349,20 @@ body.menu-open {
         font-size: 16px;
     }
 
-    /* Статистика - В колонку */
     .statistics {
         flex-direction: column;
         align-items: flex-start;
-        padding-left: 10px; /* Небольшой отступ для списка */
+        padding-left: 10px;
     }
 
     .statistic-item {
         width: 100%;
     }
 
-    /* Заголовки секций */
     .trust-title, .main-text-3 {
         font-size: 30px;
     }
 
-    /* Футер */
     .footer-content {
         padding: 0 20px;
     }
@@ -1428,7 +1386,7 @@ body.menu-open {
     }
 
     .btn-login, .btn-demo {
-        width: 90%; /* Занимают почти всю ширину */
+        width: 90%;
         padding: 15px 50px;
         font-size: 18px;
     }
@@ -1438,9 +1396,6 @@ body.menu-open {
     }
 }
 
-
-
-/* Дополнительно для самых маленьких экранов */
 @media (max-width: 480px) {
     .menu-toggle {
         display: block;
@@ -1450,29 +1405,23 @@ body.menu-open {
         width: 100%;
     }
 
-    /* Убедитесь, что начальное скрытое состояние соответствует новой ширине */
     .mobile-nav:not(.open) {
-        /* Перемещаем его полностью за пределы экрана */
         right: -100%;
     }
 
     .mobile-nav.open {
-        /* При открытии привязываем к правому краю */
         right: 0;
     }
 
-    /* Уменьшение отступов для крайне узких экранов */
     .container {
         padding: 0 10px;
     }
 
-    /* Кнопки футера (уже должны быть в колонку, но уменьшаем padding) */
     .btn-login, .btn-demo {
         padding: 12px 20px;
         font-size: 16px;
     }
 
-    /* Заголовки секций */
     .section-title, .trust-title, .main-text-3 {
         font-size: 28px;
         margin-bottom: 20px;
@@ -1489,7 +1438,7 @@ body.menu-open {
         font-size: 40px;
     }
     .mobile-nav {
-        width: 100%; /* Меню на всю ширину экрана */
+        width: 100%;
     }
 }
 
