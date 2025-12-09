@@ -27,13 +27,16 @@ ul {
 }
 
 header {
-    background: #fff;
-    box-shadow: 0 12px 57.8px 0 rgba(0,0,0,0.25);
+    background-color: #fff;
+    box-shadow: 0 12px 57.8px 0 rgba(0, 0, 0, 0.25);
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
-    position: relative;
     z-index: 1000;
+    position: sticky; /* Прилипает при достижении */
+    top: 0;          /* Фиксируется в 0px от верха */
+    width: 100%;
 }
+
 .header-container {
     display: flex;
     align-items: center;
@@ -42,75 +45,95 @@ header {
     margin: 0 auto;
     padding: 0 20px;
 }
+
 .logo img {
     height: 40px;
-    width: 40px;
+    width: auto;
 }
-.main-nav {
+
+.main-nav .nav-list {
     display: flex;
     align-items: center;
+    gap: 30px;
 }
+
 .main-nav ul {
     display: flex;
     align-items: center;
     gap: 25px;
 }
+
 .main-nav a {
     display: flex;
     align-items: center;
+    text-decoration: none;
     color: #333;
     font-weight: normal;
     padding: 5px 10px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     gap: 13px;
 }
+
 .main-nav a:hover {
     padding: 10px 15px;
     border-radius: 5px;
     color: #fff;
     background: linear-gradient(160deg, #3647FF, #1625CE);
 }
+
 .main-nav a:hover img {
     filter: brightness(0) invert(1);
 }
-.header-right { display: flex;
+
+.header-right {
+    display: flex;
     align-items: center;
-    gap: 20px;}
+    gap: 20px;
+}
+
 .language-switcher {
-    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.25);
     display: flex;
 }
+
 .lang-button {
-    background: #fff;
+    background-color: #fff;
     padding: 10px 20px;
-    cursor: pointer; border: none;
+    cursor: pointer;
+    border: none;
     font-family: inherit;
     font-size: 14px;
 }
+
 .lang-button.active {
     background: linear-gradient(160deg, #3647FF, #1625CE);
     color: #fff;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+
 .lang-button.noactive {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     color: #666;
 }
+
 .lang-button:hover {
     background: linear-gradient(160deg, #3647FF, #1625CE);
     color: #fff;
 }
+
 .user-profile a {
     display: flex;
     align-items: center;
+    text-decoration: none;
     background-color: rgba(48, 64, 245, 0.15);
     color: #1625CE;
     border-radius: 5px;
     font-weight: bold;
     padding: 10px 15px;
 }
+
 .user-profile img {
     margin-right: 6px;
 }
@@ -301,7 +324,7 @@ h1 {
 }
 .dashboard-img,
 .dashboard-img-t {
-    max-width: 45%;
+    max-width: 50%;
     height: auto;
     border-radius: 18px;
     box-shadow: 0 8px 32px rgba(54,71,255,0.05);
@@ -309,17 +332,15 @@ h1 {
 }
 
 .trust-section {
-    margin: 0 auto;
-    padding: 80px 0 40px 0;
+
     font-family: Arial, sans-serif;
 }
 .trust-header {
     margin-top: 60px;
     margin-bottom: 45px;
-    text-align: center;
 }
 .trust-title {
-    font-size: 48px;
+    font-size: 54px;
     font-weight: 700;
     margin-bottom: 16px;
     line-height: 1.15;
@@ -330,10 +351,12 @@ h1 {
     color: transparent;
 }
 .tools-container {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 35px;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-bottom: 80px;
 }
 
 .menu-toggle {
@@ -452,15 +475,16 @@ h1 {
 }
 
 .tool-item {
-    flex: 1 1 350px;
+    flex: 1 0 450px;
     min-width: 260px;
-    max-width: 410px;
+    max-width: 600px;
     border-radius: 15px;
     box-shadow: 0 12px 58px rgba(0,0,0,0.22);
     padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 20px;
     background: #fff;
 }
 .tool-item .icon-wrapper {
@@ -525,6 +549,7 @@ h1 {
     .advantage-item, .tool-item {
         width: 44vw;
         min-width: 210px;
+
     }
     .dashboard-img, .dashboard-img-t {
         max-width: 95%;
@@ -564,13 +589,18 @@ h1 {
         margin-top: 24px;
     }
 }
-@media (max-width: 760px) {
+@media (max-width: 768px) {
     .advantage-item, .tool-item {
         width: 100%;
-        min-width: unset;
+
+    }
+    .trust-title{
+        text-align: center;
     }
     .tools-container, .advantages-container {
         flex-direction: column;
+        display: flex;
+        align-items: center;
         gap: 15px;
     }
     .icon-wrapper {

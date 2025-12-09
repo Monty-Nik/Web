@@ -26,76 +26,123 @@ img {
 }
 
 header {
-    background: #fff;
-    box-shadow: 0 12px 58px 0 rgba(0,0,0,0.25);
-    padding: 18px 0;
+    background-color: #fff;
+    box-shadow: 0 12px 57.8px 0 rgba(0, 0, 0, 0.25);
+    padding: 10px 0;
     border-bottom: 1px solid #ddd;
     z-index: 1000;
-    position: relative;
+    position: sticky; /* Прилипает при достижении */
+    top: 0;          /* Фиксируется в 0px от верха */
+    width: 100%;
 }
+
 .header-container {
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:space-between; }
-.logo { margin-right: 20px; }
-.logo img { height:40px; width:40px; }
-
-.activity-dot {
-    position: relative;
-    width: 20px;
-    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1728px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.activity-dot img {
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.logo img {
+    height: 40px;
+    width: auto;
 }
+
+.main-nav .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-nav .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .main-nav ul {
-    display:flex;
-    align-items:center;
-    gap:22px; }
-.main-nav a {
-    display:flex; align-items:center; padding: 5px 10px; gap:13px;
-    color: #333; font-weight:normal; transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
+
+.main-nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    gap: 13px;
+}
+
 .main-nav a:hover {
-    padding:10px 15px;
-    border-radius:5px;
-    color:#fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #fff;
     background: linear-gradient(160deg, #3647FF, #1625CE);
 }
-.main-nav a:hover img { filter:brightness(0) invert(1);}
-.header-right {
-    display:flex;
-    align-items:center;
-    gap:18px; }
-.language-switcher {
-    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.25);
-    display:flex;}
-.lang-button {
-    background: #fff;
-    padding: 10px 20px;
-    cursor:pointer;
-    border:none;
-    font-family:inherit;
-    font-size:14px;
+
+.main-nav a:hover img {
+    filter: brightness(0) invert(1);
 }
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.language-switcher {
+    box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+}
+
+.lang-button {
+    background-color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+}
+
 .lang-button.active {
     background: linear-gradient(160deg, #3647FF, #1625CE);
-    color:#fff; border-radius:6px 0 0 6px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
-.lang-button.noactive { border-radius:0 6px 6px 0; color:#666;}
+
+.lang-button.noactive {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #666;
+}
+
+.lang-button:hover {
+    background: linear-gradient(160deg, #3647FF, #1625CE);
+    color: #fff;
+}
+
 .user-profile a {
-    display: flex; align-items: center;
-    background:rgba(48,64,245,0.15); color:#1625CE;
-    border-radius:5px; font-weight:bold; padding:10px 15px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: rgba(48, 64, 245, 0.15);
+    color: #1625CE;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 15px;
 }
-.user-profile img { margin-right:6px; }
+
+.user-profile img {
+    margin-right: 6px;
+}
+
 
 .menu-toggle {
     display: none;
@@ -242,7 +289,9 @@ body.menu-open {
 .user-info h1, .welcome-section h1 {
     margin: 0 0 5px 0;
     font-size:2em;
-    font-weight:bold;}
+    font-weight:bold;
+    color: #1F31F0;
+}
 .user-info p {
     margin:0;
     font-size:1em;
@@ -305,10 +354,13 @@ body.menu-open {
 .analytics-actions-block { margin: 38px 0; }
 .tab-navigation {
     display: flex; gap: 16px;
-    margin-top: 38px; margin-bottom: 38px; padding: 12px 8px;
+    margin-top: 38px;
+    margin-bottom: 38px;
+    padding: 12px 8px;
     background:linear-gradient(270deg,#D7D7D7,#fff);
     border-radius:25px; box-shadow:0 2px 4px rgba(0,0,0,0.05);
     flex-wrap:wrap;
+    justify-content: space-between;
 }
 .tab-button {
     background: none;
@@ -324,7 +376,6 @@ body.menu-open {
     background: #fff;
     border-radius:25px;
     box-shadow:8px 0 10px rgba(0,0,0,0.09);
-    margin-right:12px;
 }
 
 .columns-wrapper { display: flex;
@@ -360,15 +411,15 @@ body.menu-open {
     font-weight:400;
     margin-bottom:32px;}
 .action-list {
-    margin-top:14px;
+    margin-top:24px;
     gap:17px;
-    padding:0; }
+}
 .action-list li {
     width:100%;
     padding: 11px 15px;
     border-radius:11px;
     border:1px solid #A5A5A5;
-    margin: 0 0 0 0;
+    margin-bottom:10px;
     display: flex;
     align-items:center;
     gap:10px;
@@ -440,7 +491,7 @@ body.menu-open {
     background:#0040FF;
     border-radius:4px;}
 .progress-text {
-    margin-left:30px;
+    margin-left:80px;
     font-size:1em;
     color:#575757; }
 .activity-list {
@@ -460,6 +511,14 @@ body.menu-open {
     width:20px;
     height:20px;
     border-radius:50%; }
+
+.activity-dot img{
+    width:12px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 3px;
+}
+
 .dot-pink{
     background:#36C9FF;}
 .dot-blue{background:#F40FE5;}
@@ -516,10 +575,15 @@ max-width: 1320px) {
         flex-direction:column;
         gap:11px;
         margin-bottom: 16px;}
-    .kpi-card,.main-left-column,.main-right-column,.left-column,.right-column {
+    .main-left-column,.main-right-column,.left-column,.right-column {
         min-width:unset;
         max-width:100%;
         width:100%; }
+    .kpi-card{
+        max-width:80%;
+        width:80%;
+        margin: 0 auto;
+    }
     .revenue-trend-box,.quick-actions-box,.performance-box,.activity-box {
         padding:12px 7px; }
     .action-list {

@@ -31,11 +31,9 @@ ul {
     width: 100%;
 }
 
-
 .section-title {
     font-size: 36px;
     font-weight: 700;
-    color: #4447ff;
     margin-bottom: 40px;
 }
 
@@ -44,27 +42,33 @@ header {
     box-shadow: 0 12px 57.8px 0 rgba(0, 0, 0, 0.25);
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
+    z-index: 1000;
+    position: sticky; /* Прилипает при достижении */
+    top: 0;          /* Фиксируется в 0px от верха */
+    width: 100%;
 }
 
-.container {
+.header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 1728px;
     margin: 0 auto;
-
+    padding: 0 20px;
 }
 
 .logo img {
     height: 40px;
-    width: 40px;
+    width: auto;
 }
 
+.main-nav .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
 
 .main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     align-items: center;
     gap: 25px;
@@ -77,7 +81,7 @@ header {
     color: #333;
     font-weight: normal;
     padding: 5px 10px;
-    transition: all 0.3s ease ;
+    transition: all 0.3s ease;
     gap: 13px;
 }
 
@@ -92,38 +96,36 @@ header {
     filter: brightness(0) invert(1);
 }
 
-.main-nav svg:hover {
-    color: #3647FF;
-}
-
 .header-right {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 .language-switcher {
-    margin-right:50px;
     box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
 }
 
 .lang-button {
     background-color: #fff;
-    box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.25);
     padding: 10px 20px;
     cursor: pointer;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
 }
 
 .lang-button.active {
     background: linear-gradient(160deg, #3647FF, #1625CE);
     color: #fff;
-    margin-right: -4PX;
-    border-top-left-radius:5px ;
-    border-bottom-left-radius:5px ;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
-.lang-button.noactive{
-    border-top-right-radius:5px ;
-    border-bottom-right-radius:5px ;
+.lang-button.noactive {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     color: #666;
 }
 
@@ -131,7 +133,6 @@ header {
     background: linear-gradient(160deg, #3647FF, #1625CE);
     color: #fff;
 }
-
 
 .user-profile a {
     display: flex;
@@ -341,7 +342,7 @@ header {
     font-size: 64px;
     width: 1200px;
     font-weight: 800;
-    color: #3647FF;
+    color: #0040FF;
     text-align: center;
     margin-bottom: 50px;
     padding: 0 20px;
@@ -477,7 +478,6 @@ header {
 .investor-guides-section__title {
     font-size: 32px;
     font-weight: 800;
-    color: #5E72E4;
     text-align: center;
     margin-bottom: 50px;
     padding: 0 20px;
@@ -632,12 +632,14 @@ header {
     background: #1F31F0;
     padding: 180px 0;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-top: 60px;
 }
 
 .footer__container { align-items: center; }
-.footer h2 { font-size: 128px; margin-bottom: 30px; max-width: 1200px; }
+.footer h2 { font-size: 4rem; margin-bottom: 30px; max-width: 1780px; }
 .footer__btns { display: flex; gap: 20px; }
 
 .menu-toggle {
@@ -681,7 +683,6 @@ body.menu-open {
 body.menu-open {
     overflow: hidden;
 }
-
 
 .menu-toggle {
     display: none;
@@ -835,9 +836,7 @@ body.menu-open {
     top: 0;
     right: -300px;
     width: 300px;
-
 }
-
 
 body.menu-open {
     overflow: hidden;
@@ -1143,8 +1142,14 @@ body.menu-open {
 
 
 @media (max-width: 768px) {
+    .investo_type__icon{
+        width: 25px;
+        height: 25px;
+    }
 
-
+    .fa-bullhorn{
+        width: 80%;
+    }
     header {
         padding: 5px 0;
     }
@@ -1194,162 +1199,194 @@ body.menu-open {
 
     .header-right {
         display: none;
-    .main-nav .header-right.mobile-only {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        padding: 0 20px;
-    }
 
-    .main-nav .header-right.mobile-only .language-switcher {
-        margin-right: 0;
-        margin-bottom: 15px;
-        width: 100%;
-        box-shadow: none;
-        display: flex;
-        justify-content: center;
-    }
+        .main-nav .header-right.mobile-only {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            padding: 0 20px;
+        }
 
-    .main-nav .header-right.mobile-only .user-profile {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+        .main-nav .header-right.mobile-only .language-switcher {
+            margin-right: 0;
+            margin-bottom: 15px;
+            width: 100%;
+            box-shadow: none;
+            display: flex;
+            justify-content: center;
+        }
 
-    .main-nav .header-right.mobile-only .user-profile a {
-        width: 100%;
-        justify-content: center;
-    }
+        .main-nav .header-right.mobile-only .user-profile {
+            width: 100%;
+            margin-bottom: 20px;
+        }
 
-
-
-    .section { padding: 40px 0; }
-    .section__title {
-        font-size: 36px;
-        margin-bottom: 25px;
-    }
-    .btn {
-        padding: 15px 30px;
-        width: 100%;
-        max-width: 300px;
-        font-size: 14px;
-    }
-
-    .hero { padding: 40px 0 60px; }
-    .hero__title {
-        font-size: 44px;
-        margin-bottom: 15px;
-    }
-    .hero__subtitle {
-        font-size: 18px;
-        margin-bottom: 30px;
-    }
+        .main-nav .header-right.mobile-only .user-profile a {
+            width: 100%;
+            justify-content: center;
+        }
 
 
-    .stats-grid {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .stat-card {
-        flex: none;
-        width: 100%;
-        padding: 20px;
-    }
-    .stat-card__val { font-size: 32px; }
-    .stat-card__percent { font-size: 16px; }
+        .section {
+            padding: 40px 0;
+        }
+
+        .section__title {
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            width: 100%;
+            max-width: 300px;
+            font-size: 14px;
+        }
+
+        .hero {
+            padding: 40px 0 60px;
+        }
+
+        .hero__title {
+            font-size: 44px;
+            margin-bottom: 15px;
+        }
+
+        .hero__subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
 
 
-    .roadmap-card {
-        width: 100%;
-        max-width: 100%;
-        padding: 20px;
-        height: auto;
-    }
-    .roadmap-card__icon {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 10px;
-    }
-    .roadmap-card__price {
-        font-size: 20px;
-    }
-    .roadmap-card__list {
-        margin-bottom: 15px;
-    }
+        .stats-grid {
+            flex-direction: column;
+            gap: 15px;
+        }
 
-    .guide-section__title {
-        font-size: 36px;
-        margin-bottom: 30px;
-    }
-    .guide__grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    .guide-card__content {
-        padding: 15px;
-    }
-    .guide-card__description {
-        min-height: unset;
-    }
+        .stat-card {
+            flex: none;
+            width: 100%;
+            padding: 20px;
+        }
 
-    .investor-table {
-        gap: 15px;
-    }
-    .investor-table__row {
-        flex-direction: column;
-        min-height: unset;
-        padding: 15px;
-    }
-    .investor-table__column {
-        padding: 0;
-        width: 100%;
-    }
-    .investor-table__column--type {
-        flex-direction: column;
-        border-bottom: none;
-        margin-bottom: 15px;
-        padding-bottom: 0;
-        align-items: flex-start;
-    }
-    .investor-type {
-        flex-direction: column;
-        text-align: left;
-    }
-    .investor-type__icon {
-        margin: 0 0 10px 0;
-    }
-    .investor-type__meta {
-        display: block;
-        margin-top: 10px;
-    }
-    .investor-table__column--pros,
-    .investor-table__column--cons {
-        flex-basis: 100%;
-        padding: 10px 0;
-        border-top: 1px solid #eee;
-    }
-    .investor-table__heading {
-        margin-top: 15px;
-        margin-bottom: 10px;
-    }
+        .stat-card__val {
+            font-size: 32px;
+        }
 
-    .footer {
-        padding: 60px 0;
-        margin-top: 40px;
+        .stat-card__percent {
+            font-size: 16px;
+        }
+
+
+        .roadmap-card {
+            width: 100%;
+            max-width: 100%;
+            padding: 20px;
+            height: auto;
+        }
+
+        .roadmap-card__icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .roadmap-card__price {
+            font-size: 20px;
+        }
+
+        .roadmap-card__list {
+            margin-bottom: 15px;
+        }
+
+        .guide-section__title {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .guide__grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .guide-card__content {
+            padding: 15px;
+        }
+
+        .guide-card__description {
+            min-height: unset;
+        }
+
+        .investor-table {
+            gap: 15px;
+        }
+
+        .investor-table__row {
+            flex-direction: column;
+            min-height: unset;
+            padding: 15px;
+        }
+
+        .investor-table__column {
+            padding: 0;
+            width: 100%;
+        }
+
+        .investor-table__column--type {
+            flex-direction: column;
+            border-bottom: none;
+            margin-bottom: 15px;
+            padding-bottom: 0;
+            align-items: flex-start;
+        }
+
+        .investor-type {
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .investor-type__icon {
+            margin: 0 0 10px 0;
+        }
+
+        .investor-type__meta {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .investor-table__column--pros,
+        .investor-table__column--cons {
+            flex-basis: 100%;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .investor-table__heading {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .footer__container h2 {
+            font-size: 48px;
+            margin-bottom: 25px;
+        }
+
+        .footer__btns {
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .btn--outline-white, .btn--white {
+            width: 90%;
+            max-width: 300px;
+        }
     }
-    .footer__container h2 {
-        font-size: 28px;
-        margin-bottom: 25px;
-    }
-    .footer__btns {
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-        align-items: center;
-    }
-    .btn--outline-white, .btn--white {
-        width: 90%;
-        max-width: 300px;
-    }
-}
 }
