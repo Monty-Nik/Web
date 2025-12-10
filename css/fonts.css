@@ -98,14 +98,49 @@ h1 {
     font-weight: 700;
     letter-spacing: normal;
 }
-h2 { font-size: 64px; font-weight: 700; }
-h3 { font-size: 45px; font-weight: 700; }
-h4 { font-size: 36px; font-weight: 600; }
-p, .card-title { font-size: 32px; font-weight: 500; letter-spacing: 0.12em; }
-.card-title { font-size: 32px; font-weight: 500; letter-spacing: 0.12em; }
-.card-description { font-size: 16px; font-weight: 400; letter-spacing: 0.12em; }
-.card-lit { font-size: 12px; font-weight: 300;  }
-.title { font-size: 24px; font-weight: 400; }
+
+h2 {
+    font-size: 64px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p, .card-title {
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+}
+
+.card-title {
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+}
+
+.card-description {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+}
+
+.card-lit {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 400;
+}
 
 strong, b {
     font-weight: 700;
