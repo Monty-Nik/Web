@@ -281,26 +281,52 @@ header {
     border: 1px solid #0040FF;
     color: #0040FF;
     text-decoration: none;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .btn--blue:hover {
-    background-color: #a6baff;
+    background-color: #0040FF;
+    color: #fff;
     transform: translateY(-1px);
+}
+
+.btn--blue:focus {
+    background-color: #2C3CEA;
+    color: #fff;
 }
 
 .btn--full {
     width: 100%;
 }
 
+
+
 .btn--white {
     background: #fff;
     color: #414141;
 }
 
+.btn--white:focus {
+    background-color: #C6C9CA;
+    color: #575757;
+}
+
+.btn--white:hover {
+    box-shadow: 0 8px 22px rgba(255, 255, 255, 0.35);
+}
+
 .btn--outline-white {
     border: 1px solid #fff;
     color: #fff;
+}
+
+.btn--outline-white:hover {
+    background-color: #fff;
+    box-shadow: 0 8px 22px rgba(255, 255, 255, 0.35);
+    color: #575757;
+}
+.btn--outline-white:focus {
+    background-color: #C6C9CA;
+    color: #575757;
 }
 
 .card {
@@ -350,11 +376,11 @@ header {
 .hero__subtitle {
     font-size: 32px;
     color: #575757;
-    max-width: 1000px;
+    max-width: 1800px;
     margin-bottom: 40px;
 }
 
-.stats-grid {
+.stats-flex {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -491,12 +517,16 @@ header {
 
 
 .guide__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.guide__grid > * {
+    flex: 1 1 30%;
 }
 
 .guide-section__title {
@@ -524,7 +554,6 @@ header {
 }
 
 .guide-card__image-wrapper--recommended {
-    padding: 0;
     border-radius: 16px 16px 0 0;
     padding: 4px;
 }
@@ -536,7 +565,7 @@ header {
     background-size: cover;
     background-position: center;
     border-radius: 12px 12px 0 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/400/200?blur=1');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -637,7 +666,14 @@ header {
 }
 
 .guide-card__btn:hover {
-    background-color: #3647FF;
+    background-color: transparent;
+    border: 1px solid #3647FF;
+    color: #3647FF;
+}
+
+.guide-card__btn:focus {
+    background-color: #2C3CEA;
+    color: #fff;
 }
 
 .investor-guides-section {
@@ -833,8 +869,11 @@ header {
 
 .footer__btns {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
 }
+
 
 
 @media (max-width: 1200px) {
@@ -960,6 +999,13 @@ header {
         padding: 50px 0;
     }
 
+    .guide__grid{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
     .hero {
         padding: 60px 0;
     }
@@ -977,9 +1023,11 @@ header {
         margin-bottom: 30px;
     }
 
-    .stats-grid {
+    .stats-flex{
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
         flex-direction: column;
-        gap: 15px;
     }
 
     .stat-card {
@@ -1099,10 +1147,12 @@ header {
         border-bottom: 1px solid #f0f0f0;
         padding-bottom: 15px;
         margin-bottom: 15px;
-        display: flex;
-        flex-direction: row;
+        display: flex
+    ;
+        flex-direction: column-reverse;
         align-items: center;
         text-align: left;
+        justify-content: flex-start;
     }
 
     .investor-type {
@@ -1138,12 +1188,12 @@ header {
 
     .btn--blue, .btn--outline-white {
         width: 100%;
-        max-width: 300px;
+        max-width: 700px;
     }
 
     .mobile-nav {
-        width: 90vw;
-        max-width: 350px;
+        width: 100%;
+        max-width: 700px;
     }
 
     .user-profile a {

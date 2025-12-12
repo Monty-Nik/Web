@@ -100,7 +100,7 @@
                 <span><img src="img/article-like.svg" alt="article">Admin</span>
                 <span><img src="img/article-talk.svg" alt="article">18 Окт, 2024</span>
             </div>
-            <a href="#">Читать статью</a>
+            <a href="#" class="read-btn">Читать статью</a>
         </div>
     </article>
     <div class="blog-layout">
@@ -123,7 +123,7 @@
                         <span><img src="img/article-like.svg" alt="article">Admin</span>
                         <span><img src="img/article-talk.svg" alt="article">18 Окт, 2024</span>
                     </div>
-                    <a href="#">Читать</a>
+                    <a href="#" class="read-btn-small">Читать</a>
                 </div>
             </article>
 
@@ -144,7 +144,7 @@
                         <span><img src="img/article-like.svg" alt="article">Admin</span>
                         <span><img src="img/article-talk.svg" alt="article">18 Окт, 2024</span>
                     </div>
-                    <a href="#">Читать</a>
+                    <a href="#" class="read-btn-small">Читать</a>
                 </div>
             </article>
 
@@ -165,7 +165,7 @@
                         <span><img src="img/article-like.svg" alt="article">Admin</span>
                         <span><img src="img/article-talk.svg" alt="article">18 Окт, 2024</span>
                     </div>
-                    <a href="#">Читать</a>
+                    <a href="#" class="read-btn-small">Читать</a>
                 </article>
             </article>
 
@@ -186,13 +186,13 @@
                         <span><img src="img/article-like.svg" alt="article">Admin</span>
                         <span><img src="img/article-talk.svg" alt="article">18 Окт, 2024</span>
                     </div>
-                    <a href="#">Читать</a>
+                    <a href="#" class="read-btn-small">Читать</a>
                 </article>
             </article>
 
             <article class="article-card-small">
                 <article class="article-card-small-image">
-                    <img src="img/portal.png" alt="Биржевые графики">
+                    <img src="img/portal.png" alt="Биржевые графики" >
                 </article>
                 <article class="article-card-small-content">
                     <h3>Как найти правильные источники финансирования для вашего бизнеса</h3>
@@ -207,7 +207,7 @@
                         <span><img src="img/article-like.svg" alt="article">Admin</span>
                         <span><img src="img/article-talk.svg" alt="article">18 Окт, 2024</span>
                     </div>
-                    <a href="#">Читать</a>
+                    <a href="#" class="read-btn-small">Читать</a>
                 </article>
             </article>
         </section>
@@ -223,7 +223,7 @@
                         </div>
                     </a>
                     <a href="#" class="authors-list-item">
-                        <img src="img/Marcus.png" alt="Автор 2">
+                        <img src="img/marcus.png" alt="Автор 2">
                         <div>
                             <p>Маркус Родригез</p>
                             <span>Технический директор</span>
@@ -279,7 +279,6 @@
         function toggleMenu() {
             const isOpen = mobileNav.classList.contains('open');
 
-            // Если открыто - закрываем, если закрыто - открываем
             if (isOpen) {
                 mobileNav.classList.remove('open');
                 menuToggle.classList.remove('active');
@@ -293,13 +292,9 @@
             }
         }
 
-        // Клик по бургеру
         menuToggle.addEventListener('click', toggleMenu);
 
-        // Клик по затемнению (закрыть меню)
         overlay.addEventListener('click', toggleMenu);
-
-        // Закрытие при ресайзе окна (если вдруг растянули обратно в десктоп)
         window.addEventListener('resize', () => {
             if (window.innerWidth > 900 && mobileNav.classList.contains('open')) {
                 toggleMenu();

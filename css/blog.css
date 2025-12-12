@@ -149,6 +149,50 @@ header {
     width: 24px;
     height: 24px;
 }
+
+.read-btn{
+    display: inline-block;
+    width: 187px;
+    height: auto;
+    margin-top: 60px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 10px 20px;
+    background: #3041FB;
+    color: #fff;
+}
+
+.read-btn:hover{
+    color: #3041FB;
+    border: 1px solid #3041FB;
+    background: transparent;
+}
+
+.read-btn-small{
+    display: inline-block;
+    width: 122px;
+    height: auto;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px 20px;
+    background: #3041FB;
+    color: #fff;
+}
+
+.read-btn-small:hover{
+    color: #3041FB;
+    border: 1px solid #3041FB;
+    background: transparent;
+}
+
+.read-btn-small:focus{
+    background: #2C3CEA;
+}
+
+.read-btn:focus{
+    background: #2C3CEA;
+}
+
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -350,7 +394,8 @@ header {
     width: 100%;
     padding: 14px 14px 14px 45px;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #EDEDED, #FFFFFF);
     font-size: 16px;
 }
 
@@ -387,8 +432,10 @@ header {
 
 .featured-post-image {
     flex: 1;
-    min-height: 300px;
+    min-height: auto;
 }
+
+
 
 .featured-post-image img {
     width: 100%;
@@ -452,16 +499,16 @@ header {
     gap: 20px;
     background: #fff;
     border-radius: 12px;
-    padding: 20px;
+    overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .article-card-small-image {
-    width: 240px;
-    flex-shrink: 0;
+
+    width: 100%;
     border-radius: 8px;
-    overflow: hidden;
-    height: 180px;
+
+
 }
 
 .article-card-small-image img {
@@ -475,7 +522,7 @@ header {
 }
 
 .article-card-small-content h3 {
-    margin-bottom: 10px;
+    margin-top: 20px;
     font-size: 20px;
 }
 
@@ -518,6 +565,11 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+}
+
+.tags-list a:hover {
+    background: #3647FF;
+    color: #fff;
 }
 
 .tags-list a {
@@ -566,16 +618,26 @@ header {
 .cta-footer h2 {
     font-size: clamp(28px, 4vw, 48px);
     margin-bottom: 20px;
+
 }
 
 .cta-button {
     background: #fff;
-    color: #3647FF;
+    color: #575757;
     padding: 15px 30px;
     border-radius: 6px;
     font-weight: bold;
     display: inline-block;
     margin-top: 20px;
+}
+
+.cta-button:hover {
+    box-shadow: 0 8px 22px rgba(255, 255, 255, 0.35);
+}
+
+.cta-button:focus{
+    background: #C6C9CA;
+    color: #575757;
 }
 
 @media (max-width: 1024px) {

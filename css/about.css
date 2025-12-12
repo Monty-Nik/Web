@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-Serif;
+    font-family: 'Segoe UI', sans-serif;
     background-color: #EFF5FE;
     color: #333333;
     line-height: 1.6;
@@ -42,7 +42,7 @@ img {
 .section-title {
     font-size: 36px;
     font-weight: 800;
-    color: #000;
+    color: #0040FF;
     margin-bottom: 20px;
 }
 
@@ -351,15 +351,15 @@ header {
 
 
 .stats {
-    padding: 60px 0;
+    padding: 20px 0;
     background: #EFF5FE;
 }
 
 .stats__container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 60px;
+    justify-content: flex-start;
+    gap: 40px;
 }
 
 .stats__info {
@@ -374,8 +374,9 @@ header {
 .stats__cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 30px;
+    width: 50%;
     margin-top: 30px;
 }
 
@@ -405,7 +406,7 @@ header {
 .stat-number {
     font-size: 28px;
     font-weight: 800;
-    color: #3647FF;
+    color: #000000;
     margin: 10px 0 5px;
 }
 
@@ -573,7 +574,6 @@ header {
     z-index: 2;
     font-size: 14px;
     top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .timeline__content {
@@ -637,10 +637,23 @@ header {
 
 .cta__button:hover {
     background: #f0f0f0;
+    box-shadow: 0 4px 22px rgba(0, 64, 255, 0.35);
+}
+
+.cta__button:focus{
+    background: #C6C9CA;
 }
 
 .cta__link:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255, 255, 255);
+    color: #575757;
+    box-shadow: 0 4px 22px rgba(0, 64, 255, 0.35);
+}
+
+.cta__link:focus{
+    background: #C6C9CA;
+    color: #575757;
+    box-shadow: 0 4px 22px rgba(0, 64, 255, 0.35);
 }
 
 
@@ -738,11 +751,19 @@ header {
 
     .stats__cards {
         gap: 20px;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .stat-item {
-        flex: 1 1 100%;
-        max-width: 350px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 750px;
+        align-content: space-around;
+        justify-content: space-between;
+        flex: 1 0 100%;
+        display: flex
+    ;
     }
 
     .timeline__wrapper::before {

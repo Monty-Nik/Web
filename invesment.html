@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="user-profile">
-                    <a href="#">
+                    <a href="profile.html">
                         <img src="img/proof.png" alt="User">
                         Войти
                     </a>
@@ -61,7 +61,7 @@
                 <a class="lang-button noactive">RU</a>
             </div>
             <div class="user-profile">
-                <a href="/profile.html"><img src="img/proof.png" alt="home"> Monty-Nik</a>
+                <a href="profile.html"><img src="img/proof.png" alt="home"> Monty-Nik</a>
             </div>
         </div>
     </div>
@@ -84,7 +84,7 @@
         <div class="container section__container">
             <h2 class="section__title">Наши достижения</h2>
 
-            <div class="stats-grid">
+            <div class="stats-flex">
                 <div class="card stat-card">
                     <div class="stat-card__val">4.2 months</div>
                     <div class="stat-card__label">Среднее время</div>
@@ -237,13 +237,11 @@
                             <img src="img/start-i.svg" alt="star">4.9
                         </span>
                         </div>
-
                         <button class="btn guide-card__btn">
                             Читать
                         </button>
                     </article>
                 </article>
-
                 <article class="card guide-card">
                     <div class="guide-card__image-wrapper guide-card__image-wrapper--recommended">
                         <img src="img/investi.png" alt="investi">
@@ -255,7 +253,6 @@
                         <p class="guide-card__description">
                             Поймите, как оценить свой стартап для раундов финансирования
                         </p>
-
                         <div class="guide-card__meta">
                         <span class="guide-card__meta-item">
                             <img src="img/time-i.svg" alt="time-icon">
@@ -268,7 +265,6 @@
                             <img src="img/start-i.svg" alt="star">4.9
                         </span>
                         </div>
-
                         <button class="btn guide-card__btn">
                             Читать
                         </button>
@@ -300,11 +296,9 @@
                         </button>
                     </article>
                 </article>
-
             </div>
         </div>
     </section>
-
     <section class="section investor-guides-section">
         <section class="container investor-guides-section__container">
             <h2 class="section__title investor-guides-section__title">Экспертные инвестиционные руководства</h2>
@@ -437,11 +431,10 @@
         menuToggle.classList.toggle('open');
         mobileNav.classList.toggle('open');
         menuOverlay.classList.toggle('active');
-        body.classList.toggle('no-scroll'); // Блокировка скролла
+        body.classList.toggle('no-scroll');
     });
 
     menuOverlay.addEventListener('click', () => {
-        // Закрытие при клике на оверлей
         if (menuToggle.classList.contains('open')) {
             menuToggle.classList.remove('open');
             mobileNav.classList.remove('open');

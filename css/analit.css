@@ -1,14 +1,3 @@
-
-
-.card-1 .icon-wrapper { background: linear-gradient(160deg, #008bff, #00508e);}
-.card-2 .icon-wrapper { background: linear-gradient(160deg, #FFD700, #FF6B00);}
-.card-3 .icon-wrapper { background: linear-gradient(160deg, #F33099, #A425B9);}
-.card-4 .icon-wrapper { background: linear-gradient(160deg, #0C8F8F, #2ECC71);}
-@import "css/fonts.css";
-
-/* ==========================================================================
-   1. Основные стили (Reset & Base)
-   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +5,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-Serif;
+    font-family: 'Segoe UI', sans-serif;
     background: #EFF5FE;
     color: #333;
     line-height: 1.6;
@@ -24,7 +13,7 @@ body {
 }
 
 body.menu-open {
-    overflow: hidden; /* Блокировка прокрутки при открытом меню */
+    overflow: hidden;
 }
 
 a {
@@ -50,9 +39,6 @@ img {
     width: 100%;
 }
 
-/* ==========================================================================
-   2. Шапка (Header)
-   ========================================================================== */
 header {
     background-color: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -78,7 +64,6 @@ header {
     width: auto;
 }
 
-/* Навигация десктоп */
 .main-nav .nav-list {
     display: flex;
     align-items: center;
@@ -112,14 +97,11 @@ header {
     filter: brightness(0) invert(1);
 }
 
-/* Правая часть шапки */
 .header-right {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-
-/* Переключатель языков */
 .language-switcher {
     box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.1);
     display: flex;
@@ -133,7 +115,7 @@ header {
     cursor: pointer;
     border: none;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 1px;
     transition: background 0.3s, color 0.3s;
 }
 
@@ -150,7 +132,24 @@ header {
     color: #666;
 }
 
-/* Профиль пользователя */
+
+.card-1 .icon-wrapper {
+    background: linear-gradient(160deg, #008bff, #00508e);
+}
+
+.card-2 .icon-wrapper {
+    background: linear-gradient(160deg, #FFD700, #FF6B00);
+}
+
+.card-3 .icon-wrapper {
+    background: linear-gradient(160deg, #F33099, #A425B9);
+}
+
+.card-4 .icon-wrapper {
+    background: linear-gradient(160deg, #0C8F8F, #2ECC71);
+}
+
+
 .user-profile a {
     display: flex;
     align-items: center;
@@ -168,20 +167,18 @@ header {
     height: 24px;
 }
 
-/* ==========================================================================
-   3. Бургер-меню (Стили как в образце)
-   ========================================================================== */
+
 .menu-toggle {
-    display: none; /* Скрыто по умолчанию на больших экранах */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 22px; /* Чуть компактнее */
+    height: 22px;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1002; /* Поверх всего */
+    z-index: 1002;
     position: relative;
 }
 
@@ -195,10 +192,9 @@ header {
     transform-origin: left center;
 }
 
-/* Анимация превращения в крестик */
 .menu-toggle.open span:nth-child(1) {
     transform: rotate(45deg) translate(0px, -1px);
-    width: 110%; /* Чуть длиннее для красоты диагонали */
+    width: 110%;
 }
 
 .menu-toggle.open span:nth-child(2) {
@@ -211,7 +207,6 @@ header {
     width: 110%;
 }
 
-/* Затемнение фона */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -231,18 +226,17 @@ header {
     visibility: visible;
 }
 
-/* Выдвижное меню */
 .mobile-nav {
     position: fixed;
     top: 0;
-    right: -320px; /* Полностью скрыто */
+    right: -320px;
     width: 300px;
     height: 100%;
     background: #fff;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Плавная анимация */
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1001;
-    padding: 80px 20px 20px 20px; /* Отступ сверху под крестик */
+    padding: 80px 20px 20px 20px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -252,7 +246,6 @@ header {
     right: 0;
 }
 
-/* Внутренности мобильного меню */
 .mobile-nav .nav-menu {
     display: flex;
     flex-direction: column;
@@ -282,18 +275,18 @@ header {
 }
 
 .mobile-nav-header {
-    display: none; /* Убираем старый заголовок, крестик теперь сам по себе контроллер */
+    display: none;
 }
 
-/* Языковая панель в мобильном меню */
 .mobile-nav .language-switcher {
     margin-top: auto;
     justify-content: center;
     box-shadow: none;
     border: 1px solid #eee;
 }
+
 .menu-toggle {
-    display: none; /* Скрыто на ПК */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -314,9 +307,18 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
-.menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-.menu-toggle.open span:nth-child(2) { opacity: 0; transform: translateX(-20px); }
-.menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
 
 .mobile-nav {
     position: fixed;
@@ -363,8 +365,10 @@ header {
 
 .menu-overlay {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     opacity: 0;
@@ -372,9 +376,17 @@ header {
     transition: 0.3s;
 }
 
-.menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
-.menu-toggle.active span:nth-child(2) { opacity: 0; }
-.menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
 
 .mobile-nav {
     position: fixed;
@@ -383,7 +395,7 @@ header {
     width: 300px;
     height: 100vh;
     background: #fff;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     padding: 100px 20px 40px;
     transition: right 0.3s ease-in-out;
     z-index: 1000;
@@ -393,23 +405,43 @@ header {
     overflow-y: auto;
 }
 
-.mobile-nav.open { right: 0; }
+.mobile-nav.open {
+    right: 0;
+}
 
-.mobile-nav ul { display: flex; flex-direction: column; gap: 15px; }
-.mobile-nav a { font-size: 18px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-nav a {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
 .menu-overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 900;
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
 }
+
 .menu-overlay.active {
     opacity: 1;
-    visibility: visible; }
+    visibility: visible;
+}
 
 main {
     position: relative;
@@ -418,13 +450,12 @@ main {
 }
 
 h1 {
-    font-size: 96px;
+    font-size: 6rem;
     color: #3647FF;
     margin-top: 120px;
+    margin-left: 100px;
     font-weight: 700;
     line-height: 1.1;
-    text-align: center;
-    font-size: clamp(28px, 6vw + 1rem, 96px);
     margin-bottom: 60px;
 }
 
@@ -442,7 +473,7 @@ h1 {
     align-items: flex-start;
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0 12px 58px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 58px rgba(0, 0, 0, 0.1);
     padding: 28px 22px;
     text-align: left;
     transition: transform 0.3s;
@@ -450,7 +481,7 @@ h1 {
 
 .advantage-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 18px 65px rgba(0,0,0,0.2);
+    box-shadow: 0 18px 65px rgba(0, 0, 0, 0.2);
 }
 
 .icon-stat {
@@ -465,7 +496,9 @@ h1 {
     padding: 16px;
     border-radius: 50%;
     margin-bottom: 12px;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
 }
 
@@ -504,7 +537,6 @@ h1 {
     font-weight: 600;
 }
 
-/* 4.2 Dashboard Images */
 .image-dashboard {
     width: 100%;
     margin: 40px 0 60px 0;
@@ -524,7 +556,7 @@ h1 {
     max-width: 48%;
     height: auto;
     border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(54,71,255,0.08);
+    box-shadow: 0 8px 32px rgba(54, 71, 255, 0.08);
 }
 
 .trust-header {
@@ -534,7 +566,7 @@ h1 {
 }
 
 .trust-title {
-    font-size: 54px;
+    font-size: 3rem;
     font-weight: 800;
     margin-bottom: 16px;
     line-height: 1.15;
@@ -543,18 +575,18 @@ h1 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    font-size: clamp(24px, 5vw + 1rem, 54px);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .tools-container {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: flex-start;
+    min-width: 250px;
     gap: 30px;
-    justify-content: center;
     margin-bottom: 80px;
-    max-width: 1200px;
-    margin: 0 auto 80px auto;
+    max-width: 1780px;
 }
 
 .tool-item {
@@ -562,7 +594,7 @@ h1 {
     flex-direction: column;
     align-items: flex-start;
     border-radius: 15px;
-    box-shadow: 0 12px 58px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 58px rgba(0, 0, 0, 0.1);
     padding: 30px;
     background: #fff;
     transition: transform 0.3s;
@@ -570,7 +602,7 @@ h1 {
 
 .tool-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 18px 65px rgba(0,0,0,0.2);
+    box-shadow: 0 18px 65px rgba(0, 0, 0, 0.2);
 }
 
 .tool-item .icon-wrapper {
@@ -608,12 +640,14 @@ h1 {
     opacity: 0.55;
     pointer-events: none;
 }
+
 .main_el_pink {
     right: 20%;
     top: 15vh;
     max-width: 260px;
     width: 18vw;
 }
+
 .main_el_blue {
     right: 50%;
     top: 45vh;
@@ -626,32 +660,42 @@ h1 {
     .menu-toggle {
         display: flex;
     }
+
     .main-nav,
     .header-right {
         display: none;
     }
 
     .advantages-container {
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 }
+
 @media (max-width: 992px) {
     .container {
         padding: 0 15px;
     }
+
     .advantages-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
+
     .tools-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 
     .dashboard {
+        display: flex;
         flex-direction: column;
-        gap: 20px;
+        flex-wrap: wrap;
     }
+
     .dashboard-img,
     .dashboard-img-t {
         max-width: 100%;
@@ -673,7 +717,9 @@ h1 {
     }
 
     .advantages-container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         gap: 15px;
     }
 
@@ -686,10 +732,12 @@ h1 {
         display: none;
     }
 }
+
 @media (max-width: 480px) {
     .container {
         padding: 0 10px;
     }
+
     .header-container {
         padding: 0 10px;
     }

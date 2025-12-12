@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +5,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-Serif;
+    font-family: 'Segoe UI', sans-serif;
     background-color: #EFF5FE;
     color: #333;
     line-height: 1.6;

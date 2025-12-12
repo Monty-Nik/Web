@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-Serif;
+    font-family: 'Segoe UI', sans-serif;
     background-color: #EFF5FE;
     color: #333333;
     line-height: 1.6;
@@ -267,7 +267,7 @@ header {
 .trust-title {
     font-size: 64px;
     font-weight: 700;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     line-height: 1.2;
     background: linear-gradient(60deg, #00ffbb, #1F31F0, #ff00ef);
     -webkit-background-clip: text;
@@ -384,7 +384,7 @@ h1 {
     height: 64px;
     width: 275px;
     text-decoration: none;
-    background: unset;
+    background: transparent;
     text-align: center;
     color: #414141;
     border-radius: 15px;
@@ -401,10 +401,16 @@ h1 {
     width: 275px;
     text-decoration: none;
     background-color: #0040FF;
-
     color: #fff;
     border-radius: 15px;
     margin-right: 34px;
+}
+
+.sign:hover{
+    background: transparent;
+    border: 1px solid #0040FF;
+    color: #0040FF;
+    box-shadow: 0 4px 22px rgba(0, 64, 255, 0.35);
 }
 
 .auth {
@@ -413,7 +419,18 @@ h1 {
     background: rgba(0, 119, 255, 0.47);
 }
 
+.watch:hover {
+    background: #0040FF;
+    color: #fff;}
 
+.watch:focus{
+    background: #C6C9CA;
+}
+
+.auth:focus{
+    background: #9B9EBF;
+    color: #fff;
+}
 .statistics {
     display: flex;
     flex-wrap: wrap;
@@ -428,8 +445,9 @@ h1 {
 .statistic-item {
     display: flex;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1em;
     color: #555;
+    max-width: 290px;
     margin-right: 40px;
 }
 
@@ -440,7 +458,7 @@ h1 {
 .statistic-item svg {
     color: #90EE90;
     margin-right: 10px;
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 
@@ -534,6 +552,7 @@ main {
     font-size: 16px;
     color: #666;
     line-height: 1.4;
+    margin: 10px;
 }
 
 .tools-container {
@@ -625,9 +644,9 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
-    max-width: 1420px;
+    max-width: 1780px;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 .advantage-item {
@@ -975,6 +994,7 @@ main {
 .btn-login:hover {
     background: white;
     color: #1a1a1a;
+    transition: 500ms;
     transform: translateY(-2px);
 }
 
@@ -991,7 +1011,8 @@ main {
 
 .btn-demo:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(244, 15, 229, 0.3);
+    transition: 500ms;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
 .gold-gradient {
