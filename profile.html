@@ -42,7 +42,6 @@
             </ul>
         </div>
         <div class="menu-overlay" id="menuOverlay"></div>
-
         <nav class="main-nav">
             <ul class="nav-list">
                 <li><a href="index.html"><img src="img/home.svg" alt="home"> Главная</a></li>
@@ -54,7 +53,6 @@
                 <li><a href="blog.html"><img src="img/blog.png" alt="blog"> Блог</a></li>
             </ul>
         </nav>
-
         <div class="header-right desktop-only">
             <div class="language-switcher">
                 <a class="lang-button active">EN</a>
@@ -66,7 +64,6 @@
         </div>
     </div>
 </header>
-
 <main class="dashboard-container">
     <section class="welcome-section">
         <div class="user-info">
@@ -138,7 +135,6 @@
             <button class="tab-button"><img src="img/money.png" alt="money">Задача</button>
             <button class="tab-button"><img src="img/money.png" alt="money">Команда</button>
         </div>
-
         <div class="columns-wrapper clearfix">
 
             <div class="main-left-column">
@@ -146,7 +142,6 @@
                     <img src="img/dashboard.png" alt="График доходов">
                 </div>
             </div>
-
             <div class="main-right-column">
                 <div class="quick-actions-box">
                     <h3>Быстрые действия</h3>
@@ -195,7 +190,6 @@
                         </div>
                     </div>
                 </article>
-
                 <div class="right-column">
                     <div class="activity-box">
                         <h3>Недавняя активность</h3>
@@ -213,7 +207,6 @@
                 </div>
             </section>
     </section>
-
 </main>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -221,7 +214,6 @@
         const mobileNav = document.getElementById('mobileNav');
         const menuOverlay = document.getElementById('menuOverlay');
         const body = document.body;
-
         function toggleMenu() {
             menuToggle.classList.toggle('open');
             mobileNav.classList.toggle('open');
@@ -230,7 +222,6 @@
         }
         if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
         if (menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
-
         if (mobileNav) {
             mobileNav.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', function() {

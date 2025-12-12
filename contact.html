@@ -19,8 +19,6 @@
         </button>
         <div class="mobile-nav" id="mobileNav">
             <div class="mobile-nav-header">
-
-
                 <div class="user-profile">
                     <a href="profile.html">
                         <img src="img/proof.png" alt="User">
@@ -39,7 +37,6 @@
             </ul>
         </div>
         <div class="menu-overlay" id="menuOverlay"></div>
-
         <nav class="main-nav">
             <ul class="nav-list">
                 <li><a href="index.html"><img src="img/home.svg" alt="home"> Главная</a></li>
@@ -51,7 +48,6 @@
                 <li><a href="blog.html"><img src="img/blog.png" alt="blog"> Блог</a></li>
             </ul>
         </nav>
-
         <div class="header-right desktop-only">
             <div class="language-switcher">
                 <a class="lang-button active">EN</a>
@@ -102,11 +98,10 @@
                 <p>Просмотрите наши статьи и руководства по помощи</p>
             </article>
         </section>
-
         <section class="send-message-section clearfix">
             <h2>Отправьте нам сообщение</h2>
             <div class="message-form-block">
-                <form action="#" method="POST">
+                <form>
                     <div class="form-row-half clearfix">
                         <div class="input-group half-width float-left">
                             <label for="name">Имя</label>
@@ -117,7 +112,6 @@
                             <input type="email" id="email" placeholder="Введите свою почту" required>
                         </div>
                     </div>
-
                     <div class="form-row-half clearfix">
                         <div class="input-group half-width float-left">
                             <label for="company">Компания</label>
@@ -144,7 +138,6 @@
                     <button type="submit" class="submit-button">Отправить сообщение</button>
                 </form>
             </div>
-
             <div class="office-team-block">
                 <h3>Наши офисы</h3>
                 <div class="office-list">
@@ -159,7 +152,6 @@
                         <p class="office-card">Пн-Пт 9:00-17:00</p>
                     </article>
                 </div>
-
                 <div class="office-list">
                     <h3>Нью-Йорк</h3>
                     <article class="cart-flex"><img src="img/place.svg" alt="place">
@@ -172,7 +164,6 @@
                         <p class="office-card">Пн-Пт 9:00-17:00</p>
                     </article>
                 </div>
-
                 <div class="office-list">
                     <h3>Москва</h3>
                     <article class="cart-flex"><img src="img/place.svg" alt="place">
@@ -185,7 +176,6 @@
                         <p class="office-card">Пн-Пт 9:00-17:00</p>
                     </article>
                 </div>
-
                 <h3>Познакомьтесь с нашей командой</h3>
                 <section class="team-list">
                     <article class="cart-flex"><img src="img/Alex.png" alt="alex">
@@ -196,7 +186,6 @@
                         </div>
                     </article>
                 </section>
-
                 <section class="team-list">
                     <article class="cart-flex"><img src="img/Pria.png" alt="pria">
                         <div class="team-member">
@@ -206,7 +195,6 @@
                         </div>
                     </article>
                 </section>
-
                 <section class="team-list">
                     <article class="cart-flex"><img src="img/Jordan.png" alt="jordan">
                         <div class="team-member">
@@ -218,7 +206,6 @@
                 </section>
             </div>
         </section>
-
         <section class="faq-section">
             <h2>Часто задаваемые вопросы</h2>
             <article class="faq-cards clearfix">
@@ -256,7 +243,6 @@
         const mobileNav = document.getElementById('mobileNav');
         const menuOverlay = document.getElementById('menuOverlay');
         const body = document.body;
-
         function toggleMenu() {
             menuToggle.classList.toggle('open');
             mobileNav.classList.toggle('open');

@@ -23,7 +23,6 @@
                     <button class="lang-button active">RU</button>
                     <button class="lang-button noactive">EN</button>
                 </div>
-
                 <div class="user-profile">
                     <a href="#">
                         <img src="img/proof.png" alt="User">
@@ -42,7 +41,6 @@
             </ul>
         </div>
         <div class="menu-overlay" id="menuOverlay"></div>
-
         <nav class="main-nav">
             <ul class="nav-list">
                 <li><a href="index.html"><img src="img/home.svg" alt="home"> Главная</a></li>
@@ -54,7 +52,6 @@
                 <li><a href="blog.html"><img src="img/blog.png" alt="blog"> Блог</a></li>
             </ul>
         </nav>
-
         <div class="header-right desktop-only">
             <div class="language-switcher">
                 <a class="lang-button active">EN</a>
@@ -126,7 +123,6 @@
                     <a href="#" class="read-btn-small">Читать</a>
                 </div>
             </article>
-
             <article class="article-card-small">
                 <div class="article-card-small-image">
                     <img src="img/bulding.png" alt="Команда в офисе">
@@ -147,7 +143,6 @@
                     <a href="#" class="read-btn-small">Читать</a>
                 </div>
             </article>
-
             <article class="article-card-small">
                 <article class="article-card-small-image">
                     <img src="img/airevolution.png" alt="Графики и данные">
@@ -168,7 +163,6 @@
                     <a href="#" class="read-btn-small">Читать</a>
                 </article>
             </article>
-
             <article class="article-card-small">
                 <article class="article-card-small-image">
                     <img src="img/portal.png" alt="Биржевые графики">
@@ -238,7 +232,6 @@
                     </a>
                 </div>
             </div>
-
             <div class="widget">
                 <h3>Популярные теги</h3>
                 <div class="tags-list">
@@ -251,7 +244,6 @@
                     <a href="#">Стартап</a>
                 </div>
             </div>
-
             <div class="widget widget-subscribe">
                 <h3>Подпишитесь на рассылку</h3>
                 <p>Получайте последние статьи и инсайты прямо на вашу почту.</p>
@@ -275,10 +267,8 @@
         const mobileNav = document.querySelector('.mobile-nav');
         const overlay = document.querySelector('.menu-overlay');
         const body = document.body;
-
         function toggleMenu() {
             const isOpen = mobileNav.classList.contains('open');
-
             if (isOpen) {
                 mobileNav.classList.remove('open');
                 menuToggle.classList.remove('active');
@@ -291,9 +281,7 @@
                 body.classList.add('no-scroll');
             }
         }
-
         menuToggle.addEventListener('click', toggleMenu);
-
         overlay.addEventListener('click', toggleMenu);
         window.addEventListener('resize', () => {
             if (window.innerWidth > 900 && mobileNav.classList.contains('open')) {

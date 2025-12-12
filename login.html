@@ -16,7 +16,6 @@
             <h1 class="auth-form__title">Добро пожаловать!</h1>
             <p class="auth-form__subtitle">Войдите в свой аккаунт для доступа к аналитике</p>
         </header>
-
         <div class="auth-form__nav">
             <a href="#" class="auth-form__tab auth-form__tab--active">
                 <img src="img/login.svg" alt="login"> Вход
@@ -25,7 +24,7 @@
                 <img src="img/reg.svg" alt="reg"> Регистрация
             </a>
         </div>
-        <form class="auth-form__fields" action="#" method="POST">
+        <form class="auth-form__fields">
             <div class="form-group">
                 <label class="form-group__label" for="email">Email</label>
                 <input class="form-group__input" type="email" id="email" placeholder="введите ваш email" required>
@@ -33,7 +32,6 @@
             <div class="form-group form-group--password">
                 <label class="form-group__label" for="password">Пароль</label>
                 <input class="form-group__input" type="password" id="password" placeholder="введите пароль" required>
-                <i class="fa-solid fa-eye form-group__eye-icon"></i>
             </div>
             <button type="submit" class="auth-form__btn auth-form__btn--main">
                 <img src="img/login.svg" alt="login"> Войти в аккаунт
@@ -44,7 +42,7 @@
         </p>
         <div class="auth-form__features">
             <p class="auth-form__features-title">Что вас ждет после регистрации:</p>
-            <div class="auth-form__feature-grid">
+            <div class="auth-form__feature-flex">
                     <span class="auth-form__feature-item">
                        Персональная аналитика
                     </span>
@@ -67,7 +65,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         const eyeIcon = document.querySelector('.form-group__eye-icon');
         const passwordInput = document.getElementById('password');
-
         if (eyeIcon && passwordInput) {
             eyeIcon.addEventListener('click', () => {
                 const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';

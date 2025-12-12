@@ -23,7 +23,6 @@
                     <button class="lang-button active">RU</button>
                     <button class="lang-button noactive">EN</button>
                 </div>
-
                 <div class="user-profile">
                     <a href="#">
                         <img src="img/proof.png" alt="User">
@@ -42,7 +41,6 @@
             </ul>
         </div>
         <div class="menu-overlay" id="menuOverlay"></div>
-
         <nav class="main-nav">
             <ul class="nav-list">
                 <li><a href="index.html"><img src="img/home.svg" alt="home"> Главная</a></li>
@@ -54,7 +52,6 @@
                 <li><a href="blog.html"><img src="img/blog.png" alt="blog"> Блог</a></li>
             </ul>
         </nav>
-
         <div class="header-right desktop-only">
             <div class="language-switcher">
                 <a class="lang-button active">EN</a>
@@ -86,7 +83,6 @@
                         Спрашивайте меня о чем угодно!</p>
                 </div>
             </div>
-
             <div class="chat-window">
                 <div class="content-area">
                     <div class="ai-message-icon">
@@ -99,7 +95,6 @@
                         </div>
                     </div>
                 </div>
-
                 <section class="suggested-prompts">
                     <h4>Попробуйте спросить об:</h4>
                     <div class="prompt-buttons">
@@ -109,11 +104,11 @@
                         <a href="#" class="prompt-btn">Какие маркетинговые стратегии лучше всего подходят для B2B?</a>
                     </div>
                 </section>
-
                 <div class="suggested-prompts-input">
                     <div class="chat-input-area">
                         <div class="cha-area">
-                            <input type="text" class="chat-input" placeholder="Как подготовиться к финансированию серии А?">
+                            <input type="text" class="chat-input"
+                                   placeholder="Как подготовиться к финансированию серии А?">
                         </div>
                         <button class="send-btn" aria-label="Отправить сообщение">
                             <img src="img/raketa.svg" alt="idea">
@@ -187,7 +182,6 @@
                     </li>
                 </ul>
             </div>
-
             <div class="widget prompts-widget">
                 <h3>Попробуйте спросить об:</h3>
                 <ul class="prompts-list">
@@ -217,13 +211,11 @@
                     </li>
                 </ul>
             </div>
-
         </aside>
-
     </main>
 </div>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const menuToggle = document.querySelector('.menu-toggle');
         const mobileNav = document.getElementById('mobileNav');
         const menuOverlay = document.getElementById('menuOverlay');
@@ -244,13 +236,12 @@
                 }
             });
         });
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
             if (window.innerWidth > 1024 && mobileNav.classList.contains('open')) {
                 toggleMenu();
             }
         });
     });
 </script>
-
 </body>
 </html>
